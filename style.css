@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    width: auto;
+    height: auto;
+    padding: 10px 10px;
+    margin:5px;
+}
+
+header{
+    display:flex;
+    flex-direction: column;
+    width:auto;
+    height: 400px;
+    align-items: center;
+    margin: 5px;
+    border-radius: 50px;
+    padding: 50px;
+    margin-bottom: 20px;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before{
+    background-image: url('img/vista.jpg');
+    filter: blur(2px);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-size: cover;
+        transform: scale(1.1);
+}
+
+h1{
+    color:rgb(230, 225, 225);
+    text-align:center;
+    padding: 5px;
+    font-weight: 900;
+    font-size: 50px;
+    margin-bottom: 2px;
+    margin-top: 50px;
+}
+
+#subtitulo{
+    color:green;
+    text-align:center;
+    margin-bottom: 2px;
+    font-size: 25px;
+}
+
+
+main{
+    background-color:rgb(175, 197, 170);
+    width:auto;
+    height:auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#registro{
+    color:black ;
+    font-size: 30px;  
+    padding: 20px;
+    text-align: justify;
+}
+
+section#agregar_producto{
+    color:rgb(7, 7, 7);
+    display: flex;
+    flex-direction: column;
+    text-align:justify;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+form{
+    background-color: rgb(139, 139, 143);
+    margin: 0px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+label{
+    color:black;
+    font-size: 15px;
+    padding: 5px;
+    margin:5px;
+    display: inline-block;
+    width: 90px;
+}
+
+input{
+    width: 40%;
+    height:30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: justify;
+    padding: 5px;
+    margin: 5px;
+}
+
+button{
+    width: 100px;
+    height:30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color:aqua;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+section#inventario{
+    color:rgb(10, 10, 10);
+    display: flex;
+    flex-direction: column;
+    text-align:justify;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+h2{
+    color:black;
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0px;
+}
+
+li{
+    background-color: white;
+    margin-bottom: 40px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+section#inventario ul li p{
+    color: black;
+    font-size: 15px;
+    padding: 10px;
+}
+
+section#inventario ul li p span{
+    color: black;
+    font-size: 15px;
+    margin-left:5px;
+}
+
+section#inventario ul li button{
+    color: black;
+    font-size: 14px;
+    margin-left:5px;
+    margin-bottom: 20px;
+}
+
+section#resumen_de_inventario{
+    color:black;
+    display: flex;
+    flex-direction: column;
+    text-align:justify;
+    margin-left: 20px;
+    margin-top: 10px; 
+    margin-bottom: 20px;  
+}
+
+section#resumen_de_inventario p{
+    color:black;
+    font-size: 20px; 
+    padding: 5px;
+}
+
+span{
+    color:black;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+footer{
+    background-color:rgb(170, 197, 197);
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+

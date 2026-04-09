@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP DE GESTION DE INVENTARIO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <header>
+        <h1>INVENTARIO MAFE</h1>
+        <h2 id="subtitulo">Todo un sistema de gestion de productos</h2>
+    </header>
+
+
+    <main class="contenido_principal">
+        <P id="registro">Registra el producto que deseas agregar al inventario</P>
+        <section id = "agregar_producto">
+            <form id="formulario_producto">
+
+                <div id="nombre_producto">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" placeholder="Ingrese el nombre del producto:">
+                </div>
+
+                <br>
+
+                <div id="precio_producto">
+                    <label for="precio">Precio</label>
+                    <input id="precio" type="number" placeholder="Ingrese el precio del producto:">
+                </div>
+
+                <br>
+
+                <div id="cantidad_producto">
+                    <label for="cantidad">Cantidad</label>
+                    <input id="cantidad"type="number" placeholder="Ingrese la cantidad de productos:">
+                </div>
+
+                <br>
+                <div id="descripcion_producto">
+                    <label for="descripcion">Descripción</label>
+                    <input id="descripcion" type="text" placeholder="Ingrese la descripción del producto:">
+                </div>
+                <br>
+                <button type="submit">Guardar</button>
+            </form>
+        </section>
+
+        <br><br>
+
+        <section id="inventario">
+            <h2>Lista de productos</h2>
+            <ul id="lista-productos">
+                <li id="producto-1">
+                    <p>Nombre: <span id="nombre-1">Producto 1</span></p>
+                    <p>Precio: <span id="precio-1">$10.00</span></p>
+                    <p>Cantidad: <span id="cantidad-1">5</span></p>
+                    <p>Descripción: <span id="descripcion-1">Descripción del producto 1</span></p>
+                    <button>Eliminar</button>
+                    <button>Desactivar</button>
+                </li>
+            </ul>
+        </section>
+
+
+        <section id="resumen_de_inventario">
+            <p>Total_productos: <span id="total_productos"></span></p>
+            <p>Valor_total_inventario: <span id="valor_total_inventario"></span></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Derechos reservados &copy; 2024</p>
+    </footer>
+
+</body>
+</html>
