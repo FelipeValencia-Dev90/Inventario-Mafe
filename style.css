@@ -113,23 +113,21 @@ input{
 }
 
 button{
+    background-color: aqua;
     width: 100px;
     height:30px;
     border-radius: 5px;
     border: 1px solid black;
-    background-color:aqua;
-    font-size: 14px;
-    margin-top: 10px;
     margin-bottom: 5px;
 }
 
-section#inventario{
+.section#inventario{
     color:rgb(10, 10, 10);
     display: flex;
     flex-direction: column;
     text-align:justify;
     margin-left: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 h2{
@@ -138,6 +136,8 @@ h2{
     margin-bottom: 15px;
     font-size: 30px;
     font-weight: normal;
+    margin-top: 30px;
+    margin-left: 20px;
 }
 
 ul{
@@ -150,6 +150,7 @@ li{
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 5px;
+    margin-left: 20px;
 }
 
 section#inventario ul li p{
@@ -195,12 +196,79 @@ span{
 }
 
 footer{
-    background-color:rgb(170, 197, 197);
+    background-color:rgba(40, 168, 177, 0.945);
     width: auto;
     height: auto;
     text-align: center;
-    padding: 50px;
+    padding-top: 0px;
+    border-radius: 10px;
 }
+
+.contenedor-footer{
+    font-size: 20px;
+    display: flex;
+    background-color:rgba(40, 168, 177, 0.945);
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.footer-content{
+    color: rgb(252, 252, 251);
+    font-size: 15px;
+    margin-left:20%;
+    padding: 30px;
+    background-color: rgba(40, 168, 177, 0.945);
+}
+
+.footer-content h3{
+    color: rgb(250, 250, 248);
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.footer-content p{
+    color:rgb(240, 245, 243);
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+
+.footer-content ul li{
+    padding: 0px;
+    margin: 10px;
+    background-color: rgba(40, 168, 177, 0.945);
+    width: auto;
+    height: auto;
+}
+
+.bottom-bar {
+    text-align: center;      /* centra todo */
+    margin-top: 0px;        /* separación arriba */
+    color: rgb(243, 243, 243);            /* color del texto */
+    font-size: 14px;
+    padding: 0px;
+    background-color: rgba(40, 168, 177, 0.945);
+    border-radius: 10px;
+}
+
+.bottom-bar p {
+    background-color: rgba(42, 66, 68, 0.945);
+    width: auto;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
 
 
 
