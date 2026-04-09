@@ -109,7 +109,7 @@ input{
     border: 1px solid black;
     text-align: justify;
     padding: 5px;
-    margin: 5px;
+    margin: 8px;
 }
 
 button{
@@ -120,6 +120,7 @@ button{
     background-color:aqua;
     font-size: 14px;
     margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 section#inventario{
@@ -146,8 +147,8 @@ ul{
 
 li{
     background-color: white;
-    margin-bottom: 40px;
-    padding: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
     border-radius: 5px;
 }
 
@@ -167,7 +168,8 @@ section#inventario ul li button{
     color: black;
     font-size: 14px;
     margin-left:5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 section#resumen_de_inventario{
