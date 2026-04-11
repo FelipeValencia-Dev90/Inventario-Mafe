@@ -48,14 +48,14 @@ h1{
     padding: 5px;
     font-weight: 900;
     font-size: 50px;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
     margin-top: 50px;
 }
 
 #subtitulo{
     color:green;
     text-align:center;
-    margin-bottom: 2px;
+    margin:2px;
     font-size: 25px;
 }
 
@@ -72,8 +72,9 @@ main{
 #registro{
     color:black ;
     font-size: 30px;  
-    padding: 20px;
+    padding: 10px;
     text-align: justify;
+    margin-left: 10px;
 }
 
 section#agregar_producto{
@@ -88,8 +89,16 @@ section#agregar_producto{
 form{
     background-color: rgb(139, 139, 143);
     margin: 0px;
+    padding: 2px;
+    border-radius: 5px;
+    padding-bottom: 25px;
+}
+
+.contenedor-inputs{
+    width: auto;
     padding: 20px;
     border-radius: 5px;
+    
 }
 
 
@@ -103,7 +112,7 @@ label{
 }
 
 input{
-    width: 40%;
+    width: 400px;
     height:30px;
     border-radius: 5px;
     border: 1px solid black;
@@ -118,7 +127,8 @@ button{
     height:30px;
     border-radius: 5px;
     border: 1px solid black;
-    margin-bottom: 5px;
+    margin-left:25px;
+    margin-top: 2px;
 }
 
 .section#inventario{
@@ -183,6 +193,13 @@ section#resumen_de_inventario{
     margin-bottom: 20px;  
 }
 
+section#resumen_de_inventario h3{
+    margin-top: 20px;
+    font-size:25px;
+    font-weight: 600;
+    padding: 5px;
+}
+
 section#resumen_de_inventario p{
     color:black;
     font-size: 20px; 
@@ -200,25 +217,30 @@ footer{
     width: auto;
     height: auto;
     text-align: center;
-    padding-top: 0px;
+    padding:0px;
     border-radius: 10px;
 }
 
 .contenedor-footer{
-    font-size: 20px;
     display: flex;
-    background-color:rgba(40, 168, 177, 0.945);
+    justify-content: center;
     align-items: center;
-    padding: 10px;
+    background-color:rgba(40, 168, 177, 0.945);
+    padding:40px;
     border-radius: 10px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    height: 250px;
 }
 
 .footer-content{
     color: rgb(252, 252, 251);
     font-size: 15px;
-    margin-left:20%;
     padding: 30px;
     background-color: rgba(40, 168, 177, 0.945);
+    margin-left: 5px;
+    margin-top: 10px;
+    height: 200px;
 }
 
 .footer-content h3{
@@ -244,13 +266,13 @@ footer{
 }
 
 .bottom-bar {
-    text-align: center;      /* centra todo */
-    margin-top: 0px;        /* separación arriba */
-    color: rgb(243, 243, 243);            /* color del texto */
+    text-align: center;          
+    color: rgb(243, 243, 243);           
     font-size: 14px;
     padding: 0px;
     background-color: rgba(40, 168, 177, 0.945);
     border-radius: 10px;
+    height: auto;
 }
 
 .bottom-bar p {
