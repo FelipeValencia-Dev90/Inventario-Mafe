@@ -259,10 +259,16 @@ footer{
 
 .footer-content ul li{
     padding: 0px;
-    margin: 10px;
-    background-color: rgba(40, 168, 177, 0.945);
+    margin: 5px;
+    background-color:rgba(40, 168, 177, 0.945);
     width: auto;
     height: auto;
+}
+
+.footer-content ul li a i{
+    font-size: 20px;
+    color:chartreuse;
+    transition: 0.3s;
 }
 
 .bottom-bar {
