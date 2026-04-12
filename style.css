@@ -267,9 +267,13 @@ footer{
 
 .footer-content ul li a i{
     font-size: 20px;
-    color:chartreuse;
+    color:rgb(200, 201, 199);
     transition: 0.3s;
 }
+ .footer-content ul li a i:hover{
+    color:chartreuse;
+    transform: scale(1.2);
+ }
 
 .bottom-bar {
     text-align: center;          
