@@ -7,5 +7,11 @@ conexion = pyodbc.connect(
     'Trusted_Connection=yes;'
 )
 
-print("Conexión exitosa 🚀")
+cursor = conexion.cursor()  
 
+cursor.execute("""
+INSERT INTO Productos (nombre, precio, cantidad, descripcion)
+VALUES ('TV', 2500000, 4, 'Smart TV')
+""")
+
+conexion.commit()  
