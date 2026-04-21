@@ -71,8 +71,30 @@ while True:
 
 
     elif opcion == "5":
-        buscar_producto = input("Ingrese nombre a buscar: ").strip().title()
+        buscar_producto = input("Ingrese nombre a buscar: ").strip()
 
+        buscar_producto = f"%{buscar_producto}%"
+
+        cursor.execute("""
+                       SELECT * FROM Productos
+                       WHERE nombre LIKE ?
+                       AND activo = 1 
+                       """, (buscar_producto,))
+        
+        productos = cursor.fetchall()
+
+
+        if not productos:
+            print("❌ No hay productos con ese nombre")
+        
+        else:
+            for producto in productos:
+                print("-" * 40)
+                print(f"ID: {producto[0]}")
+                print(f"Nombre: {producto[1]}")
+                print(f"Precio: {producto[2]}")
+                print(f"Cantidad: {producto[3]}")
+                print(f"Descripcion: {producto[4]}")
 
 
     else: 
