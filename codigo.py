@@ -13,7 +13,9 @@ while True:
     print("\nOpciones:")
     print("1 - Agregar Producto")
     print("2 - Salir")
-    print("3 - mostrar Inventario")
+    print("3 - Mostrar Inventario")
+    print("4 - Desactivar Producto")
+    print("5 - Buscar Producto")
 
     opcion = input("Elija una opcion: ")
 
@@ -40,7 +42,7 @@ while True:
     elif opcion == "3":
         print("\n📦 Inventario Actual")
 
-        cursor.execute("SELECT * FROM Productos")
+        cursor.execute("SELECT * FROM Productos WHERE activo = 1")
         productos = cursor.fetchall()
 
         if not productos:
@@ -53,6 +55,25 @@ while True:
                 print(f"Precio: {producto[2]}")
                 print(f"Cantidad: {producto[3]}")
                 print(f"Descripción: {producto[4]}")
+
+    elif opcion == "4":
+        id_producto = int(input("Ingrese el ID del producto a desactivar: "))
+
+        cursor.execute("""
+                        UPDATE Productos
+                        SET activo = 0
+                        WHERE Id = ?
+                        """, (id_producto,))
+        
+        conexion.commit()
+
+        print("\n⚠ Producto desactivado Correctamente")
+
+
+    elif opcion == "5":
+        buscar_producto = input("Ingrese nombre a buscar: ").strip().title()
+
+
 
     else: 
         print("\n❌ ¡Opción Inválida! Elija una opción valida")
