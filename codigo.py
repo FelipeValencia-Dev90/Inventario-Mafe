@@ -16,6 +16,7 @@ while True:
     print("3 - Mostrar Inventario")
     print("4 - Desactivar Producto")
     print("5 - Buscar Producto")
+    print("6 - Resumen Inventario")
 
     opcion = input("Elija una opcion: ")
 
@@ -45,7 +46,7 @@ while True:
         cursor.execute("SELECT * FROM Productos WHERE activo = 1")
         productos = cursor.fetchall()
 
-        if not productos:
+        if not productos:   
             print("⚠ Inventario vacío")
         else:
             for producto in productos:
@@ -95,6 +96,25 @@ while True:
                 print(f"Precio: {producto[2]}")
                 print(f"Cantidad: {producto[3]}")
                 print(f"Descripcion: {producto[4]}")
+
+    elif opcion == "6":
+
+        cursor.execute("""
+                SELECT
+                    SUM(cantidad) AS total_unidades,
+                    SUM(precio * cantidad) AS valor_total
+                FROM Productos
+                WHERE activo = 1
+            """)
+
+        resultado = cursor.fetchone()
+
+        if resultado and resultado[0] is not None:
+            print("\n📊 RESUMEN DEL INVENTARIO")
+            print(f"Total de unidades: {resultado[0]}")
+            print(f"Valor total: $ {resultado[1]:.2f}")
+        else:
+            print("⚠ No hay productos en el inventario")
 
 
     else: 
