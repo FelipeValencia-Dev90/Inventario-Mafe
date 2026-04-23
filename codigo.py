@@ -17,6 +17,7 @@ while True:
     print("4 - Desactivar Producto")
     print("5 - Buscar Producto")
     print("6 - Resumen Inventario")
+    print("7 - Eliminar Producto")
 
     opcion = input("Elija una opcion: ")
 
@@ -116,6 +117,21 @@ while True:
         else:
             print("⚠ No hay productos en el inventario")
 
+
+    elif opcion == "7":
+        id_producto = int(input("Ingresa el ID del productos que deseas eliminar: "))
+
+        cursor.execute("""
+                    DELETE FROM Productos
+                    WHERE Id = ?
+                     """, (id_producto,))
+        
+        conexion.commit()
+        if cursor.rowcount > 0:
+            print("✅ Producto eliminado correctamente")
+        else:
+            print("❌ No existe un producto con ese ID")
+        
 
     else: 
         print("\n❌ ¡Opción Inválida! Elija una opción valida")
