@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APP DE GESTION DE INVENTARIO</title>
-    <script src="https://kit.fontawesome.com/52c26b3b71.js" crossorigin="anonymous"></script>"
-    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/52c26b3b71.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 
@@ -20,26 +20,26 @@
     <main class="contenido_principal">
         <P id="registro">Registra el producto que deseas agregar al inventario</P>
         <section id = "agregar_producto">
-            <form id="formulario_producto" action="guardar-producto" method="post">
+            <form id="formulario_producto" action="/guardar-producto" method="post">
                 <div class="contenedor-inputs">
                     <div class="Registro">
                         <label for="nombre">Nombre</label>
-                        <input id="nombre" type="text" name="nombre-producto" placeholder="Ingrese el nombre del producto:">
+                        <input id="nombre" type="text" name="nombre" placeholder="Ingrese el nombre del producto:">
                     </div>
 
                     <div class="Registro">
                         <label for="precio">Precio</label>
-                        <input id="precio" type="number" name="precio-producto" placeholder="Ingrese el precio del producto:">
+                        <input id="precio" type="number" name="precio" placeholder="Ingrese el precio del producto:">
                     </div>
 
                     <div class="Registro">
                         <label for="cantidad">Cantidad</label>
-                        <input id="cantidad" type="number" name="cantidad-producto" placeholder="Ingrese la cantidad de productos:">
+                        <input id="cantidad" type="number" name="cantidad" placeholder="Ingrese la cantidad de productos:">
                     </div>
 
                     <div class="Registro">
                         <label for="descripcion">Descripción</label>
-                        <input id="descripcion" type="text" name="descripcion-producto" placeholder="Ingrese la descripción del producto:">
+                        <input id="descripcion" type="text" name="descripcion" placeholder="Ingrese la descripción del producto:">
                     </div>
                 </div>
                 <button type="submit">Guardar</button>
