@@ -48,15 +48,21 @@
 
         <section id="inventario">
             <h2>Caracteristicas del Productos</h2>
+
             <ul id="lista-productos">
-                <li id="producto-1">
-                    <p>Nombre: <span class="dato-nombre">Producto 1</span></p>
-                    <p>Precio: <span class="dato-precio">$10.00</span></p>
-                    <p>Cantidad: <span class="dato-cantidad">5</span></p>
-                    <p>Descripción: <span class="dato-descripcion">Descripción del producto 1</span></p>
+                {% for producto in productos %}
+
+                <li id="producto-{{producto[0]}}">
+                    <p>Nombre: <span class="dato-nombre">{{producto[1]}}</span></p>
+                    <p>Precio: <span class="dato-precio">{{producto[2]}}</span></p>
+                    <p>Cantidad: <span class="dato-cantidad">{{producto[3]}}</span></p>
+                    <p>Descripción: <span class="dato-descripcion">{{producto[4]}}</span></p>
                     <button type="button">Eliminar</button>
                     <button type="button">Desactivar</button>
                 </li>
+
+                {% endfor %}
+
             </ul>
         </section>
 

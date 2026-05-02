@@ -6,7 +6,24 @@ app = Flask(__name__)
 # PAGINA PRINCIPAL
 @app.route("/")
 def inicio():
-    return render_template("index.html")
+
+    conexion = pyodbc.connect(
+        'DRIVER={ODBC Driver 17 for SQL Server};'
+        'SERVER=DESKTOP-Q681RM2\\SQLEXPRESS;'
+        'DATABASE=InventarioAVA;'
+        'Trusted_Connection=yes;'
+    )
+
+    
+    cursor = conexion.cursor()
+
+    cursor.execute("SELECT * FROM Productos WHERE activo = 1")
+
+    productos = cursor.fetchall()
+
+    conexion.close()
+
+    return render_template("index.html", productos=productos)
 
 
 # GUARDAR PRODUCTO
