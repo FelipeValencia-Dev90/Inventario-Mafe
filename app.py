@@ -52,6 +52,28 @@ def guardar_producto():
     conexion.commit()
     conexion.close()
 
+@app.route("/desactivar-producto/<int:id>", methods=["POST"])
+def desactivar_producto(id):
+
+    conexion = pyodbc.connect(
+        'DRIVER={ODBC Driver 17 for SQL Server};'
+        'SERVER=DESKTOP-Q681RM2\\SQLEXPRESS;'
+        'DATABASE=InventarioAVA;'
+        'Trusted_Connection=yes;'
+    )
+
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+                        UPDATE Productos
+                        SET activo = 0
+                        WHERE Id = ?
+                        """, (id,))
+
+    conexion.commit()
+    print("Producto desactivado correctamente.")
+    conexion.close()
+
     return redirect("/")
 
 

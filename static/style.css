@@ -86,7 +86,7 @@ section#agregar_producto{
     margin-top: 5px;
 }
 
-form{
+#formulario_producto{
     background-color: rgb(139, 139, 143);
     margin: 0px;
     padding: 2px;
@@ -153,6 +153,7 @@ h2{
 ul{
     list-style-type: none;
     padding: 0px;
+
 }
 
 li{
@@ -175,13 +176,14 @@ section#inventario ul li p span{
     margin-left:5px;
 }
 
-section#inventario ul li button{
-    color: black;
-    font-size: 14px;
-    margin-left:5px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
+.form-accion{
+    background-color:white;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+} 
 
 section#resumen_de_inventario{
     color:black;
