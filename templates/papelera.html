@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papelera</title>
+</head>
+<body>
+    <h2>Productos Desactivados</h2>
+
+            <ul id="lista-productos">
+                {% for producto in productos     %}
+
+                <li id="producto-{{producto[0]}}">
+                    <p>Nombre: <span class="dato-nombre">{{producto[1]}}</span></p>
+                    <p>Precio: <span class="dato-precio">{{producto[2]}}</span></p>
+                    <p>Cantidad: <span class="dato-cantidad">{{producto[3]}}</span></p>
+                    <p>Descripción: <span class="dato-descripcion">{{producto[4]}}</span></p>
+
+                    <form class="form-accion" action="/reactivar-producto/{{producto[0]}}" method="post">
+                        <button class="btn-reactivar" type="submit" 
+                        onclick="return confirm('¿Desea Reactivar Este Producto?');">
+                            Reactivar</button>
+                    </form>
+
+                </li>
+
+                {% endfor %}
+
+            </ul>
+</body>
+</html>

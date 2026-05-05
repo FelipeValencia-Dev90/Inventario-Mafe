@@ -46,8 +46,14 @@
             </form>
         </section>
 
+      
+
         <section id="inventario">
             <h2>Caracteristicas del Productos</h2>
+
+            <div class="header-inventario">
+                <a href="/papelera" class="btn-papelera">🗑 Ver papelera</a>
+            </div>
 
             <ul id="lista-productos">
                 {% for producto in productos %}
@@ -63,7 +69,6 @@
                         onclick="return confirm('¿Desea Desactivar Este Producto?');">
                             Desactivar</button>
                     </form>
-
                 </li>
 
                 {% endfor %}

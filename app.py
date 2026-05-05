@@ -77,4 +77,52 @@ def desactivar_producto(id):
     return redirect("/")
 
 
+@app.route("/papelera")
+def papelera():
+
+    conexion = pyodbc.connect(
+        'DRIVER={ODBC Driver 17 for SQL Server};'
+        'SERVER=DESKTOP-Q681RM2\\SQLEXPRESS;'
+        'DATABASE=InventarioAVA;'
+        'Trusted_Connection=yes;'
+    )
+
+    cursor = conexion.cursor()
+
+    cursor.execute("SELECT * FROM Productos WHERE activo = 0")
+
+    productos_desactivados = cursor.fetchall()
+
+    conexion.close()
+
+    return render_template("papelera.html", productos=productos_desactivados)
+
+
+
+@app.route("/reactivar-producto/<int:id>", methods=['POST'])
+def reactivar_producto(id):
+
+    conexion = pyodbc.connect(
+        'DRIVER={ODBC Driver 17 for SQL Server};'
+        'SERVER=DESKTOP-Q681RM2\\SQLEXPRESS;'
+        'DATABASE=InventarioAVA;'
+        'Trusted_Connection=yes;'
+    )
+
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+                        UPDATE Productos
+                        SET activo = 1
+                        WHERE id = ?
+                    """, (id,))
+
+    conexion.commit()
+    print("Producto reactivado correctamente.")
+
+    conexion.close()
+
+    return redirect("/papelera")
+
+
 app.run(debug=True)

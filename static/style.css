@@ -150,6 +150,30 @@ h2{
     margin-left: 20px;
 }
 
+.header-inventario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-papelera{
+    background-color: rgb(242, 242, 243);
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    margin-left: 20px;
+    margin: 20px;
+}
+
+.btn-papelera:hover{
+    background-color: rgb(130, 175, 243);
+    transform: scale(1.05);
+}
+
 ul{
     list-style-type: none;
     padding: 0px;
@@ -178,12 +202,31 @@ section#inventario ul li p span{
 
 .form-accion{
     background-color:white;
-    color: white;
     border: none;
-    padding: 5px 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 5px;
     cursor: pointer;
+    width: auto;
 } 
+
+.btn-desactivar{
+    background-color:aqua;
+    color: black;
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+.btn-desactivar:hover{
+    background-color: rgb(130, 175, 243);
+    transform: scale(1.05);
+}
 
 section#resumen_de_inventario{
     color:black;
