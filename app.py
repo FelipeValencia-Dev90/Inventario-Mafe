@@ -124,5 +124,4 @@ def reactivar_producto(id):
 
     return redirect("/papelera")
 
-
 app.run(debug=True)

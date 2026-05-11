@@ -47,6 +47,7 @@ while True:
         cursor.execute("SELECT * FROM Productos WHERE activo = 1")
         productos = cursor.fetchall()
 
+
         if not productos:   
             print("⚠ Inventario vacío")
         else:
@@ -57,6 +58,7 @@ while True:
                 print(f"Precio: {producto[2]}")
                 print(f"Cantidad: {producto[3]}")
                 print(f"Descripción: {producto[4]}")
+
 
     elif opcion == "4":
         id_producto = int(input("Ingrese el ID del producto a desactivar: "))
