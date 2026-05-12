@@ -23,6 +23,13 @@
                             Reactivar</button>
                     </form>
 
+                    <form action="/eliminar-producto/{{producto[0]}}" method="post">
+                        <button class="btn-eliminar" type="submit" 
+                            onclick="return confirm('¿Desea Eliminar Este Producto?');">
+                            Eliminar
+                        </button>
+                    </form>
+
                 </li>
 
                 {% endfor %}

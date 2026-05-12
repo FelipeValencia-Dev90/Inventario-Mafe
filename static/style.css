@@ -150,6 +150,15 @@ h2{
     margin-left: 20px;
 }
 
+.mensaje-exito{
+    background-color: lightgreen;
+    color: darkgreen;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
 .header-inventario {
     display: flex;
     justify-content: space-between;

@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 import pyodbc
 
 app = Flask(__name__)
+app.secret_key = "InventarioAVA"
 
 # PAGINA PRINCIPAL
 @app.route("/")
@@ -18,12 +19,27 @@ def inicio():
     cursor = conexion.cursor()
 
     cursor.execute("SELECT * FROM Productos WHERE activo = 1")
-
     productos = cursor.fetchall()
+
+
+    #RESUMEN INVENTARIO
+
+    cursor.execute("""
+                SELECT
+                   SUM(cantidad) AS total_unidades,
+                   SUM(precio * cantidad) AS valor_total
+                FROM Productos
+                WHERE activo = 1
+                """)
+    
+    resumen = cursor.fetchone()
 
     conexion.close()
 
-    return render_template("index.html", productos=productos)
+    return render_template("index.html", 
+                           productos=productos,
+                           resumen=resumen
+                           )
 
 
 # GUARDAR PRODUCTO
@@ -71,7 +87,7 @@ def desactivar_producto(id):
                         """, (id,))
 
     conexion.commit()
-    print("Producto desactivado correctamente.")
+    flash("Producto desactivado correctamente.")
     conexion.close()
 
     return redirect("/")
@@ -119,6 +135,31 @@ def reactivar_producto(id):
 
     conexion.commit()
     print("Producto reactivado correctamente.")
+
+    conexion.close()
+
+    return redirect("/papelera")
+
+
+@app.route("/eliminar-producto/<int:id>", methods=['POST'])
+def eliminar_producto(id):
+
+    conexion = pyodbc.connect(
+        'DRIVER={ODBC Driver 17 for SQL Server};'
+        'SERVER=DESKTOP-Q681RM2\\SQLEXPRESS;'
+        'DATABASE=InventarioAVA;'
+        'Trusted_Connection=yes;'
+    )
+
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+                        DELETE FROM Productos
+                        WHERE id = ?
+                    """, (id,))
+
+    conexion.commit()
+    flash("✔Producto eliminado correctamente.")
 
     conexion.close()
 

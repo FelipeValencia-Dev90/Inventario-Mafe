@@ -51,6 +51,18 @@
         <section id="inventario">
             <h2>Caracteristicas del Productos</h2>
 
+            {% with mensajes = get_flashed_messages() %}
+                {% if mensajes %}
+
+                        {% for mensaje in mensajes %}
+                            <p class="mensaje-exito">
+                                {{ mensaje }}
+                            </p>
+                        {% endfor %}
+                  
+                {% endif %}
+            {% endwith %}
+
             <div class="header-inventario">
                 <a href="/papelera" class="btn-papelera">🗑 Ver papelera</a>
             </div>
@@ -78,9 +90,17 @@
 
         <section id="resumen_de_inventario">
             <h3>Resumen de inventario</h3>
-            <p>Total de Productos: <span id="total_productos"></span></p>
-            <p>Valor Total Inventario: <span id="valor_total_inventario"></span></p>
+
+            <p>📦Total de Productos:
+                <strong>{{resumen[0]}}</strong> <span id="total_productos"></span>
+            </p>
+
+            <p>💰Valor Total Inventario: 
+                <strong>${{ "{:,.0f}".format(resumen[1]) }}</strong>
+                <span id="valor_total_inventario"></span>
+            </p>
         </section>
+
     </main>
 
     <footer>
