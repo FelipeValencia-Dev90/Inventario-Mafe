@@ -17,8 +17,15 @@ def inicio():
 
     
     cursor = conexion.cursor()
+    buscar = request.args.get("buscar", "")
 
-    cursor.execute("SELECT * FROM Productos WHERE activo = 1")
+    cursor.execute("""
+                   SELECT * FROM Productos 
+                   WHERE activo = 1 
+                   AND nombre LIKE ?
+                   """, (f"%{buscar}%",))
+    
+    
     productos = cursor.fetchall()
 
 
