@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>EDITAR PRODUCTO</title>
+</head>
+
+<body>
+
+    <section id="editar_producto">
+
+        <h2>Editar Producto</h2>
+
+        <form id="formulario_producto" action="/actualizar-producto/{{producto[0]}}" method="post">
+
+                    <div class="contenedor-inputs">
+                        <div class="Registro">
+                            <label for="nombre">Nombre</label>
+                            <input id="nombre" type="text" name="nombre" value="{{producto[1]}}">
+                        </div>
+
+                        <div class="Registro">
+                            <label for="precio">Precio</label>
+                            <input id="precio" type="number" name="precio" value="{{producto[2]}}">
+                        </div>
+
+                        <div class="Registro">
+                            <label for="cantidad">Cantidad</label>
+                            <input id="cantidad" type="number" name="cantidad" value="{{producto[3]}}">
+                        </div>
+
+                        <div class="Registro">
+                            <label for="descripcion">Descripción</label>
+                            <input id="descripcion" type="text" name="descripcion" value="{{producto[4]}}">
+                        </div>
+                    </div>
+                    <button class="btn-guardar" type="submit">Guardar</button>
+                </form>
+    </section> 
+</body>
+</html>

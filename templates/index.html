@@ -24,25 +24,25 @@
                 <div class="contenedor-inputs">
                     <div class="Registro">
                         <label for="nombre">Nombre</label>
-                        <input id="nombre" type="text" name="nombre" placeholder="Ingrese el nombre del producto:">
+                        <input id="nombre" type="text" name="nombre" required placeholder="Ingrese el nombre del producto:">
                     </div>
 
                     <div class="Registro">
                         <label for="precio">Precio</label>
-                        <input id="precio" type="number" name="precio" placeholder="Ingrese el precio del producto:">
+                        <input id="precio" type="number" name="precio" required placeholder="Ingrese el precio del producto:">
                     </div>
 
                     <div class="Registro">
                         <label for="cantidad">Cantidad</label>
-                        <input id="cantidad" type="number" name="cantidad" placeholder="Ingrese la cantidad de productos:">
+                        <input id="cantidad" type="number" name="cantidad" required placeholder="Ingrese la cantidad de productos:">
                     </div>
 
                     <div class="Registro">
                         <label for="descripcion">Descripción</label>
-                        <input id="descripcion" type="text" name="descripcion" placeholder="Ingrese la descripción del producto:">
+                        <input id="descripcion" type="text" name="descripcion" required placeholder="Ingrese la descripción del producto:">
                     </div>
                 </div>
-                <button type="submit">Guardar</button>
+                <button class="btn-agregar" type="submit">Guardar</button>
             </form>
         </section>
 
@@ -80,6 +80,12 @@
                         <button class="btn-desactivar" type="submit" 
                         onclick="return confirm('¿Desea Desactivar Este Producto?');">
                             Desactivar</button>
+                    </form>
+
+                    <form action="/editar-producto/{{producto[0]}}" method="get">
+                        <button class="btn-editar" type="submit">
+                            Editar
+                        </button>   
                     </form>
                 </li>
 

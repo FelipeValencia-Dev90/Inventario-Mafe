@@ -47,9 +47,20 @@ def inicio():
 def guardar_producto():
 
     nombre = request.form["nombre"]
-    precio = float(request.form["precio"])
-    cantidad = int(request.form["cantidad"])
+    precio = request.form["precio"]
+    cantidad = request.form["cantidad"]
     descripcion = request.form["descripcion"]
+
+
+    #VALIDACIÓN DE CAMPOS
+    if nombre == "" or precio == "" or cantidad == "" or descripcion == "":
+        flash("⚠ Todos los campos son obligatorios.")
+        return redirect("/")
+    
+    #CONVERTIR DATOS
+
+    precio = float(precio)
+    cantidad = int(cantidad)
 
     conexion = pyodbc.connect(
         'DRIVER={ODBC Driver 17 for SQL Server};'
@@ -66,7 +77,11 @@ def guardar_producto():
     """, (nombre, precio, cantidad, descripcion))
 
     conexion.commit()
+    flash("✔Producto guardado correctamente.")
+
     conexion.close()
+    
+    return redirect("/")
 
 @app.route("/desactivar-producto/<int:id>", methods=["POST"])
 def desactivar_producto(id):
@@ -164,5 +179,65 @@ def eliminar_producto(id):
     conexion.close()
 
     return redirect("/papelera")
+
+
+@app.route("/editar-producto/<int:id>")
+def editar_producto(id):
+
+    conexion = pyodbc.connect(
+        'DRIVER={ODBC Driver 17 for SQL Server};'
+        'SERVER=DESKTOP-Q681RM2\\SQLEXPRESS;'
+        'DATABASE=InventarioAVA;'
+        'Trusted_Connection=yes;'
+    )
+
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+                SELECT * FROM Productos
+                WHERE id = ?
+            """, (id,)
+            )
+    
+    producto = cursor.fetchone()
+    conexion.close()
+    
+
+    return render_template(
+                        "editar_producto.html",
+                        producto=producto
+                    )
+
+@app.route("/actualizar-producto/<int:id>", methods=['POST'])
+def actualizar_producto(id):
+
+    nombre = request.form["nombre"]
+    precio = float(request.form["precio"])
+    cantidad = int(request.form["cantidad"])
+    descripcion = request.form["descripcion"]
+    
+    conexion = pyodbc.connect(
+        'DRIVER={ODBC Driver 17 for SQL Server};'
+        'SERVER=DESKTOP-Q681RM2\\SQLEXPRESS;'
+        'DATABASE=InventarioAVA;'
+        'Trusted_Connection=yes;'
+    )
+
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+                        UPDATE Productos
+                        SET nombre = ?, 
+                            precio = ?, 
+                            cantidad = ?, 
+                            descripcion = ?
+                        WHERE id = ?
+                    """, (nombre, precio, cantidad, descripcion, id))
+    
+    conexion.commit()
+    flash("Producto actualizado correctamente. ")
+
+    return redirect("/")
+                   
 
 app.run(debug=True)

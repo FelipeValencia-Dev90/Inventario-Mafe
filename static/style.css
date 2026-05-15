@@ -75,6 +75,7 @@ main{
     padding: 10px;
     text-align: justify;
     margin-left: 10px;
+    margin-bottom: 15px;
 }
 
 section#agregar_producto{
@@ -87,6 +88,9 @@ section#agregar_producto{
 }
 
 #formulario_producto{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
     background-color: rgb(139, 139, 143);
     margin: 0px;
     padding: 2px;
@@ -95,12 +99,13 @@ section#agregar_producto{
 }
 
 .contenedor-inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: auto;
     padding: 20px;
-    border-radius: 5px;
-    
+    border-radius: 5px;  
 }
-
 
 label{
     color:black;
@@ -123,12 +128,57 @@ input{
 
 button{
     background-color: aqua;
-    width: 100px;
-    height:30px;
+    width: auto;
+    height:auto;
     border-radius: 5px;
-    border: 1px solid black;
     margin-left:25px;
     margin-top: 2px;
+}
+
+.btn-agregar{
+    background-color: aqua;
+    color: rgb(12, 12, 12);
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor:pointer;
+    width:100px;
+    height: 30px;
+    margin-top: 15px;
+     border: 1px solid black;
+}
+
+.btn-agregar:hover{
+    background-color:rgb(14, 190, 190);
+    transform: scale(1.05);
+}
+
+
+section#editar_producto{
+    width: 70%;
+    margin:auto;
+    margin-top: 40px;
+    background-color: rgb(241, 227, 227);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.btn-guardar{
+    background-color: aqua;
+    color: rgb(12, 12, 12);
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor:pointer;
+    width:100px;
+    height: 30px;
+    margin-top: 15px;
+    border: 1px solid black;
+}
+
+.btn-guardar:hover{
+    background-color:rgb(14, 190, 190);
+    transform: scale(1.05);
 }
 
 .section#inventario{
@@ -186,7 +236,6 @@ h2{
 ul{
     list-style-type: none;
     padding: 0px;
-
 }
 
 li{
@@ -233,7 +282,25 @@ section#inventario ul li p span{
 }
 
 .btn-desactivar:hover{
-    background-color: rgb(130, 175, 243);
+    background-color:rgb(14, 190, 190);
+    transform: scale(1.05);
+}
+
+.btn-editar{
+   background-color:aqua;
+    color: black;
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    margin-left: 5px; 
+}
+
+.btn-editar:hover{
+    background-color:rgb(14, 190, 190);
     transform: scale(1.05);
 }
 
