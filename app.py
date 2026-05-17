@@ -17,13 +17,38 @@ def inicio():
 
     
     cursor = conexion.cursor()
-    buscar = request.args.get("buscar", "")
 
-    cursor.execute("""
-                   SELECT * FROM Productos 
-                   WHERE activo = 1 
-                   AND nombre LIKE ?
-                   """, (f"%{buscar}%",))
+    buscar = request.args.get("buscar", "")
+    orden = request.args.get("orden", "")
+    stock = request.args.get("stock", "")
+
+    #CONSULTA BASE
+    consulta = """
+                SELECT * FROM Productos
+                WHERE activo = 1
+                AND nombre LIKE ?
+            """
+                                      
+    
+    #Filtrar stock Bajo
+    if stock == "bajo":
+        consulta += " AND cantidad <= 5"
+
+    #Filtrar stock Alto
+    elif stock == "alto":
+        consulta += " AND cantidad > 5"
+
+    #Filtar por precio
+    if orden == "nombre_asc":
+        consulta += " ORDER BY nombre ASC"
+
+    elif orden == "precio_mayor":
+        consulta += " ORDER BY precio DESC"
+        
+    elif orden == "precio_menor":
+        consulta += " ORDER BY precio ASC"
+
+    cursor.execute(consulta, (f"%{buscar}%",))
     
     
     productos = cursor.fetchall()
@@ -46,8 +71,7 @@ def inicio():
     return render_template("index.html", 
                            productos=productos,
                            resumen=resumen
-                           )
-
+                        )
 
 # GUARDAR PRODUCTO
 @app.route("/guardar-producto", methods=["POST"])

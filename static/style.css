@@ -153,7 +153,6 @@ button{
     transform: scale(1.05);
 }
 
-
 section#editar_producto{
     width: 70%;
     margin:auto;
@@ -178,6 +177,102 @@ section#editar_producto{
 
 .btn-guardar:hover{
     background-color:rgb(14, 190, 190);
+    transform: scale(1.05);
+}
+
+.container-busqueda{
+    background-color: rgb(241, 227, 227);
+    width: auto;
+    height: auto;
+    padding: 5px;
+    margin-top: 5px;
+    margin-left:20px;
+    border-radius: 5px;
+}
+
+.form-busqueda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.titulo-busqueda{
+    color: black;
+    font-size:15px;
+    font-family: cursive;
+    padding: 5px;
+    margin: 3px;
+}
+
+input#buscar-producto{
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height:30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 3px;
+}
+
+.btn-buscar{
+    background-color: aqua;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 90px;
+    height: 30px;
+    margin:3px;
+}
+
+.btn-buscar:hover{
+    background-color: rgb(14, 190, 190);
+    transform: scale(1.05);
+}
+
+.form-filtros{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+
+select{
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+    margin: 3px;
+}
+
+.orden-filtro{
+    background-color: yellow;
+}
+
+.stock-filtro{
+    background-color: rgb(120, 180, 120);
+}
+
+.btn-filtro{
+    background-color: aqua;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 90px;
+    height: 30px;
+    margin:3px;
+}
+
+.btn-filtro:hover{
+    background-color: rgb(14, 190, 190);
     transform: scale(1.05);
 }
 

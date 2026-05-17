@@ -46,14 +46,36 @@
             </form>
         </section>
 
+        <div class="container-busqueda">
             <form action="/" method="get" class="form-busqueda">
-                <input type="text" name="buscar" placeholder="Buscar Producto">
+                <p class="titulo-busqueda">Busqueda Avanzada</p>
+                <input id="buscar-producto" type="text" name="buscar" placeholder="Buscar Producto">
                 
-                <button type="submit">
+                <button class="btn-buscar" type="submit">
                     Buscar
                 </button>
             </form>
-      
+
+            <form action="/" method="get" class="form-filtros">
+
+                <select class="orden-filtro" name="orden">
+                    <option value="">Ordenar</option>
+                    <option value="nombre_asc">Nombre (A-Z)</option>
+                    <option value="precio_mayor">Mayor Precio</option>
+                    <option value="precio_menor">Menor Precio</option>
+                </select>
+
+                <select class="stock-filtro" name="stock">
+                    <option value="">Stock</option>
+                    <option value="bajo">Stock Bajo</option>
+                    <option value="alto">Stock Alto</option>
+                </select>
+
+                 <button type="submit" class="btn-filtro">Filtrar</button>
+
+             </form>
+        </div>
+
 
         <section id="inventario">
             <h2>Caracteristicas del Productos</h2>
