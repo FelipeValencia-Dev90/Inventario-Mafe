@@ -29,7 +29,7 @@ header{
 }
 
 header::before{
-    background-image: url('img/vista.jpg');
+    background-image: url('imagenes/vista.jpg');
     filter: blur(2px);
         content: "";
         position: absolute;
@@ -124,6 +124,11 @@ input{
     text-align: justify;
     padding: 5px;
     margin: 8px;
+}
+
+input[type="file"]{
+    width: 400px;
+    height: 30px;
 }
 
 button{
@@ -330,7 +335,7 @@ h2{
 
 ul{
     list-style-type: none;
-    padding: 0px;
+    padding: 5px;   
 }
 
 li{
@@ -339,6 +344,14 @@ li{
     padding: 20px;
     border-radius: 5px;
     margin-left: 20px;
+}
+
+.imagen-producto{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 section#inventario ul li p{

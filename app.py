@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request, redirect, flash
 import pyodbc
+import os
+from werkzeug.utils import secure_filename
+
 
 app = Flask(__name__)
 app.secret_key = "InventarioAVA"
@@ -81,17 +84,26 @@ def guardar_producto():
     precio = request.form["precio"]
     cantidad = request.form["cantidad"]
     descripcion = request.form["descripcion"]
+    imagen = request.files["imagen"]
 
+    if imagen.filename == "":
+        flash("⚠ Debes seleccionar una imagen.")
+        return redirect("/")
 
+    nombre_imagen = secure_filename(imagen.filename)
+    ruta_imagen = os.path.join("static/imagenes", nombre_imagen)
+    imagen.save(ruta_imagen)
+
+   
     #VALIDACIÓN DE CAMPOS
     if nombre == "" or precio == "" or cantidad == "" or descripcion == "":
         flash("⚠ Todos los campos son obligatorios.")
         return redirect("/")
     
     #CONVERTIR DATOS
-
     precio = float(precio)
     cantidad = int(cantidad)
+  
 
     conexion = pyodbc.connect(
         'DRIVER={ODBC Driver 17 for SQL Server};'
@@ -103,9 +115,9 @@ def guardar_producto():
     cursor = conexion.cursor()
 
     cursor.execute("""
-        INSERT INTO Productos (nombre, precio, cantidad, descripcion)
-        VALUES (?, ?, ?, ?)
-    """, (nombre, precio, cantidad, descripcion))
+        INSERT INTO Productos (nombre, precio, cantidad, descripcion, imagen)
+        VALUES (?, ?, ?, ?, ?)
+    """, (nombre, precio, cantidad, descripcion, nombre_imagen))
 
     conexion.commit()
     flash("✔Producto guardado correctamente.")

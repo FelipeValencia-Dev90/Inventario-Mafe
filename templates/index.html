@@ -20,7 +20,7 @@
     <main class="contenido_principal">
         <P id="registro">Registra el producto que deseas agregar al inventario</P>
         <section id = "agregar_producto">
-            <form id="formulario_producto" action="/guardar-producto" method="post">
+            <form id="formulario_producto" action="/guardar-producto" method="post" enctype="multipart/form-data">
                 <div class="contenedor-inputs">
                     <div class="Registro">
                         <label for="nombre">Nombre</label>
@@ -41,6 +41,12 @@
                         <label for="descripcion">Descripción</label>
                         <input id="descripcion" type="text" name="descripcion" required placeholder="Ingrese la descripción del producto:">
                     </div>
+
+                    <div class="Registro">
+                        <label for="imagen">Imagen</label>
+                        <input id="imagen" type="file" name="imagen" accept="image/*">
+                    </div>
+                
                 </div>
                 <button class="btn-agregar" type="submit">Guardar</button>
             </form>
@@ -50,7 +56,8 @@
             <form action="/" method="get" class="form-busqueda">
                 <p class="titulo-busqueda">Busqueda Avanzada</p>
                 <input id="buscar-producto" type="text" name="buscar" placeholder="Buscar Producto">
-                
+
+
                 <button class="btn-buscar" type="submit">
                     Buscar
                 </button>
@@ -61,8 +68,8 @@
                 <select class="orden-filtro" name="orden">
                     <option value="">Ordenar</option>
                     <option value="nombre_asc">Nombre (A-Z)</option>
-                    <option value="precio_mayor">Mayor Precio</option>
-                    <option value="precio_menor">Menor Precio</option>
+                    <option value="precio_mayor">Precio Mayor</option>
+                    <option value="precio_menor">Precio Menor</option>
                 </select>
 
                 <select class="stock-filtro" name="stock">
@@ -100,10 +107,29 @@
                 {% for producto in productos %}
 
                 <li id="producto-{{producto[0]}}">
-                    <p>Nombre: <span class="dato-nombre">{{producto[1]}}</span></p>
-                    <p>Precio: <span class="dato-precio">{{producto[2]}}</span></p>
+
+                    {% if producto[7] %}
+
+                    <img 
+                        class="imagen-producto"
+                        src="{{ url_for('static', filename='imagenes/' + producto[7]) }}"
+                        alt="Imagen producto"
+                    >   
+                    {% else %}  
+
+                    <img 
+                        class="imagen-producto"
+                        src="{{ url_for('static', filename='imagenes/vista.jpg') }}"
+                        alt="Sin imagen disponible"
+                    >
+
+                    {% endif %}
+
+
+                    <p>Nombre: <span class="dato-nombre">{{producto[1].title()}}</span></p>
+                    <p>Precio: <span class="dato-precio">{{ "{:,.0f}".format(producto[2]) }}</span></p>
                     <p>Cantidad: <span class="dato-cantidad">{{producto[3]}}</span></p>
-                    <p>Descripción: <span class="dato-descripcion">{{producto[4]}}</span></p>
+                    <p>Descripción: <span class="dato-descripcion">{{producto[4].title()}}</span></p>
 
                     <form class="form-accion" action="/desactivar-producto/{{producto[0]}}" method="post">
                         <button class="btn-desactivar" type="submit" 
