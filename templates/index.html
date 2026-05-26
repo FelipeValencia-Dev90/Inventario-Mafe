@@ -85,7 +85,17 @@
 
 
         <section id="inventario">
-            <h2>Caracteristicas del Productos</h2>
+
+           <div class="header-inventario">
+                <h2>Caracteristicas del Productos</h2>
+
+                <div class="logout-container">
+
+                    <a href="/logout" class="btn-logout">
+                        Cerrar Sesión
+                    </a>
+                </div>
+           </div>
 
             {% with mensajes = get_flashed_messages() %}
                 {% if mensajes %}

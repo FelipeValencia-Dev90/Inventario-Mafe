@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Inventario AVA</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <section id="login">
+
+        <h2>Iniciar Sesión</h2>
+
+        {% with mensajes = get_flashed_messages() %}
+            {% if mensajes %}
+
+                {% for mensaje in mensajes %}
+                    <p class="mensaje-exito">
+                        {{ mensaje }}
+                    </p>
+                {% endfor %}
+
+            {% endif %}
+        {% endwith %}
+
+        <form action="/login" method="post" id="form-login">
+
+            <div class="grupo-login">
+                <label for="correo">Correo</label>
+
+                <input 
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="Ingrese su correo"
+                    required
+                >
+            </div>
+
+            <div class="grupo-login">
+                <label for="contraseña">Contraseña</label>
+
+                <input
+                    type="password"
+                    id="contraseña"
+                    name="contraseña"
+                    placeholder="Ingrese su contraseña"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn-login">
+                Ingresar
+            </button>
+
+        </form>
+
+    </section>
+
+</body>
+</html>

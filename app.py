@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, session
 import pyodbc
 import os
 from werkzeug.utils import secure_filename
@@ -10,6 +10,10 @@ app.secret_key = "InventarioAVA"
 # PAGINA PRINCIPAL
 @app.route("/")
 def inicio():
+
+    if "usuario" not in session:
+        return redirect("/login")
+    
 
     conexion = pyodbc.connect(
         'DRIVER={ODBC Driver 17 for SQL Server};'
@@ -281,6 +285,55 @@ def actualizar_producto(id):
     flash("Producto actualizado correctamente. ")
 
     return redirect("/")
-                   
 
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+
+
+    if request.method == "GET":
+        return render_template("login.html")
+
+    correo = request.form["correo"]
+    contraseña = request.form["contraseña"]
+
+    conexion = pyodbc.connect(
+        'DRIVER={ODBC Driver 17 for SQL Server};'
+        'SERVER=DESKTOP-Q681RM2\\SQLEXPRESS;'
+        'DATABASE=InventarioAVA;'
+        'Trusted_Connection=yes;'
+    )
+
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+        SELECT * FROM Usuarios
+        WHERE correo = ?
+        AND contraseña = ?
+    """, (correo, contraseña))
+
+    usuario = cursor.fetchone()
+
+    conexion.close()
+
+    if usuario:
+
+        session["usuario"] = usuario[1]
+
+        flash("✔ Bienvenido al sistema AVA")
+
+        return redirect("/")
+
+    else:
+
+        flash("⚠ Correo o contraseña incorrectos")
+
+        return redirect("/login")
+    
+@app.route("/logout")
+def logout():
+
+    session.pop("usuario", None)
+    flash("✔ Has cerrado sesión correctamente.")
+    return redirect("/login")
+           
 app.run(debug=True)
