@@ -109,7 +109,6 @@
                 <li id="producto-{{producto[0]}}">
 
                     {% if producto[7] %}
-
                     <img 
                         class="imagen-producto"
                         src="{{ url_for('static', filename='imagenes/' + producto[7]) }}"
@@ -125,23 +124,27 @@
 
                     {% endif %}
 
+                    <div class="info-producto">
+                        <p>Nombre: <span class="dato-nombre">{{producto[1].title()}}</span></p>
+                        <p>Precio: <span class="dato-precio">{{ "{:,.0f}".format(producto[2]) }}</span></p>
+                        <p>Cantidad: <span class="dato-cantidad">{{producto[3]}}</span></p>
+                        <p>Descripción: <span class="dato-descripcion">{{producto[4].title()}}</span></p>
+                    </div>
 
-                    <p>Nombre: <span class="dato-nombre">{{producto[1].title()}}</span></p>
-                    <p>Precio: <span class="dato-precio">{{ "{:,.0f}".format(producto[2]) }}</span></p>
-                    <p>Cantidad: <span class="dato-cantidad">{{producto[3]}}</span></p>
-                    <p>Descripción: <span class="dato-descripcion">{{producto[4].title()}}</span></p>
+                    <div class="action-producto">
+                        <form class="form-accion" action="/desactivar-producto/{{producto[0]}}" method="post">
+                            <button class="btn-desactivar" type="submit" 
+                            onclick="return confirm('¿Desea Desactivar Este Producto?');">
+                                Desactivar</button>
+                        </form>
+                   
 
-                    <form class="form-accion" action="/desactivar-producto/{{producto[0]}}" method="post">
-                        <button class="btn-desactivar" type="submit" 
-                        onclick="return confirm('¿Desea Desactivar Este Producto?');">
-                            Desactivar</button>
-                    </form>
-
-                    <form action="/editar-producto/{{producto[0]}}" method="get">
-                        <button class="btn-editar" type="submit">
-                            Editar
-                        </button>   
-                    </form>
+                        <form action="/editar-producto/{{producto[0]}}" method="get">
+                            <button class="btn-editar" type="submit">
+                                Editar
+                            </button>   
+                        </form>
+                    </div>
                 </li>
 
                 {% endfor %}
@@ -175,10 +178,10 @@
     
             <div class="footer-content">
                 <h3>Redes Sociales</h3>
-                 <ul class="redes_sociales">
-                    <li><a href="https://wa.me/+573163669301" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-                    <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="https://www.facebook.com/felipevalencia" target="_blank"><i class="fab fa-facebook"></i></a></li> 
+                 <ul class="redes-sociales">
+                    <li class="redes"><a href="https://wa.me/+573163669301" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li class="redes"><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li class="redes"><a href="https://www.facebook.com/felipevalencia" target="_blank"><i class="fab fa-facebook"></i></a></li> 
                  </ul>    
             </div>    
          </div>  

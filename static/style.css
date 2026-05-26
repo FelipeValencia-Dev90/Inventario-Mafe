@@ -9,7 +9,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     width: auto;
     height: auto;
-    padding: 10px 10px;
+    padding: 1px 1px;
     margin:5px;
 }
 
@@ -19,10 +19,9 @@ header{
     width:auto;
     height: 400px;
     align-items: center;
-    margin: 5px;
     border-radius: 50px;
     padding: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     background-size: cover;
     position: relative;
     overflow: hidden;
@@ -64,27 +63,23 @@ main{
     background-color:rgb(175, 197, 170);
     width:auto;
     height:auto;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
 }
 
 #registro{
     color:black ;
     font-size: 30px;  
-    padding: 10px;
+    padding: 1px;
     text-align: justify;
-    margin-left: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 section#agregar_producto{
     color:rgb(7, 7, 7);
     display: flex;
     flex-direction: column;
-    text-align:justify;
-    margin-left: 20px;
-    margin-top: 5px;
 }
 
 #formulario_producto{
@@ -92,7 +87,6 @@ section#agregar_producto{
     flex-direction:column;
     align-items: center;
     background-color: rgb(139, 139, 143);
-    margin: 0px;
     padding: 2px;
     border-radius: 5px;
     padding-bottom: 25px;
@@ -116,7 +110,7 @@ label{
     width: 90px;
 }
 
-input{
+input {
     width: 400px;
     height:30px;
     border-radius: 5px;
@@ -126,12 +120,12 @@ input{
     margin: 8px;
 }
 
-input[type="file"]{
+input[type="file"] {
     width: 400px;
     height: 30px;
 }
 
-button{
+button {
     background-color: aqua;
     width: auto;
     height:auto;
@@ -140,7 +134,7 @@ button{
     margin-top: 2px;
 }
 
-.btn-agregar{
+.btn-agregar {
     background-color: aqua;
     color: rgb(12, 12, 12);
     border: none;
@@ -185,24 +179,23 @@ section#editar_producto{
     transform: scale(1.05);
 }
 
-.container-busqueda{
+.container-busqueda {
     background-color: rgb(241, 227, 227);
     width: auto;
     height: auto;
     padding: 5px;
     margin-top: 5px;
-    margin-left:20px;
     border-radius: 5px;
 }
 
-.form-busqueda{
+.form-busqueda {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 2px;
 }
 
-.titulo-busqueda{
+.titulo-busqueda {
     color: black;
     font-size:15px;
     font-family: cursive;
@@ -243,6 +236,7 @@ input#buscar-producto{
     align-items: center;
     justify-content: center;
     padding-top: 5px;
+    margin-bottom: 2px;
 }
 
 
@@ -281,30 +275,27 @@ select{
     transform: scale(1.05);
 }
 
-.section#inventario{
+section#inventario{
     color:rgb(10, 10, 10);
     display: flex;
     flex-direction: column;
-    text-align:justify;
-    margin-left: 20px;
-    margin-top: 20px;
+    text-align:center;
+    margin-top: 15px;
+    padding: 1px;
+    width: auto;
 }
 
 h2{
     color:black;
     text-align: left;
-    margin-bottom: 15px;
     font-size: 30px;
     font-weight: normal;
-    margin-top: 30px;
-    margin-left: 20px;
 }
 
 .mensaje-exito{
     background-color: lightgreen;
     color: darkgreen;
     padding: 10px;
-    margin: 10px 0;
     border-radius: 5px;
     font-weight: bold;
 }
@@ -312,7 +303,10 @@ h2{
 .header-inventario {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: justify;
+    padding-left: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .btn-papelera{
@@ -324,8 +318,8 @@ h2{
     cursor: pointer;
     width: auto;
     height: auto;
-    margin-left: 20px;
-    margin: 20px;
+    display: flex;
+    text-align: justify;
 }
 
 .btn-papelera:hover{
@@ -335,45 +329,74 @@ h2{
 
 ul{
     list-style-type: none;
-    padding: 5px;   
+    padding: 1px; 
 }
 
 li{
     background-color: white;
-    margin-bottom: 20px;
-    padding: 20px;
+    margin-bottom: 5px;
+    padding: 5px;
     border-radius: 5px;
-    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    height: auto;
 }
 
 .imagen-producto{
-    width: 150px;
-    height: 150px;
+    width: 400px;
+    height: 300px;
     object-fit: cover;
     border-radius: 5px;
-    margin-bottom: 10px;
+    flex-shrink: 0;
 }
 
-section#inventario ul li p{
+.info-producto {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: yellow;
+    width: auto;
+    height: auto;
+    padding: 50px;
+    border-radius: 5px;
+}
+
+.info-producto p {
+    margin: 12px;
     color: black;
     font-size: 15px;
-    padding: 10px;
+    text-align: left;   
 }
 
-section#inventario ul li p span{
-    color: black;
-    font-size: 15px;
-    margin-left:5px;
+.info-producto p span {
+    color: rgb(122, 122, 122);
+    margin-left: 5px;
 }
 
-.form-accion{
-    background-color:white;
+.action-producto {
+    background-color: rgb(245, 244, 244);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 20px;
+    width: auto;
+    height: 300px;
+}
+
+.form-accion {
     border: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
     border-radius: 5px;
     cursor: pointer;
     width: auto;
+    margin-bottom: 5px;
 } 
 
 .btn-desactivar{
@@ -386,7 +409,7 @@ section#inventario ul li p span{
     cursor: pointer;
     width: 100px;
     height: 30px;
-    margin-left: 5px;
+     margin-left: 5px;
 }
 
 .btn-desactivar:hover{
@@ -417,22 +440,21 @@ section#resumen_de_inventario{
     display: flex;
     flex-direction: column;
     text-align:justify;
-    margin-left: 20px;
-    margin-top: 10px; 
-    margin-bottom: 20px;  
+    margin-top: 5px; 
+    padding: 1px;
 }
 
-section#resumen_de_inventario h3{
-    margin-top: 20px;
+section#resumen_de_inventario h3 {
     font-size:25px;
     font-weight: 600;
-    padding: 5px;
+    padding: 1px;
 }
 
 section#resumen_de_inventario p{
     color:black;
     font-size: 20px; 
-    padding: 5px;
+    padding: 1px;
+    margin-bottom: 5px;
 }
 
 span{
@@ -446,19 +468,15 @@ footer{
     width: auto;
     height: auto;
     text-align: center;
-    padding:0px;
     border-radius: 10px;
 }
 
-.contenedor-footer{
+.contenedor-footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:rgba(40, 168, 177, 0.945);
-    padding:40px;
+    padding:20px;
     border-radius: 10px;
-    margin-bottom: 0px;
-    margin-top: 20px;
     height: 250px;
 }
 
@@ -466,40 +484,57 @@ footer{
     color: rgb(252, 252, 251);
     font-size: 15px;
     padding: 30px;
-    background-color: rgba(40, 168, 177, 0.945);
-    margin-left: 5px;
-    margin-top: 10px;
-    height: 200px;
+    margin: 5px;
+    justify-content: center;
+    display: flex;
+    flex-direction:column;
 }
 
-.footer-content h3{
+.footer-content h3 {
     color: rgb(250, 250, 248);
     font-size: 18px;
     margin-bottom: 10px;
     font-weight: normal;
 }
 
-.footer-content p{
+.footer-content p {
     color:rgb(240, 245, 243);
     font-size: 15px;
     margin-bottom: 8px;
 }
 
-
-.footer-content ul li{
-    padding: 0px;
-    margin: 5px;
-    background-color:rgba(40, 168, 177, 0.945);
+.redes-sociales {  
     width: auto;
     height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.footer-content ul li a i{
-    font-size: 20px;
-    color:rgb(200, 201, 199);
-    transition: 0.3s;
+.redes {    
+    background-color: rgba(40, 168, 177, 0.945);
+    padding: 1px;
+    width: auto;
+    height: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1px;
+
 }
- .footer-content ul li a i:hover{
+
+.redes a {
+    background-color: black;
+    color: rgb(252, 252, 251);
+    padding: 1px;
+    border-radius: 5px;
+    margin: 1px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+ .footer-content ul li a i:hover {
     color:chartreuse;
     transform: scale(1.2);
  }
@@ -507,9 +542,7 @@ footer{
 .bottom-bar {
     text-align: center;          
     color: rgb(243, 243, 243);           
-    font-size: 14px;
-    padding: 0px;
-    background-color: rgba(40, 168, 177, 0.945);
+    font-size: 15px;
     border-radius: 10px;
     height: auto;
 }
@@ -518,7 +551,8 @@ footer{
     background-color: rgba(42, 66, 68, 0.945);
     width: auto;
     height: 40px;
-    border-radius: 10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
     padding: 10px;
 }
 
