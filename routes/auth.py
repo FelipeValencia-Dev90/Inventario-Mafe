@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template
 from flask import request, redirect, flash, session
+from werkzeug.security import generate_password_hash
+from werkzeug.security import check_password_hash
 
 from database.conexion import obtener_conexion
 
@@ -22,14 +24,13 @@ def login():
     cursor.execute("""
         SELECT * FROM Usuarios
         WHERE correo = ?
-        AND contraseña = ?
-    """, (correo, contraseña))
+    """, (correo,))
 
     usuario = cursor.fetchone()
 
     conexion.close()
 
-    if usuario:
+    if usuario and check_password_hash(usuario[3], contraseña):
 
         session["usuario"] = usuario[1]
 
@@ -47,5 +48,6 @@ def login():
 def logout():
 
     session.pop("usuario", None)
+
     flash("✔ Has cerrado sesión correctamente.")
     return redirect("/login")

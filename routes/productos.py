@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
 from flask import request, redirect, flash, session
 from database.conexion import obtener_conexion
+from utils.auth import login_required
 import os
 
 from werkzeug.utils import secure_filename
@@ -9,11 +10,8 @@ productos = Blueprint("productos", __name__)
 
 # PAGINA PRINCIPAL
 @productos.route("/")
+@login_required
 def inicio():
-
-    if "usuario" not in session:
-        return redirect("/login")
-    
 
     conexion = obtener_conexion()
 
@@ -78,6 +76,7 @@ def inicio():
 
 # GUARDAR PRODUCTO
 @productos.route("/guardar-producto", methods=["POST"])
+@login_required
 def guardar_producto():
 
     nombre = request.form["nombre"]
@@ -122,6 +121,7 @@ def guardar_producto():
     return redirect("/")
 
 @productos.route("/desactivar-producto/<int:id>", methods=["POST"])
+@login_required
 def desactivar_producto(id):
 
     conexion = obtener_conexion()
@@ -143,6 +143,7 @@ def desactivar_producto(id):
 
 
 @productos.route("/papelera")
+@login_required
 def papelera():
 
     conexion = obtener_conexion()
@@ -160,6 +161,7 @@ def papelera():
 
 
 @productos.route("/reactivar-producto/<int:id>", methods=['POST'])
+@login_required
 def reactivar_producto(id):
 
     conexion = obtener_conexion()
@@ -181,6 +183,7 @@ def reactivar_producto(id):
 
 
 @productos.route("/eliminar-producto/<int:id>", methods=['POST'])
+@login_required
 def eliminar_producto(id):
 
     conexion = obtener_conexion()
@@ -201,6 +204,7 @@ def eliminar_producto(id):
 
 
 @productos.route("/editar-producto/<int:id>")
+@login_required
 def editar_producto(id):
 
     conexion = obtener_conexion()
@@ -223,6 +227,7 @@ def editar_producto(id):
                     )
 
 @productos.route("/actualizar-producto/<int:id>", methods=['POST'])
+@login_required
 def actualizar_producto(id):
 
     nombre = request.form["nombre"]
