@@ -64,7 +64,11 @@ Actualmente enfocado en mejoras de seguridad, arquitectura backend y futuras fun
 
 ## 📋 Registro y filtrado de producto
 
-![Registro y búsqueda](static/screenshots/registro-busqueda.png)
+![Registro y búsqueda](static/screenshots/registro-y-busqueda.png)
+
+## ✏ Edición de productos
+
+![Editar producto](static/screenshots/editar-producto.png)
 
 
 “Inicialmente desarrollé el sistema como una aplicación CLI en Python y luego evolucioné la arquitectura hacia una aplicación web modular con Flask.”
