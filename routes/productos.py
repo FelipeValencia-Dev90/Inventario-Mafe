@@ -286,3 +286,32 @@ def api_productos():
             })
 
         return jsonify(productos_json)
+
+@productos.route("/api/productos", methods=["POST"])
+@login_required
+def crear_producto_api():
+
+        datos = request.get_json()
+
+        nombre = datos["nombre"]
+        precio = datos["precio"]
+        cantidad = datos["cantidad"]
+        descripcion = datos["descripcion"]
+
+        conexion = obtener_conexion()
+
+        cursor = conexion.cursor()
+
+        cursor.execute("""
+            INSERT INTO Productos
+            (nombre, precio, cantidad, descripcion)
+            VALUES (?, ?, ?, ?)
+        """, (nombre, precio, cantidad, descripcion))
+
+        conexion.commit()
+
+        conexion.close()
+
+        return jsonify({
+            "mensaje": "Producto creado correctamente"
+        })
