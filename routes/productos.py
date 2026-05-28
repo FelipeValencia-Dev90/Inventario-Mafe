@@ -2,6 +2,7 @@ from flask import Blueprint, render_template
 from flask import request, redirect, flash, session
 from database.conexion import obtener_conexion
 from utils.auth import login_required
+from flask import jsonify
 import os
 
 from werkzeug.utils import secure_filename
@@ -252,3 +253,36 @@ def actualizar_producto(id):
     flash("Producto actualizado correctamente. ")
 
     return redirect("/")
+
+# API REST PARA OBTENER PRODUCTOS EN FORMATO JSON
+@productos.route("/api/productos")
+@login_required
+def api_productos():
+
+        conexion = obtener_conexion()
+
+        cursor = conexion.cursor()
+
+        cursor.execute("""
+                SELECT * FROM Productos
+                WHERE activo = 1
+             """)
+        
+        productos_db = cursor.fetchall()
+
+        conexion.close()
+
+        productos_json = []
+
+        for producto in productos_db:
+
+            productos_json.append({
+                "id": producto[0],
+                "nombre": producto[1],
+                "precio": producto[2],
+                "cantidad": producto[3],
+                "descripcion": producto[4],
+                "imagen": producto[7]
+            })
+
+        return jsonify(productos_json)
