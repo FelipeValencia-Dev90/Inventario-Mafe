@@ -256,7 +256,7 @@ def actualizar_producto(id):
 
 # API REST PARA OBTENER PRODUCTOS EN FORMATO JSON
 @productos.route("/api/productos")
-# @login_required
+@login_required
 def api_productos():
 
         conexion = obtener_conexion()
@@ -288,8 +288,11 @@ def api_productos():
         return jsonify(productos_json)
 
 @productos.route("/api/productos", methods=["POST"])
-# @login_required
+@login_required
 def crear_producto_api():
+        
+
+    try:
 
         datos = request.get_json()
 
@@ -297,6 +300,27 @@ def crear_producto_api():
         precio = datos["precio"]
         cantidad = datos["cantidad"]
         descripcion = datos["descripcion"]
+
+
+        #VALIDACION DE CAMPOS
+
+        if not nombre:
+             return jsonify({
+                  "success": False,
+                  "mensaje": "El nombre es obligatorio"
+             }), 400
+        
+        if not precio:
+            return jsonify({
+                    "success": False,
+                    "mensaje": "El precio es obligatorio"
+                }), 400
+        
+        if not cantidad:
+             return jsonify({
+                  "success": False,
+                  "mensaje": "la cantidad es obligatoria"
+             }), 400
 
         conexion = obtener_conexion()
 
@@ -316,9 +340,16 @@ def crear_producto_api():
             "success": True,
             "mensaje": "Producto creado correctamente"
         }), 201
+    
+    except Exception as e:
+         
+        return jsonify({
+            "success": False,
+            "mensaje": str(e)
+        }), 500
 
 @productos.route("/api/productos/<int:id>", methods=["PUT"])
-# @login_required
+@login_required
 def editar_producto_api(id):
     
         datos = request.get_json()
@@ -347,7 +378,7 @@ def editar_producto_api(id):
         }), 200
 
 @productos.route("/api/productos/<int:id>", methods=["DELETE"])
-# @login_required
+@login_required
 def eliminar_producto_api(id):
      
         conexion = obtener_conexion()
