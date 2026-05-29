@@ -256,7 +256,7 @@ def actualizar_producto(id):
 
 # API REST PARA OBTENER PRODUCTOS EN FORMATO JSON
 @productos.route("/api/productos")
-@login_required
+# @login_required
 def api_productos():
 
         conexion = obtener_conexion()
@@ -288,7 +288,7 @@ def api_productos():
         return jsonify(productos_json)
 
 @productos.route("/api/productos", methods=["POST"])
-@login_required
+# @login_required
 def crear_producto_api():
 
         datos = request.get_json()
@@ -313,5 +313,58 @@ def crear_producto_api():
         conexion.close()
 
         return jsonify({
+            "success": True,
             "mensaje": "Producto creado correctamente"
-        })
+        }), 201
+
+@productos.route("/api/productos/<int:id>", methods=["PUT"])
+# @login_required
+def editar_producto_api(id):
+    
+        datos = request.get_json()
+
+        nombre = datos["nombre"]
+        precio = datos["precio"]
+        cantidad = datos["cantidad"]
+        descripcion = datos["descripcion"]
+
+        conexion = obtener_conexion()
+
+        cursor = conexion.cursor()
+
+        cursor.execute("""
+            UPDATE Productos
+            SET nombre = ?, precio = ?, cantidad = ?, descripcion = ?
+            WHERE id = ?
+        """, (nombre, precio, cantidad, descripcion, id))
+
+        conexion.commit()
+
+        conexion.close()
+
+        return jsonify({
+            "mensaje": "Producto actualizado correctamente"
+        }), 200
+
+@productos.route("/api/productos/<int:id>", methods=["DELETE"])
+# @login_required
+def eliminar_producto_api(id):
+     
+        conexion = obtener_conexion()
+
+        cursor = conexion.cursor()
+
+        cursor.execute("""
+            DELETE FROM Productos
+            WHERE id = ?
+        """, (id,))
+
+        conexion.commit()
+
+        conexion.close()
+
+        return jsonify({
+            "mensaje": "Producto eliminado correctamente"
+        }), 200
+     
+
