@@ -304,6 +304,37 @@ def api_productos():
 
         return jsonify(productos_json)
 
+
+@productos.route("/api/user/productos")
+@jwt_required()
+def api_user_productos():
+
+    conexion = obtener_conexion()
+
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+        SELECT nombre, precio, cantidad
+        FROM Productos
+        WHERE activo = 1
+    """)
+
+    productos_db = cursor.fetchall()
+
+    conexion.close()
+
+    productos_json = []
+
+    for producto in productos_db:
+
+        productos_json.append({
+            "nombre": producto[0],
+            "precio": producto[1],
+            "cantidad": producto[2]
+        })
+
+    return jsonify(productos_json), 200
+
 @productos.route("/api/productos", methods=["POST"])
 @login_required
 def crear_producto_api():

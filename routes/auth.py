@@ -122,3 +122,13 @@ def refresh():
     return jsonify({
         "access_token": nuevo_token
     }), 200
+
+@auth.route("/api/perfil")
+@jwt_required()
+def api_perfil():
+
+    usuario = get_jwt_identity()
+
+    return jsonify({
+        "usuario": usuario
+    }), 200
