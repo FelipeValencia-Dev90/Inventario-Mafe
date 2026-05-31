@@ -2,6 +2,10 @@ from flask import Blueprint, render_template
 from flask import request, redirect, flash, session
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
+from flask_jwt_extended import create_access_token
+from flask import jsonify
+
+
 
 from database.conexion import obtener_conexion
 
@@ -51,3 +55,43 @@ def logout():
 
     flash("✔ Has cerrado sesión correctamente.")
     return redirect("/login")
+
+
+@auth.route("/api/login", methods=["POST"])
+def api_login():
+
+    datos = request.get_json()
+
+    correo = datos.get("correo")
+    contraseña = datos.get("contraseña")
+
+    conexion = obtener_conexion()
+
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+        SELECT * FROM Usuarios
+        WHERE correo = ?
+    """, (correo,))
+
+    usuario = cursor.fetchone()
+
+    conexion.close()
+
+    if usuario and check_password_hash(usuario[3], contraseña):
+
+        token = create_access_token(
+            identity=str(usuario[1]),
+            additional_claims={
+                "rol": usuario[4]
+            }
+        )
+        return jsonify({
+            "success": True,
+            "token": token
+        }), 200
+
+    return jsonify({
+        "success": False,
+        "mensaje": "Credenciales incorrectas"
+    }), 401

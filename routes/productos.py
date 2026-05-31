@@ -3,6 +3,8 @@ from flask import request, redirect, flash, session
 from database.conexion import obtener_conexion
 from utils.auth import login_required
 from flask import jsonify
+from flask_jwt_extended import jwt_required
+from utils.auth import admin_required
 import os
 
 from werkzeug.utils import secure_filename
@@ -254,11 +256,26 @@ def actualizar_producto(id):
 
     return redirect("/")
 
+
 # API REST PARA OBTENER PRODUCTOS EN FORMATO JSON
 @productos.route("/api/productos")
-@login_required
+@admin_required
+@jwt_required()
 def api_productos():
+        
+        """
+        Listar productos
+        ---
+        tags:
+            - Productos
 
+        security:
+            - Bearer: []
+        responses:
+            200:
+                description: Lista de productos
+        """
+            
         conexion = obtener_conexion()
 
         cursor = conexion.cursor()
@@ -290,7 +307,6 @@ def api_productos():
 @productos.route("/api/productos", methods=["POST"])
 @login_required
 def crear_producto_api():
-        
 
     try:
 
@@ -397,5 +413,4 @@ def eliminar_producto_api(id):
         return jsonify({
             "mensaje": "Producto eliminado correctamente"
         }), 200
-     
 
