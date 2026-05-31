@@ -5,12 +5,17 @@ from routes.productos import productos
 from routes.auth import auth
 from flasgger import Swagger
 
+from datetime import timedelta
+
 
 app = Flask(__name__)
 
 
 app.secret_key = "InventarioAVA"
 app.config["JWT_SECRET_KEY"] = "super-secret-key"
+
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(minutes=30)
+app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(days=7)
 
 jwt = JWTManager(app)
 

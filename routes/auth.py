@@ -3,6 +3,9 @@ from flask import request, redirect, flash, session
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 from flask_jwt_extended import create_access_token
+from flask_jwt_extended import create_refresh_token
+from flask_jwt_extended import jwt_required
+from flask_jwt_extended import get_jwt_identity
 from flask import jsonify
 
 
@@ -86,12 +89,36 @@ def api_login():
                 "rol": usuario[4]
             }
         )
+
+
+        refresh_token = create_refresh_token(
+            identity=str(usuario[1]),
+            additional_claims={
+                "rol": usuario[4]
+            }
+        )
+
+
         return jsonify({
             "success": True,
-            "token": token
+            "access_token": token,
+            "refresh_token": refresh_token
         }), 200
+    
 
     return jsonify({
         "success": False,
         "mensaje": "Credenciales incorrectas"
     }), 401
+
+@auth.route("/refresh", methods=["POST"])
+@jwt_required(refresh=True)
+def refresh():
+
+    usuario = get_jwt_identity()
+
+    nuevo_token = create_access_token(identity=usuario)
+
+    return jsonify({
+        "access_token": nuevo_token
+    }), 200
