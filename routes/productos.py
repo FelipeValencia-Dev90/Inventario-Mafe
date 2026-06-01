@@ -257,6 +257,66 @@ def actualizar_producto(id):
     return redirect("/")
 
 
+@productos.route("/vender-producto/<int:id>", methods=["POST"])
+@login_required
+def vender_producto(id):
+
+    cantidad_vendida = int(request.form["cantidad"])
+
+    conexion = obtener_conexion()
+
+    cursor = conexion.cursor()
+
+    # CONSULTAR STOCK ACTUAL
+    cursor.execute("""
+        SELECT cantidad
+        FROM Productos
+        WHERE id = ?
+    """, (id,))
+
+    producto = cursor.fetchone()
+
+    if not producto:
+
+        flash("❌ Producto no encontrado")
+
+        return redirect("/")
+
+    stock_actual = producto[0]
+
+    # VALIDAR STOCK
+    if cantidad_vendida > stock_actual:
+
+        flash("⚠ Stock insuficiente")
+
+        conexion.close()
+
+        return redirect("/")
+
+    # DESCONTAR STOCK
+    nuevo_stock = stock_actual - cantidad_vendida
+
+    cursor.execute("""
+        UPDATE Productos
+        SET cantidad = ?
+        WHERE id = ?
+    """, (nuevo_stock, id))
+
+    # REGISTRAR VENTA
+    cursor.execute("""
+        INSERT INTO Ventas(producto_id, cantidad)
+        VALUES(?, ?)
+    """, (id, cantidad_vendida))
+
+    conexion.commit()
+
+    conexion.close()
+
+    flash("✅ Venta registrada correctamente")
+
+    return redirect("/")
+
+
 # API REST PARA OBTENER PRODUCTOS EN FORMATO JSON
 @productos.route("/api/productos")
 @admin_required

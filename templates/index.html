@@ -154,6 +154,22 @@
                                 Editar
                             </button>   
                         </form>
+
+
+                        <form action="/vender-producto/{{ producto[0] }}" method="POST">
+
+                            <input
+                                type="number"
+                                name="cantidad"
+                                placeholder="Cantidad"
+                                required
+                            >
+
+                            <button type="submit">
+                                Vender
+                            </button>
+                        </form>
+                        
                     </div>
                 </li>
 
