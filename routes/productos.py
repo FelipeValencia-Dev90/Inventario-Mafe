@@ -5,6 +5,7 @@ from utils.auth import login_required
 from flask import jsonify
 from flask_jwt_extended import jwt_required
 from utils.auth import admin_required
+from utils.logger import logger
 import os
 
 from werkzeug.utils import secure_filename
@@ -105,11 +106,32 @@ def guardar_producto():
     #CONVERTIR DATOS
     precio = float(precio)
     cantidad = int(cantidad)
+
+    if precio <= 0:
+        flash("⚠ El precio debe ser mayor a 0.")
+        return redirect("/")
+    
+    if cantidad < 0:
+        flash("⚠ La cantidad no puede ser negativa.")
+        return redirect("/")
   
 
     conexion = obtener_conexion()
 
     cursor = conexion.cursor()
+
+    cursor.execute("""
+        SELECT * FROM Productos
+        WHERE nombre = ?
+    """, (nombre,))
+
+    producto_existente = cursor.fetchone()
+
+    if producto_existente:
+        flash("⚠ Ya existe un producto con ese nombre.")
+        conexion.close()
+
+        return redirect("/")
 
     cursor.execute("""
         INSERT INTO Productos (nombre, precio, cantidad, descripcion, imagen)
@@ -261,58 +283,66 @@ def actualizar_producto(id):
 @login_required
 def vender_producto(id):
 
-    cantidad_vendida = int(request.form["cantidad"])
+    try:
 
-    conexion = obtener_conexion()
+        cantidad_vendida = int(request.form["cantidad"])
 
-    cursor = conexion.cursor()
+        conexion = obtener_conexion()
 
-    # CONSULTAR STOCK ACTUAL
-    cursor.execute("""
-        SELECT cantidad
-        FROM Productos
-        WHERE id = ?
-    """, (id,))
+        cursor = conexion.cursor()
 
-    producto = cursor.fetchone()
+        cursor.execute("""
+            SELECT cantidad
+            FROM Productos
+            WHERE id = ?
+        """, (id,))
 
-    if not producto:
+        producto = cursor.fetchone()
 
-        flash("❌ Producto no encontrado")
+        if not producto:
 
-        return redirect("/")
+            flash("❌ Producto no encontrado")
 
-    stock_actual = producto[0]
+            return redirect("/")
 
-    # VALIDAR STOCK
-    if cantidad_vendida > stock_actual:
+        stock_actual = producto[0]
 
-        flash("⚠ Stock insuficiente")
+        if cantidad_vendida > stock_actual:
+
+            flash("⚠ Stock insuficiente")
+
+            conexion.close()
+
+            return redirect("/")
+
+        nuevo_stock = stock_actual - cantidad_vendida
+
+        cursor.execute("""
+            UPDATE Productos
+            SET cantidad = ?
+            WHERE id = ?
+        """, (nuevo_stock, id))
+
+        cursor.execute("""
+            INSERT INTO Ventas(producto_id, cantidad)
+            VALUES(?, ?)
+        """, (id, cantidad_vendida))
+
+        conexion.commit()
 
         conexion.close()
 
-        return redirect("/")
+        flash("✅ Venta registrada")
 
-    # DESCONTAR STOCK
-    nuevo_stock = stock_actual - cantidad_vendida
+        logger.info(f"Venta Realizada | Producto ID: {id} | Cantidad: {cantidad_vendida}")
 
-    cursor.execute("""
-        UPDATE Productos
-        SET cantidad = ?
-        WHERE id = ?
-    """, (nuevo_stock, id))
+    except Exception as error:
 
-    # REGISTRAR VENTA
-    cursor.execute("""
-        INSERT INTO Ventas(producto_id, cantidad)
-        VALUES(?, ?)
-    """, (id, cantidad_vendida))
+        logger.error(f"Error en la venta: {error}")
 
-    conexion.commit()
+        print(error)
 
-    conexion.close()
-
-    flash("✅ Venta registrada correctamente")
+        flash("🚨 Ocurrió un error en la venta")
 
     return redirect("/")
 

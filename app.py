@@ -10,6 +10,22 @@ from datetime import timedelta
 
 app = Flask(__name__)
 
+@app.errorhandler(404)
+def pagina_no_encontrada(error):
+    return """
+    <h1>⚠ Página no encontrada</h1>
+    <p>La ruta que has solicitado no existe. Por favor, verifica la URL e inténtalo de nuevo.</p>
+""", 404
+
+@app.errorhandler(500)
+def error_interno(error):
+
+    return """
+    <h1>⚠ Error Interno del Servidor</h1>
+    <p>Ocurrió un error inesperado en el servidor. Por favor, intenta nuevamente más tarde.</p>
+""", 500
+    
+
 
 app.secret_key = "InventarioAVA"
 app.config["JWT_SECRET_KEY"] = "super-secret-key"
