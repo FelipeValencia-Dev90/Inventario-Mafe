@@ -7,24 +7,12 @@ from flasgger import Swagger
 
 from datetime import timedelta
 
+from utils.errors import configurar_errores
+
 
 app = Flask(__name__)
 
-@app.errorhandler(404)
-def pagina_no_encontrada(error):
-    return """
-    <h1>⚠ Página no encontrada</h1>
-    <p>La ruta que has solicitado no existe. Por favor, verifica la URL e inténtalo de nuevo.</p>
-""", 404
-
-@app.errorhandler(500)
-def error_interno(error):
-
-    return """
-    <h1>⚠ Error Interno del Servidor</h1>
-    <p>Ocurrió un error inesperado en el servidor. Por favor, intenta nuevamente más tarde.</p>
-""", 500
-    
+configurar_errores(app)
 
 
 app.secret_key = "InventarioAVA"

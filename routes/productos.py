@@ -89,11 +89,24 @@ def guardar_producto():
     descripcion = request.form["descripcion"]
     imagen = request.files["imagen"]
 
+    # ELIMINAR ESPACIOS EN BLANCO AL INICIO Y FINAL DEL NOMBRE
+    nombre = nombre.strip()
+    descripcion = descripcion.strip()
+
     if imagen.filename == "":
         flash("⚠ Debes seleccionar una imagen.")
         return redirect("/")
 
     nombre_imagen = secure_filename(imagen.filename)
+
+    extensiones_permitidas = ["jpg", "jpeg", "png", "gif"]
+    extension = nombre_imagen.split(".")[-1].lower()
+
+    if extension not in extensiones_permitidas:
+        flash("⚠ Formato de imagen no permitido.")
+        return redirect("/")
+
+
     ruta_imagen = os.path.join("static/imagenes", nombre_imagen)
     imagen.save(ruta_imagen)
 
@@ -103,6 +116,24 @@ def guardar_producto():
         flash("⚠ Todos los campos son obligatorios.")
         return redirect("/")
     
+    if len(nombre) < 3:
+        flash("⚠ El nombre debe tener al menos 3 caracteres.")
+        return redirect("/")
+    
+    if len(descripcion) < 10:
+        flash("⚠ La descripción debe tener al menos 10 caracteres.")
+        return redirect("/")
+    
+    try:
+        precio = float(precio)
+        cantidad = int(cantidad)
+
+    except ValueError:
+        flash("⚠ Precio o cantidad invalidos.")
+        return redirect("/")
+
+
+
     #CONVERTIR DATOS
     precio = float(precio)
     cantidad = int(cantidad)
