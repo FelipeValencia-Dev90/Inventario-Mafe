@@ -188,3 +188,238 @@
 2026-06-01 22:59:43,393 - INFO - 127.0.0.1 - - [01/Jun/2026 22:59:43] "[36mGET /static/imagenes/dedos-bocadillo.png HTTP/1.1[0m" 304 -
 2026-06-01 22:59:43,398 - INFO - 127.0.0.1 - - [01/Jun/2026 22:59:43] "[36mGET /static/imagenes/papa-rellena.jpg HTTP/1.1[0m" 304 -
 2026-06-01 22:59:43,400 - INFO - 127.0.0.1 - - [01/Jun/2026 22:59:43] "[36mGET /static/imagenes/dedos-arequipe.jpg HTTP/1.1[0m" 304 -
+2026-06-02 16:25:53,578 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 16:25:53,579 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 16:25:53,584 - INFO -  * Restarting with stat
+2026-06-02 16:25:55,106 - WARNING -  * Debugger is active!
+2026-06-02 16:25:55,119 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 16:26:39,568 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 16:26:39,568 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 16:26:39,579 - INFO -  * Restarting with stat
+2026-06-02 16:26:40,534 - WARNING -  * Debugger is active!
+2026-06-02 16:26:40,545 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 16:33:30,030 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 16:33:30,030 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 16:33:30,031 - INFO -  * Restarting with stat
+2026-06-02 16:33:30,733 - WARNING -  * Debugger is active!
+2026-06-02 16:33:30,742 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 16:37:48,545 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 16:37:48,549 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 16:37:48,550 - INFO -  * Restarting with stat
+2026-06-02 16:37:49,225 - WARNING -  * Debugger is active!
+2026-06-02 16:37:49,233 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 16:39:39,030 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 16:39:39,109 - INFO -  * Restarting with stat
+2026-06-02 16:39:39,908 - WARNING -  * Debugger is active!
+2026-06-02 16:39:39,918 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 16:39:41,024 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 16:39:41,113 - INFO -  * Restarting with stat
+2026-06-02 16:40:41,051 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 16:40:41,051 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 16:40:41,053 - INFO -  * Restarting with stat
+2026-06-02 16:40:41,966 - WARNING -  * Debugger is active!
+2026-06-02 16:40:41,977 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 16:41:07,658 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 16:41:07,658 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 16:41:07,661 - INFO -  * Restarting with stat
+2026-06-02 16:41:08,703 - WARNING -  * Debugger is active!
+2026-06-02 16:41:08,712 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 16:42:08,985 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 16:42:08,985 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 16:42:08,987 - INFO -  * Restarting with stat
+2026-06-02 16:42:09,689 - WARNING -  * Debugger is active!
+2026-06-02 16:42:09,698 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 16:43:49,995 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 16:43:49,995 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 16:43:49,997 - INFO -  * Restarting with stat
+2026-06-02 16:43:50,760 - WARNING -  * Debugger is active!
+2026-06-02 16:43:50,769 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 16:52:06,547 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-02 16:52:06,678 - INFO -  * Restarting with stat
+2026-06-02 16:54:52,467 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 16:54:52,468 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 16:54:52,470 - INFO -  * Restarting with stat
+2026-06-02 16:54:53,179 - WARNING -  * Debugger is active!
+2026-06-02 16:54:53,187 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 16:59:32,112 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 16:59:32,195 - INFO -  * Restarting with stat
+2026-06-02 17:17:05,136 - WARNING -  * Debugger is active!
+2026-06-02 17:17:05,144 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 17:17:08,458 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 17:17:09,908 - WARNING -  * Debugger is active!
+2026-06-02 17:17:09,915 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 17:17:12,134 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 17:17:12,992 - WARNING -  * Debugger is active!
+2026-06-02 17:17:13,000 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 17:17:20,067 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 17:17:20,068 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 17:17:20,069 - INFO -  * Restarting with stat
+2026-06-02 17:17:20,814 - WARNING -  * Debugger is active!
+2026-06-02 17:17:20,822 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 17:17:32,669 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 17:17:32,870 - INFO -  * Restarting with stat
+2026-06-02 17:32:18,137 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 17:32:18,138 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 17:32:18,140 - INFO -  * Restarting with stat
+2026-06-02 17:32:18,798 - WARNING -  * Debugger is active!
+2026-06-02 17:32:18,813 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 17:32:34,811 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 17:32:34,890 - INFO -  * Restarting with stat
+2026-06-02 20:26:39,987 - WARNING -  * Debugger is active!
+2026-06-02 20:26:40,001 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 20:26:42,172 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 20:26:42,841 - WARNING -  * Debugger is active!
+2026-06-02 20:26:42,848 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 20:26:48,111 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 20:26:48,811 - WARNING -  * Debugger is active!
+2026-06-02 20:26:48,819 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 20:27:06,465 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 20:36:59,698 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 20:36:59,698 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 20:36:59,700 - INFO -  * Restarting with stat
+2026-06-02 20:37:00,259 - WARNING -  * Debugger is active!
+2026-06-02 20:37:00,266 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 20:41:41,711 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 20:41:41,711 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 20:41:41,712 - INFO -  * Restarting with stat
+2026-06-02 20:41:42,398 - WARNING -  * Debugger is active!
+2026-06-02 20:41:42,406 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 20:42:23,868 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 20:42:23,868 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 20:42:23,870 - INFO -  * Restarting with stat
+2026-06-02 20:42:24,546 - WARNING -  * Debugger is active!
+2026-06-02 20:42:24,554 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 20:44:01,313 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 20:44:01,389 - INFO -  * Restarting with stat
+2026-06-02 21:07:57,059 - WARNING -  * Debugger is active!
+2026-06-02 21:07:57,065 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 21:08:00,195 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 21:08:00,886 - WARNING -  * Debugger is active!
+2026-06-02 21:08:00,893 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 21:08:49,818 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 21:08:49,818 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 21:08:49,820 - INFO -  * Restarting with stat
+2026-06-02 21:08:50,503 - WARNING -  * Debugger is active!
+2026-06-02 21:08:50,511 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 21:19:37,726 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\app.py', reloading
+2026-06-02 21:19:37,794 - INFO -  * Restarting with stat
+2026-06-02 21:23:37,249 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 21:23:37,249 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 21:23:37,251 - INFO -  * Restarting with stat
+2026-06-02 21:23:37,838 - WARNING -  * Debugger is active!
+2026-06-02 21:23:37,847 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 21:23:37,880 - INFO - 127.0.0.1 - - [02/Jun/2026 21:23:37] "[32mGET / HTTP/1.1[0m" 302 -
+2026-06-02 21:23:37,896 - INFO - 127.0.0.1 - - [02/Jun/2026 21:23:37] "GET /login HTTP/1.1" 200 -
+2026-06-02 21:23:37,972 - INFO - 127.0.0.1 - - [02/Jun/2026 21:23:37] "GET /static/style.css HTTP/1.1" 200 -
+2026-06-02 21:23:38,286 - INFO - 127.0.0.1 - - [02/Jun/2026 21:23:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-02 21:24:30,138 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:30] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-06-02 21:24:30,255 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:30] "GET / HTTP/1.1" 200 -
+2026-06-02 21:24:30,598 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-02 21:24:30,599 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:30] "GET /static/imagenes/dedo-queso.png HTTP/1.1" 200 -
+2026-06-02 21:24:30,601 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:30] "GET /static/imagenes/dedo-hawaiano.png HTTP/1.1" 200 -
+2026-06-02 21:24:30,848 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:30] "GET /static/imagenes/dedos-salchicha.png HTTP/1.1" 200 -
+2026-06-02 21:24:30,926 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:30] "GET /static/imagenes/pastel-pollo.png HTTP/1.1" 200 -
+2026-06-02 21:24:30,936 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:30] "GET /static/imagenes/hojaldras.png HTTP/1.1" 200 -
+2026-06-02 21:24:31,197 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:31] "GET /static/imagenes/empanadas-tradicionales.png HTTP/1.1" 200 -
+2026-06-02 21:24:31,323 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:31] "GET /static/imagenes/arepas-super-queso.png HTTP/1.1" 200 -
+2026-06-02 21:24:31,519 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:31] "GET /static/imagenes/dedos-bocadillo.png HTTP/1.1" 200 -
+2026-06-02 21:24:31,645 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:31] "GET /static/imagenes/papa-rellena.jpg HTTP/1.1" 200 -
+2026-06-02 21:24:31,679 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:31] "GET /static/imagenes/dedos-arequipe.jpg HTTP/1.1" 200 -
+2026-06-02 21:24:31,684 - INFO - 127.0.0.1 - - [02/Jun/2026 21:24:31] "GET /static/imagenes/logo-empresa.png HTTP/1.1" 200 -
+2026-06-02 21:25:19,198 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\crear_usuario.py', reloading
+2026-06-02 21:25:19,250 - INFO -  * Restarting with stat
+2026-06-02 21:25:19,859 - WARNING -  * Debugger is active!
+2026-06-02 21:25:19,866 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 21:26:11,440 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:11] "GET /papelera HTTP/1.1" 200 -
+2026-06-02 21:26:20,380 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:20] "GET / HTTP/1.1" 200 -
+2026-06-02 21:26:20,454 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-02 21:26:20,715 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:20] "[36mGET /static/imagenes/dedo-queso.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:20,716 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:20] "[36mGET /static/imagenes/dedo-hawaiano.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:21,040 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:21] "[36mGET /static/imagenes/dedos-salchicha.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:21,042 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:21] "[36mGET /static/imagenes/pastel-pollo.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:21,283 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:21] "[36mGET /static/imagenes/logo-empresa.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:21,360 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:21] "[36mGET /static/imagenes/hojaldras.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:21,505 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:21] "[36mGET /static/imagenes/empanadas-tradicionales.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:21,506 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:21] "[36mGET /static/imagenes/arepas-super-queso.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:21,508 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:21] "[36mGET /static/imagenes/dedos-bocadillo.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:21,510 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:21] "[36mGET /static/imagenes/papa-rellena.jpg HTTP/1.1[0m" 304 -
+2026-06-02 21:26:21,596 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:21] "[36mGET /static/imagenes/dedos-arequipe.jpg HTTP/1.1[0m" 304 -
+2026-06-02 21:26:31,060 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[32mPOST /vender-producto/24 HTTP/1.1[0m" 302 -
+2026-06-02 21:26:31,110 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "GET / HTTP/1.1" 200 -
+2026-06-02 21:26:31,317 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-02 21:26:31,461 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[36mGET /static/imagenes/dedo-hawaiano.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:31,463 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[36mGET /static/imagenes/dedos-salchicha.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:31,464 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[36mGET /static/imagenes/dedo-queso.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:31,470 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[36mGET /static/imagenes/pastel-pollo.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:31,477 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[36mGET /static/imagenes/hojaldras.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:31,626 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[36mGET /static/imagenes/empanadas-tradicionales.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:31,768 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[36mGET /static/imagenes/arepas-super-queso.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:31,776 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[36mGET /static/imagenes/papa-rellena.jpg HTTP/1.1[0m" 304 -
+2026-06-02 21:26:31,778 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[36mGET /static/imagenes/dedos-bocadillo.png HTTP/1.1[0m" 304 -
+2026-06-02 21:26:31,783 - INFO - 127.0.0.1 - - [02/Jun/2026 21:26:31] "[36mGET /static/imagenes/dedos-arequipe.jpg HTTP/1.1[0m" 304 -
+2026-06-02 23:40:53,470 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 23:40:53,470 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 23:40:53,472 - INFO -  * Restarting with stat
+2026-06-02 23:40:54,072 - WARNING -  * Debugger is active!
+2026-06-02 23:40:54,081 - INFO -  * Debugger PIN: 125-925-734
+2026-06-02 23:41:21,747 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:21] "[32mGET / HTTP/1.1[0m" 302 -
+2026-06-02 23:41:21,759 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:21] "GET /login HTTP/1.1" 200 -
+2026-06-02 23:41:22,080 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:22] "GET /static/style.css HTTP/1.1" 200 -
+2026-06-02 23:41:22,460 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-02 23:41:46,361 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "GET / HTTP/1.1" 200 -
+2026-06-02 23:41:46,411 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-02 23:41:46,416 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "[36mGET /static/imagenes/dedo-queso.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:46,418 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "[36mGET /static/imagenes/dedo-hawaiano.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:46,426 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "[36mGET /static/imagenes/dedos-salchicha.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:46,427 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "[36mGET /static/imagenes/pastel-pollo.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:46,439 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "[36mGET /static/imagenes/hojaldras.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:46,448 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "[36mGET /static/imagenes/empanadas-tradicionales.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:46,454 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "[36mGET /static/imagenes/arepas-super-queso.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:46,475 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "[36mGET /static/imagenes/dedos-bocadillo.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:46,482 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "[36mGET /static/imagenes/papa-rellena.jpg HTTP/1.1[0m" 304 -
+2026-06-02 23:41:46,487 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:46] "[36mGET /static/imagenes/dedos-arequipe.jpg HTTP/1.1[0m" 304 -
+2026-06-02 23:41:47,434 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:47] "[36mGET /static/imagenes/logo-empresa.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,263 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "GET / HTTP/1.1" 200 -
+2026-06-02 23:41:56,297 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,305 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/imagenes/dedo-hawaiano.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,306 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/imagenes/dedo-queso.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,306 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/imagenes/dedos-salchicha.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,307 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/imagenes/hojaldras.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,307 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/imagenes/pastel-pollo.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,317 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/imagenes/empanadas-tradicionales.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,320 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/imagenes/arepas-super-queso.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,323 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/imagenes/dedos-bocadillo.png HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,324 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/imagenes/papa-rellena.jpg HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,332 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/imagenes/dedos-arequipe.jpg HTTP/1.1[0m" 304 -
+2026-06-02 23:41:56,334 - INFO - 127.0.0.1 - - [02/Jun/2026 23:41:56] "[36mGET /static/imagenes/logo-empresa.png HTTP/1.1[0m" 304 -
+2026-06-02 23:42:12,782 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:12] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-06-02 23:42:12,868 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:12] "GET / HTTP/1.1" 200 -
+2026-06-02 23:42:13,285 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-02 23:42:13,309 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "GET /static/imagenes/dedo-queso.png HTTP/1.1" 200 -
+2026-06-02 23:42:13,310 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "GET /static/imagenes/dedo-hawaiano.png HTTP/1.1" 200 -
+2026-06-02 23:42:13,530 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "GET /static/imagenes/dedos-salchicha.png HTTP/1.1" 200 -
+2026-06-02 23:42:13,643 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "GET /static/imagenes/logo-empresa.png HTTP/1.1" 200 -
+2026-06-02 23:42:13,645 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "GET /static/imagenes/pastel-pollo.png HTTP/1.1" 200 -
+2026-06-02 23:42:13,830 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "GET /static/imagenes/hojaldras.png HTTP/1.1" 200 -
+2026-06-02 23:42:13,830 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "GET /static/imagenes/empanadas-tradicionales.png HTTP/1.1" 200 -
+2026-06-02 23:42:13,832 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "GET /static/imagenes/arepas-super-queso.png HTTP/1.1" 200 -
+2026-06-02 23:42:13,875 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "GET /static/imagenes/dedos-bocadillo.png HTTP/1.1" 200 -
+2026-06-02 23:42:13,966 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "GET /static/imagenes/papa-rellena.jpg HTTP/1.1" 200 -
+2026-06-02 23:42:13,996 - INFO - 127.0.0.1 - - [02/Jun/2026 23:42:13] "GET /static/imagenes/dedos-arequipe.jpg HTTP/1.1" 200 -

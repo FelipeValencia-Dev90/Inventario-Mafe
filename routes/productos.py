@@ -33,7 +33,6 @@ def inicio():
                 AND nombre LIKE ?
             """
                                       
-    
     #Filtrar stock Bajo
     if stock == "bajo":
         consulta += " AND cantidad <= 5"
@@ -99,7 +98,7 @@ def guardar_producto():
 
     nombre_imagen = secure_filename(imagen.filename)
 
-    extensiones_permitidas = ["jpg", "jpeg", "png", "gif"]
+    extensiones_permitidas = ["jpg", "jpeg", "png"]
     extension = nombre_imagen.split(".")[-1].lower()
 
     if extension not in extensiones_permitidas:
@@ -309,7 +308,6 @@ def actualizar_producto(id):
 
     return redirect("/")
 
-
 @productos.route("/vender-producto/<int:id>", methods=["POST"])
 @login_required
 def vender_producto(id):
@@ -317,6 +315,12 @@ def vender_producto(id):
     try:
 
         cantidad_vendida = int(request.form["cantidad"])
+
+        # VALIDAR CANTIDAD NEGATIVA
+        if cantidad_vendida <= 0:
+
+            flash("⚠ La cantidad vendida debe ser mayor a 0")
+            return redirect("/")
 
         conexion = obtener_conexion()
 
@@ -333,7 +337,6 @@ def vender_producto(id):
         if not producto:
 
             flash("❌ Producto no encontrado")
-
             return redirect("/")
 
         stock_actual = producto[0]
@@ -363,20 +366,19 @@ def vender_producto(id):
 
         conexion.close()
 
-        flash("✅ Venta registrada")
+        logger.info(
+            f"Venta Realizada | Producto ID: {id} | Cantidad: {cantidad_vendida}"
+        )
 
-        logger.info(f"Venta Realizada | Producto ID: {id} | Cantidad: {cantidad_vendida}")
+        flash("✅ Venta registrada")
 
     except Exception as error:
 
         logger.error(f"Error en la venta: {error}")
 
-        print(error)
-
         flash("🚨 Ocurrió un error en la venta")
 
     return redirect("/")
-
 
 # API REST PARA OBTENER PRODUCTOS EN FORMATO JSON
 @productos.route("/api/productos")

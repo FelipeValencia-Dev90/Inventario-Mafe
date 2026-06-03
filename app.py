@@ -26,14 +26,6 @@ jwt = JWTManager(app)
 app.register_blueprint(auth)
 app.register_blueprint(productos)
 
-@app.errorhandler(404)
-def pagino_no_encontrada(error):
-
-    return {
-        "success": False,
-        "mensaje": "Ruta no encontrada"
-    }, 404
-
 
 swagger_config = {
     "headers": [],
@@ -68,5 +60,7 @@ template = {
 }
 
 Swagger(app, config=swagger_config, template=template)
-        
-app.run(debug=True)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
