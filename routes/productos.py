@@ -8,6 +8,10 @@ from utils.auth import admin_required
 from utils.logger import logger
 import os
 
+import subprocess
+from datetime import datetime
+
+
 from werkzeug.utils import secure_filename
 
 productos = Blueprint("productos", __name__)
@@ -568,3 +572,41 @@ def eliminar_producto_api(id):
             "mensaje": "Producto eliminado correctamente"
         }), 200
 
+@productos.route("/backup")
+@login_required
+def crear_backup():
+    try:
+        fecha = datetime.now().strftime("%Y%m%d_%H%M%S")
+        nombre_archivo = f"inventario_{fecha}.bak"
+        
+        # 1. Ruta temporal en el disco C accesible para SQL Server
+        ruta_temporal_sql = f"C:\\temp_backups\\{nombre_archivo}"
+
+        # 2. Comando usando Driver 17 (agregamos -C por seguridad)
+        comando_lista = [
+            "sqlcmd",
+            "-S", "DESKTOP-Q681RM2\\SQLEXPRESS",
+            "-Q", f"BACKUP DATABASE InventarioAVA TO DISK='{ruta_temporal_sql}'",
+            "-C"
+        ]
+
+        resultado = subprocess.run(comando_lista, capture_output=True, text=True)
+        
+        if resultado.returncode != 0:
+            raise Exception(resultado.stderr or resultado.stdout)
+
+        # 3. Ruta final de tu proyecto donde tú quieres ver el archivo
+        ruta_destino_proyecto = os.path.abspath(os.path.join("backups", nombre_archivo))
+
+        # 4. Con la ayuda de Python, movemos el archivo de la carpeta temporal a tu app
+        if os.path.exists(ruta_temporal_sql):
+            import shutil
+            shutil.move(ruta_temporal_sql, ruta_destino_proyecto)
+            flash(f"✅ Respaldo creado correctamente en tu proyecto: {nombre_archivo}")
+        else:
+            raise Exception("El archivo no se encontró en la carpeta temporal.")
+
+    except Exception as e:
+        flash(f"❌ Error creando respaldo: {e}")
+
+    return redirect("/")
