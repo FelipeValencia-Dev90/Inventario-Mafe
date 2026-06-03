@@ -8,6 +8,17 @@ from utils.auth import admin_required
 from utils.logger import logger
 import os
 
+from flask import Blueprint, send_file
+import io
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib import colors
+
+import openpyxl
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.utils import get_column_letter
+
 import subprocess
 from datetime import datetime
 
@@ -22,8 +33,6 @@ productos = Blueprint("productos", __name__)
 def inicio():
 
     conexion = obtener_conexion()
-
-    
     cursor = conexion.cursor()
 
     buscar = request.args.get("buscar", "")
@@ -56,8 +65,6 @@ def inicio():
         consulta += " ORDER BY precio ASC"
 
     cursor.execute(consulta, (f"%{buscar}%",))
-    
-    
     productos = cursor.fetchall()
 
 
@@ -73,14 +80,98 @@ def inicio():
     
     resumen = cursor.fetchone()
 
+    # Controlamos que si no hay productos, las variables no se rompan en None
+    unidades_stock = resumen[0] if resumen[0] else 0
+    valor_inventario = resumen[1] if resumen[1] else 0
+
+
+    # 3. NUEVA ESTADÍSTICA: TOTAL PRODUCTOS ACTIVOS 
+    cursor.execute("SELECT COUNT(*) FROM Productos WHERE activo = 1")
+    total_productos_activos = cursor.fetchone()[0]
+
+
+    # 4. NUEVA ESTADÍSTICA: TOTAL VENTAS REALIZADAS
+    cursor.execute("SELECT SUM(cantidad) FROM Ventas")
+    resultado_ventas = cursor.fetchone()[0]
+    total_ventas = resultado_ventas if resultado_ventas else 0
+
+
+    # === CONSULTAS PARA GRÁFICAS (DASHBOARD) ===
+
+    # G1: Productos más vendidos (Top 5)
+    cursor.execute("""
+            SELECT TOP 5 p.nombre, SUM(v.cantidad) AS total_vendido
+            FROM Ventas v
+            JOIN Productos p ON v.producto_id = p.id
+            GROUP BY p.nombre
+            ORDER BY total_vendido DESC
+         """)
+    
+    top_vendidos = cursor.fetchall()
+        # Los separamos en listas simples para JavaScript. Usamos ABS() por si tus cantidades son negativas.
+    g1_labels = [row[0] for row in top_vendidos]
+    g1_data = [abs(row[1]) for row in top_vendidos]
+
+        # G2: Productos con menor stock (Alertas de reabastecimiento - Top 5 más bajos)
+    cursor.execute("""
+            SELECT TOP 5 nombre, cantidad 
+            FROM Productos 
+            WHERE activo = 1 
+            ORDER BY cantidad ASC
+        """)
+    menor_stock = cursor.fetchall()
+    g2_labels = [row[0] for row in menor_stock]
+    g2_data = [row[1] for row in menor_stock]
+
+        # G3: Valor del inventario por producto (Top 5 más valiosos en dinero estancado)
+    cursor.execute("""
+            SELECT TOP 5 nombre, (precio * cantidad) AS valor_inventario
+            FROM Productos 
+            WHERE activo = 1 
+            ORDER BY valor_inventario DESC
+        """)
+    valor_prod = cursor.fetchall()
+    g3_labels = [row[0] for row in valor_prod]
+    g3_data = [float(row[1]) for row in valor_prod] # Convertimos a float para que JSON lo entienda sin problemas
+
+        # G4: Ventas por día (Historial de los últimos 7 días con ventas)
+        # Nota: Ajusta 'fecha_venta' si tu columna en la tabla Ventas se llama diferente (ej: 'fecha')
+    cursor.execute("""
+            SELECT TOP 7 CONVERT(VARCHAR, fecha, 103) AS fecha, SUM(cantidad) AS total
+            FROM Ventas
+            GROUP BY CONVERT(VARCHAR, fecha, 103)
+            ORDER BY fecha DESC
+        """)
+    ventas_dias = cursor.fetchall()
+        # Las invertimos para que cronológicamente se lean de izquierda a derecha (pasado a presente)
+    g4_labels = [row[0] for row in ventas_dias][::-1]
+    g4_data = [abs(row[1]) for row in ventas_dias][::-1]
+
     conexion.close()
+
+    # Armamos un diccionario limpio para las estadísticas
+    estadisticas = {
+        "productos_activos": total_productos_activos,
+        "unidades_stock": unidades_stock,
+        "valor_inventario": valor_inventario,
+        "total_ventas": total_ventas
+    }
+
+     # Consolidamos los datos de las gráficas
+    datos_graficas = {
+        "g1": {"labels": g1_labels, "data": g1_data},
+        "g2": {"labels": g2_labels, "data": g2_data},
+        "g3": {"labels": g3_labels, "data": g3_data},
+        "g4": {"labels": g4_labels, "data": g4_data}
+    }
 
     return render_template("index.html", 
                            productos=productos,
-                           resumen=resumen
-                        )
-
-
+                           resumen=resumen,
+                           estadisticas=estadisticas,
+                           datos_graficas=datos_graficas) # <- Pasamos el diccionario a la plantilla
+   
+   
 # GUARDAR PRODUCTO
 @productos.route("/guardar-producto", methods=["POST"])
 @login_required
@@ -134,8 +225,6 @@ def guardar_producto():
     except ValueError:
         flash("⚠ Precio o cantidad invalidos.")
         return redirect("/")
-
-
 
     #CONVERTIR DATOS
     precio = float(precio)
@@ -610,3 +699,236 @@ def crear_backup():
         flash(f"❌ Error creando respaldo: {e}")
 
     return redirect("/")
+
+@productos.route("/reporte/pdf")
+@login_required
+def generar_pdf():
+    # 1. Obtener la información de la base de datos
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+    
+    cursor.execute("""
+        SELECT nombre, precio, cantidad, (precio * cantidad) AS total 
+        FROM Productos 
+        WHERE activo = 1 
+        ORDER BY nombre ASC
+    """)
+    items = cursor.fetchall()
+    
+    # Obtener totales generales para el cierre del informe
+    cursor.execute("SELECT SUM(cantidad), SUM(precio * cantidad) FROM Productos WHERE activo = 1")
+    resumen = cursor.fetchone()
+    total_unidades = resumen[0] if resumen[0] else 0
+    total_valor = resumen[1] if resumen[1] else 0
+    
+    conexion.close()
+
+    # 2. Configurar el archivo en memoria virtual (Evita llenar el disco de basura)
+    buffer = io.BytesIO()
+    doc = SimpleDocTemplate(
+        buffer, 
+        pagesize=letter,
+        rightMargin=40, leftMargin=40, topMargin=40, bottomMargin=40
+    )
+    
+    # 3. Definir estilos visuales del reporte
+    estilos = getSampleStyleSheet()
+    
+    estilo_titulo = ParagraphStyle(
+        'TituloReporte',
+        parent=estilos['Heading1'],
+        fontSize=24,
+        textColor=colors.HexColor("#393e46"),
+        spaceAfter=12
+    )
+    
+    estilo_texto = ParagraphStyle(
+        'TextoNormal',
+        parent=estilos['Normal'],
+        fontSize=10,
+        textColor=colors.HexColor("#555555"),
+        spaceAfter=6
+    )
+
+    # Lista de elementos que construirán el PDF secuencialmente
+    historia = []
+
+    # Encabezado / Branding
+    historia.append(Paragraph("📊 INFORME EJECUTIVO DE INVENTARIO", estilo_titulo))
+    historia.append(Paragraph("Generado por: Sistema de Gestión Automatizado", estilo_texto))
+    historia.append(Spacer(1, 15))
+
+    # 4. Estructurar la Tabla de Datos
+    # Definimos los títulos de las columnas
+    datos_tabla = [["Producto", "Precio Unitario", "Existencias", "Valor Total Valorizado"]]
+    
+    # Insertamos los registros de la base de datos limpios
+    for fila in items:
+        datos_tabla.append([
+            fila[0],                               # Nombre
+            f"$ {fila[1]:,.2f}",                    # Precio
+            str(fila[2]),                          # Cantidad
+            f"$ {fila[3]:,.2f}"                     # Valorizado
+        ])
+        
+    # Añadimos la fila de balance final de cierre
+    datos_tabla.append(["TOTALES", "", str(total_unidades), f"$ {total_valor:,.2f}"])
+
+    # Convertimos la estructura a un objeto de ReportLab
+    tabla_reporte = Table(datos_tabla, colWidths=[200, 100, 80, 150])
+    
+    # Diseño estético de las celdas (Colores idénticos a tu paleta web)
+    estilo_celdas = TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#00adb5")), # Encabezado Turquesa
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+        ('ALIGN', (1, 0), (-1, -1), 'RIGHT'), # Valores numéricos a la derecha
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
+        ('BACKGROUND', (0, 1), (-1, -2), colors.HexColor("#f9f9f9")), # Celdas alternas grises limpias
+        ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor("#dddddd")),
+        # Estilo exclusivo para la fila de Totales (Última fila)
+        ('FONTNAME', (0, -1), (-1, -1), 'Helvetica-Bold'),
+        ('BACKGROUND', (0, -1), (-1, -1), colors.HexColor("#eef1f6")),
+    ])
+    tabla_reporte.setStyle(estilo_celdas)
+    
+    historia.append(tabla_reporte)
+
+    # 5. Compilar y retornar el archivo ejecutable binario
+    doc.build(historia)
+    buffer.seek(0)
+    
+    return send_file(
+        buffer, 
+        as_attachment=True, 
+        download_name="reporte_inventario.pdf", 
+        mimetype="application/pdf"
+    )
+
+
+@productos.route("/reporte/excel")
+@login_required
+def generar_excel():
+    # 1. Extraer los datos actualizados de SQL Server
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+    
+    cursor.execute("""
+        SELECT nombre, precio, cantidad, (precio * cantidad) AS total 
+        FROM Productos 
+        WHERE activo = 1 
+        ORDER BY nombre ASC
+    """)
+    items = cursor.fetchall()
+    conexion.close()
+
+    # 2. Crear el libro y la hoja de trabajo en memoria
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "Inventario Actualizado"
+    
+    # Asegurar que las líneas de cuadrícula normales de Excel sean visibles
+    ws.views.sheetView[0].showGridLines = True
+
+    # 3. Diseñar los Estilos visuales del documento (Combinando con tu Paleta Turquesa)
+    fuente_titulo = Font(name="Calibri", size=16, bold=True, color="333333")
+    fuente_cabecera = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
+    fuente_datos = Font(name="Calibri", size=11, color="000000")
+    fuente_totales = Font(name="Calibri", size=11, bold=True, color="000000")
+    
+    # Relleno Turquesa corporativo para los títulos de columnas
+    relleno_turquesa = PatternFill(start_color="00ADB5", end_color="00ADB5", fill_type="solid")
+    relleno_totales = PatternFill(start_color="EEF1F6", end_color="EEF1F6", fill_type="solid")
+    
+    # Alineaciones
+    alinear_izquierda = Alignment(horizontal="left", vertical="center")
+    alinear_derecha = Alignment(horizontal="right", vertical="center")
+    
+    # Bordes finos y limpios
+    borde_delgado = Side(border_style="thin", color="DDDDDD")
+    cuadrilla = Border(left=borde_delgado, right=borde_delgado, top=borde_delgado, bottom=borde_delgado)
+    
+    borde_doble_abajo = Side(border_style="double", color="333333")
+    borde_arriba = Side(border_style="thin", color="333333")
+    linea_totales = Border(top=borde_arriba, bottom=borde_doble_abajo)
+
+    # 4. Construir el Contenido del documento
+    # Título Principal
+    ws["A1"] = "REPORTE ANALÍTICO DE INVENTARIO Y STOCK"
+    ws["A1"].font = fuente_titulo
+    ws.merge_cells("A1:D1")
+    ws.row_dimensions[1].height = 35
+    
+    # Dejar una fila en blanco por estética
+    ws.row_dimensions[2].height = 15
+
+    # Encabezados de Columnas (Fila 3)
+    cabeceras = ["Descripción del Producto", "Precio Unitario", "Existencias en Stock", "Valor Total en Bodega"]
+    ws.append(cabeceras)
+    ws.row_dimensions[3].height = 25
+    
+    for col_idx in range(1, 5):
+        celda = ws.cell(row=3, column=col_idx)
+        celda.font = fuente_cabecera
+        celda.fill = relleno_turquesa
+        celda.alignment = alinear_izquierda if col_idx == 1 else alinear_derecha
+
+    # 5. Volcar los registros e inyectar FÓRMULAS VIVAS de Excel
+    fila_actual = 4
+    for fila in items:
+        ws.cell(row=fila_actual, column=1, value=fila[0]).alignment = alinear_izquierda  # Nombre
+        ws.cell(row=fila_actual, column=2, value=float(fila[1])).number_format = '"$"#,##0.00' # Precio
+        ws.cell(row=fila_actual, column=3, value=int(fila[2])).number_format = '#,##0'       # Cantidad
+        
+        # En lugar de pegar el total calculado estático, le metemos la fórmula matemática multiplicativa de Excel
+        celda_total = ws.cell(row=fila_actual, column=4, value=f"=B{fila_actual}*C{fila_actual}")
+        celda_total.number_format = '"$"#,##0.00'
+        
+        # Aplicar fuentes y bordes individuales a cada celda de datos
+        for col_idx in range(1, 5):
+            c = ws.cell(row=fila_actual, column=col_idx)
+            c.font = fuente_datos
+            c.border = cuadrilla
+            if col_idx > 1:
+                c.alignment = alinear_derecha
+                
+        ws.row_dimensions[fila_actual].height = 20
+        fila_actual += 1
+
+    # 6. Agregar Fila de Cierre con Fórmulas de Sumatoria Automática (`SUM`)
+    ws.cell(row=fila_actual, column=1, value="TOTALES").alignment = alinear_izquierda
+    ws.cell(row=fila_actual, column=3, value=f"=SUM(C4:C{fila_actual-1})").number_format = '#,##0'
+    ws.cell(row=fila_actual, column=4, value=f"=SUM(D4:D{fila_actual-1})").number_format = '"$"#,##0.00'
+    
+    ws.row_dimensions[fila_actual].height = 24
+    
+    for col_idx in range(1, 5):
+        c = ws.cell(row=fila_actual, column=col_idx)
+        c.font = fuente_totales
+        c.fill = relleno_totales
+        c.border = linea_totales
+        if col_idx > 1:
+            c.alignment = alinear_derecha
+
+    # 7. Auto-ajustar el ancho de las columnas dinámicamente según el texto más largo
+    for col in ws.columns:
+        max_len = 0
+        col_letter = get_column_letter(col[0].column)
+        for cell in col:
+            if cell.row == 1: continue # Ignoramos la celda combinada del título para no distorsionar el cálculo
+            if cell.value:
+                max_len = max(max_len, len(str(cell.value)))
+        ws.column_dimensions[col_letter].width = max(max_len + 5, 15)
+
+    # 8. Exportar binario final para descarga directa
+    buffer = io.BytesIO()
+    wb.save(buffer)
+    buffer.seek(0)
+    
+    return send_file(
+        buffer,
+        as_attachment=True,
+        download_name="reporte_inventario.xlsx",
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )

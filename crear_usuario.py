@@ -8,7 +8,7 @@ cursor = conexion.cursor()
 nombre = "felipe"
 correo = "felipe10@gmail.com"
 
-contraseña = generate_password_hash("12345feli")
+contraseña = generate_password_hash("12345")
 
 cursor.execute("""
     INSERT INTO Usuarios (nombre, correo, contraseña)

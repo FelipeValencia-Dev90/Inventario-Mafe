@@ -8,18 +8,71 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 
-
 <body>
+
+    <div class="menu-hamburguesa" onclick="alternarMenu()">
+        <i class="fas fa-bars"></i> Menú
+    </div>
+
+    <div id="panelLateral" class="panel-lateral">
+        <div class="btn-cerrar-panel" onclick="alternarMenu()">&times; Cerrar Menú</div>
+        
+        <div class="contenido-panel">
+            
+            <div class="seccion-panel">
+                <h3> Acciones y Reportes</h3>
+                <a href="{{ url_for('productos.generar_pdf') }}" class="btn-exportar pdf">📄 Exportar PDF</a>
+                <a href="{{ url_for('productos.generar_excel') }}" class="btn-exportar excel">📊 Exportar Excel</a>
+                <a href="/backup" class="btn-papelera" style="margin-top: 10px; justify-content: center;"><i class="fas fa-database"></i> Respaldar BD</a>
+                <a href="/papelera" class="btn-papelera" style="margin-top: 10px; justify-content: center;"><i class="fas fa-trash"></i> Ver Papelera</a>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #555; margin: 20px 0;">
+
+            <div class="seccion-panel">
+                <h3>📊 Resumen del Negocio</h3>
+                
+                <div class="contenedor-estadisticas-lateral">
+                    <p><strong>📦 Productos Activos:</strong> {{ estadisticas.productos_activos }}</p>
+                    <p><strong>📊 Unidades en Stock:</strong> {{ estadisticas.unidades_stock }}</p>
+                    <p><strong>💰 Valor Inventario:</strong> ${{ "{:,.2f}".format(estadisticas.valor_inventario) }}</p>
+                    <p><strong>🛒 Ventas Realizadas:</strong> {{ estadisticas.total_ventas }}</p>
+                </div>
+                
+                <h3 style="margin-top:20px;">📈 Gráficas de Rendimiento</h3>
+                <div class="bloque-grafica-panel">
+                    <h4>🔥 Productos Más Vendidos</h4>
+                    <canvas id="graficaMasVendidos"></canvas>
+                </div>
+                <div class="bloque-grafica-panel">
+                    <h4>⚠️ Alerta: Menor Stock</h4>
+                    <canvas id="graficaMenorStock"></canvas>
+                </div>
+                <div class="bloque-grafica-panel">
+                    <h4>💰 Valor de Inventario por Producto</h4>
+                    <canvas id="graficaValorProd"></canvas>
+                </div>
+                <div class="bloque-grafica-panel">
+                    <h4>📅 Ventas por Día</h4>
+                    <canvas id="graficaVentasDias"></canvas>
+                </div>
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid #555; margin: 20px 0;">
+            
+            <a href="/logout" class="btn-logout" style="text-align: center; display: block; margin-bottom: 30px;">❌ Cerrar Sesión</a>
+        </div>
+    </div>
 
     <header>
         <h1>INVENTARIO AVA</h1>
         <h2 id="subtitulo">Sistema de gestión de inventario</h2>
     </header>
 
-
     <main class="contenido_principal">
-        <P id="registro">Registra el producto que deseas agregar al inventario</P>
-        <section id = "agregar_producto">
+        <p id="registro">Registra el producto que deseas agregar al inventario</p>
+        
+        <section id="agregar_producto">
             <form id="formulario_producto" action="/guardar-producto" method="post" enctype="multipart/form-data">
                 <div class="contenedor-inputs">
                     <div class="Registro">
@@ -46,7 +99,6 @@
                         <label for="imagen">Imagen</label>
                         <input id="imagen" type="file" name="imagen" accept="image/*">
                     </div>
-                
                 </div>
                 <button class="btn-agregar" type="submit">Guardar</button>
             </form>
@@ -56,15 +108,10 @@
             <form action="/" method="get" class="form-busqueda">
                 <p class="titulo-busqueda">Busqueda Avanzada</p>
                 <input id="buscar-producto" type="text" name="buscar" placeholder="Buscar Producto">
-
-
-                <button class="btn-buscar" type="submit">
-                    Buscar
-                </button>
+                <button class="btn-buscar" type="submit">Buscar</button>
             </form>
 
             <form action="/" method="get" class="form-filtros">
-
                 <select class="orden-filtro" name="orden">
                     <option value="">Ordenar</option>
                     <option value="nombre_asc">Nombre (A-Z)</option>
@@ -79,64 +126,29 @@
                 </select>
 
                  <button type="submit" class="btn-filtro">Filtrar</button>
-
              </form>
         </div>
 
-
         <section id="inventario">
-
-           <div class="header-inventario">
-                <h2>Caracteristicas del Productos</h2>
-
-                <div class="logout-container">
-
-                    <a href="/logout" class="btn-logout">
-                        Cerrar Sesión
-                    </a>
-                </div>
-
-                <a href="/backup">
-                     <button>💾 Respaldar BD</button>
-                </a>
-                
-           </div>
+            <div class="header-inventario">
+                <h2>Características de los Productos</h2>
+            </div>
 
             {% with mensajes = get_flashed_messages() %}
                 {% if mensajes %}
-
-                        {% for mensaje in mensajes %}
-                            <p class="mensaje-exito">
-                                {{ mensaje }}
-                            </p>
-                        {% endfor %}
-                  
+                    {% for mensaje in mensajes %}
+                        <p class="mensaje-exito">{{ mensaje }}</p>
+                    {% endfor %}
                 {% endif %}
             {% endwith %}
 
-            <div class="header-inventario">
-                <a href="/papelera" class="btn-papelera">🗑 Ver papelera</a>
-            </div>
-
             <ul id="lista-productos">
                 {% for producto in productos %}
-
                 <li id="producto-{{producto[0]}}">
-
                     {% if producto[7] %}
-                    <img 
-                        class="imagen-producto"
-                        src="{{ url_for('static', filename='imagenes/' + producto[7]) }}"
-                        alt="Imagen producto"
-                    >   
+                    <img class="imagen-producto" src="{{ url_for('static', filename='imagenes/' + producto[7]) }}" alt="Imagen producto">   
                     {% else %}  
-
-                    <img 
-                        class="imagen-producto"
-                        src="{{ url_for('static', filename='imagenes/vista.jpg') }}"
-                        alt="Sin imagen disponible"
-                    >
-
+                    <img class="imagen-producto" src="{{ url_for('static', filename='imagenes/vista.jpg') }}" alt="Sin imagen disponible">
                     {% endif %}
 
                     <div class="info-producto">
@@ -148,52 +160,27 @@
 
                     <div class="action-producto">
                         <form class="form-accion" action="/desactivar-producto/{{producto[0]}}" method="post">
-                            <button class="btn-desactivar" type="submit" 
-                            onclick="return confirm('¿Desea Desactivar Este Producto?');">
-                                Desactivar</button>
+                            <button class="btn-desactivar" type="submit" onclick="return confirm('¿Desea Desactivar Este Producto?');">Desactivar</button>
                         </form>
                    
-
                         <form action="/editar-producto/{{producto[0]}}" method="get">
-                            <button class="btn-editar" type="submit">
-                                Editar
-                            </button>   
+                            <button class="btn-editar" type="submit">Editar</button>   
                         </form>
-
 
                         <form action="/vender-producto/{{ producto[0] }}" method="POST">
-
-                            <input
-                                type="number"
-                                name="cantidad"
-                                placeholder="Cantidad"
-                                required
-                            >
-
-                            <button type="submit">
-                                Vender
-                            </button>
+                            <input type="number" name="unidades" placeholder="Cantidad" required>
+                            <button class="btn-vender" type="submit">Vender</button>
                         </form>
-                        
                     </div>
                 </li>
-
                 {% endfor %}
-
             </ul>
         </section>
 
         <section id="resumen_de_inventario">
             <h3>Resumen de inventario</h3>
-
-            <p>📦Total de Productos:
-                <strong>{{resumen[0]}}</strong> <span id="total_productos"></span>
-            </p>
-
-            <p>💰Valor Total Inventario: 
-                <strong>${{ "{:,.0f}".format(resumen[1]) }}</strong>
-                <span id="valor_total_inventario"></span>
-            </p>
+            <p>📦Total de Productos: <strong>{{resumen[0]}}</strong> <span id="total_productos"></span></p>
+            <p>💰Valor Total Inventario: <strong>${{ "{:,.0f}".format(resumen[1]) }}</strong> <span id="valor_total_inventario"></span></p>
         </section>
 
     </main>
@@ -220,5 +207,73 @@
             <p>Derechos reservados © 2026</p>
          </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const datosServer = {{ datos_graficas | tojson }};
+
+        new Chart(document.getElementById('graficaMasVendidos'), {
+            type: 'bar',
+            data: {
+                labels: datosServer.g1.labels,
+                datasets: [{
+                    label: 'Unidades Vendidas',
+                    data: datosServer.g1.data,
+                    backgroundColor: '#00adb5',
+                    borderRadius: 5
+                }]
+            },
+            options: { indexAxis: 'y', responsive: true }
+        });
+
+        new Chart(document.getElementById('graficaMenorStock'), {
+            type: 'doughnut',
+            data: {
+                labels: datosServer.g2.labels,
+                datasets: [{
+                    data: datosServer.g2.data,
+                    backgroundColor: ['#ff4d4d', '#ff944d', '#ffd14d', '#4d94ff', '#4dff94']
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        new Chart(document.getElementById('graficaValorProd'), {
+            type: 'bar',
+            data: {
+                labels: datosServer.g3.labels,
+                datasets: [{
+                    label: 'Valor total ($)',
+                    data: datosServer.g3.data,
+                    backgroundColor: '#393e46',
+                    borderRadius: 5
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        new Chart(document.getElementById('graficaVentasDias'), {
+            type: 'line',
+            data: {
+                labels: datosServer.g4.labels,
+                datasets: [{
+                    label: 'Artículos Vendidos',
+                    data: datosServer.g4.data,
+                    borderColor: '#00adb5',
+                    backgroundColor: 'rgba(0, 173, 181, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        // FUNCIÓN DEL MENÚ DESPLEGABLE
+        function alternarMenu() {
+            const panel = document.getElementById("panelLateral");
+            panel.classList.toggle("activo");
+        }
+    </script>   
+   
 </body>
 </html>
