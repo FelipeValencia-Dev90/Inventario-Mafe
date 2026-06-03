@@ -71,233 +71,192 @@ main{
     padding: 15px;
 }
 
-#registro{
-    color:black ;
-    font-size: 30px;  
-    padding: 1px;
-    text-align: justify;
-    margin-bottom: 5px;
+#registro {
+    font-size: 30px;
+    color: #0c0c0c;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
-section#agregar_producto{
-    color:rgb(7, 7, 7);
-    display: flex;
-    flex-direction: column;
-}
-
-#formulario_producto{
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    background-color: rgb(139, 139, 143);
-    padding: 5px;
-    border-radius: 5px;
-    padding-bottom: 25px;
-}
-
-.contenedor-inputs{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: auto;
-    padding: 20px;
-    border-radius: 5px;  
-}
-
-label{
-    color:black;
-    font-size: 15px;
-    padding: 2px;
-    margin-bottom: 5px;
-    display: inline-block;
-    width: 90px;
-}
-
-input {
-    width: 400px;
-    height:30px;
-    border-radius: 5px;
-    border: 1px solid black;
-    text-align: justify;
-    padding: 5px;
-    margin: 8px;
-}
-
-input[type="file"] {
-    width: 400px;
-    height: 30px;
-    background-color: white; 
-    border: 1px solid black;
-    border-radius: 5px;
-    display: inline-flex;    
-    align-items: center;
-    padding: 0px;        
-    overflow: hidden;    
-}
-
-
-input[type="file"]::file-selector-button {
-    background-color: #f0f0f0; 
-    border: none;             
-    border-right: 1px solid black;
-    height: 100%;              
-    padding: 0 15px;           
-    margin-right: 10px;
-    font-family: inherit;   
-    color: rgb(114, 112, 112);   
-    transition: background-color 0.2s ease;
-}
-
-input[type="file"]::file-selector-button:hover {
-    background-color: #cecdcd;
-}
-
-button {
-    background-color: aqua;
-    width: auto;
-    height:auto;
-    border-radius: 5px;
-    margin-left:25px;
-    margin-top: 2px;
-}
-
-.btn-agregar {
-    background-color: aqua;
-    color: rgb(12, 12, 12);
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    cursor:pointer;
-    width:100px;
-    height: 30px;
-    border: 1px solid black;
-}
-
-.btn-agregar:hover{
-    background-color:rgb(14, 190, 190);
-    transform: scale(1.05);
-}
-
-section#editar_producto{
-    width: 70%;
-    margin:auto;
-    margin-top: 40px;
-    background-color: rgb(241, 227, 227);
+#agregar_producto {
+    background: #ffffff;
+    border-radius: 12px;
     padding: 30px;
-    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 35px;
+    border: 1px solid #eef2f3;
 }
 
-.btn-guardar{
-    background-color: aqua;
-    color: rgb(12, 12, 12);
+#formulario_producto .contenedor-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+#formulario_producto .Registro {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(20% - 20px); /* Intenta poner los 5 inputs en una sola fila si hay espacio */
+    min-width: 180px; /* Evita que se colapsen en pantallas pequeñas */
+    text-align: left;
+}
+
+#formulario_producto label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#formulario_producto input[type="text"],
+#formulario_producto input[type="number"] {
+    width: 100%;
+    height: 42px;
+    padding: 10px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333333;
+    background-color: #fcfcfc;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+
+#formulario_producto input[type="text"]:focus,
+#formulario_producto input[type="number"]:focus {
+    border-color: #00adb5;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.15);
+    outline: none;
+}
+
+#formulario_producto input[type="file"] {
+    font-size: 0.85rem;
+    color: #777777;
+    padding-top: 8px;
+}
+
+/* Botón Guardar elegante y centrado abajo */
+.btn-agregar {
+    background-color: #00adb5;
+    color: #ffffff;
     border: none;
-    padding: 5px;
-    border-radius: 5px;
-    cursor:pointer;
-    width:100px;
-    height: 30px;
-    margin-top: 15px;
-    border: 1px solid black;
+    border-radius: 8px;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 25px;
+    display: inline-block;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.btn-guardar:hover{
-    background-color:rgb(14, 190, 190);
-    transform: scale(1.05);
+.btn-agregar:hover {
+    background-color: #008990;
+}
+
+.btn-agregar:active {
+    transform: scale(0.98);
 }
 
 .container-busqueda {
-    background-color: rgb(241, 227, 227);
-    width: auto;
-    height: auto;
-    padding: 5px;
-    margin-top: 5px;
-    border-radius: 5px;
-}
-
-.form-busqueda {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 35px;
+    border: 1px solid #eef2f3;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .titulo-busqueda {
-    color: black;
-    font-size:15px;
-    font-family: cursive;
-    padding: 5px;
-    margin: 3px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #212121;
+    margin: 0 0 10px 0;
+    text-align: left;
 }
 
-input#buscar-producto{
+.form-busqueda, .form-filtros {
     display: flex;
+    gap: 12px;
     align-items: center;
-    width: 500px;
-    height:30px;
-    border-radius: 5px;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 3px;
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
 }
 
-.btn-buscar{
-    background-color: aqua;
-    color: black;
-    border: 1px solid black;
-    padding: 5px 10px;
-    border-radius: 5px;
+#buscar-producto {
+    flex-grow: 1;
+    height: 42px;
+    padding: 10px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: #fcfcfc;
+    transition: all 0.3s ease;
+}
+
+#buscar-producto:focus {
+    border-color: #00adb5;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.15);
+    outline: none;
+}
+
+.orden-filtro, .stock-filtro {
+    flex: 1;
+    height: 42px;
+    padding: 0 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #555555;
+    background-color: #fcfcfc;
     cursor: pointer;
-    width: 90px;
-    height: 30px;
-    margin:3px;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-.btn-buscar:hover{
-    background-color: rgb(14, 190, 190);
-    transform: scale(1.05);
+.orden-filtro:focus, .stock-filtro:focus {
+    border-color: #00adb5;
 }
 
-.form-filtros{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5px;
-    margin-bottom: 2px;
-}
-
-select{
-    color: black;
-    border: 1px solid black;
-    padding: 5px 10px;
-    border-radius: 5px;
+.btn-buscar, .btn-filtro {
+    height: 42px;
+    padding: 0 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
     cursor: pointer;
-    height: 30px;
-    margin: 3px;
+    transition: background-color 0.2s;
 }
 
-.orden-filtro{
-    background-color: yellow;
+.btn-buscar {
+    background-color: #212121; 
+    color: #ffffff;
 }
 
-.stock-filtro{
-    background-color: rgb(120, 180, 120);
+.btn-buscar:hover {
+    background-color: #424242;
 }
 
-.btn-filtro{
-    background-color: aqua;
-    color: black;
-    border: 1px solid black;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 90px;
-    height: 30px;
-    margin:3px;
+.btn-filtro {
+    background-color: #e0e0e0;
+    color: #333333;
 }
 
-.btn-filtro:hover{
-    background-color: rgb(14, 190, 190);
-    transform: scale(1.05);
+.btn-filtro:hover {
+    background-color: #d5d5d5;
 }
 
 section#inventario{
@@ -310,7 +269,13 @@ section#inventario{
     width: auto;
 }
 
-/* Alineación en fila de las tarjetas */
+section#inventario h2 {
+    color: black;
+    text-align: left;
+    font-size: 30px;
+    font-weight: normal;
+}
+
 .contenedor-estadisticas {
     display: flex;
     justify-content: space-between;
@@ -319,7 +284,6 @@ section#inventario{
     flex-wrap: wrap; /* Se acomoda si se ve en celular */
 }
 
-/* El cuerpo de cada tarjeta */
 .tarjeta-est {
     background-color: #ffffff;
     border-radius: 8px;
@@ -334,13 +298,11 @@ section#inventario{
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efecto cuando pasas el mouse por encima */
 .tarjeta-est:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Iconos de las tarjetas */
 .icono-est {
     font-size: 2.3rem;
 }
@@ -492,148 +454,147 @@ h2{
     transform: scale(1.05);
 }
 
-ul{
+ul#lista-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
     list-style-type: none;
-    padding: 1px; 
 }
 
-li{
-    background-color: white;
-    margin-bottom: 5px;
-    padding: 5px;
-    border-radius: 5px;
+li[id^="producto-"] {
+    background-color: #ffffff;
+    border-radius: 12px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    height: auto;
+    flex-direction: column; /* Cambia a vertical para que parezca un e-commerce real */
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 0px; /* Removido el margen viejo para usar el gap del Grid */
 }
 
-.imagen-producto{
-    width: 400px;
-    height: 300px;
+li[id^="producto-"]:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 220px; 
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 0px;
     flex-shrink: 0;
 }
 
 .info-producto {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
     flex-grow: 1;
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color: yellow;
-    width: auto;
-    height: 300px;
-    padding: 5px;
-    border-radius: 5px;
+    background-color: #fafafa; 
+    width: 100%;
+    height: auto;
+    padding: 20px; 
+    border-radius: 0px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .info-producto p {
-    margin: 12px;
-    color: black;
-    font-size: 15px;
+    margin: 0px; 
+    color: #333333;
+    font-size: 0.95rem;
+    font-weight: 600;
     text-align: left;   
 }
 
 .info-producto p span {
-    color: rgb(122, 122, 122);
+    color: #555555;
+    font-weight: normal;
     margin-left: 5px;
 }
 
+.info-producto p:nth-child(2) span {
+    color: #2ecc71; 
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
 .action-producto {
-    background-color: rgb(245, 244, 244);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
-    justify-content: center;
-    flex-shrink: 0;
-    padding: 20px;
-    width: auto;
-    height: 300px;
+    padding: 15px;
+    width: 100%;
+    height: auto; 
+}
+
+.action-producto form:last-child {
+    grid-column: span 2; 
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.action-producto input[type="number"] {
+    width: 100%;
+    height: 32px;
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    font-size: 0.85rem;
+}
+
+.action-producto button[type="submit"] {
+    margin: 0;
+    height: 32px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .form-accion {
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
     cursor: pointer;
-    width: auto;
-    margin-bottom: 5px;
-} 
+    width: 100%;
+    margin-bottom: 0px;
+}
 
-.btn-desactivar{
-    background-color:aqua;
-    color: black;
-    border: 1px solid black;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 5px;
+.btn-desactivar, .btn-editar, .action-producto form:last-child button {
+    background-color: #00adb5; /* El turquesa corporativo que usamos en el menú */
+    color: white;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    width: 100px;
-    height: 30px;
-     margin-left: 5px;
+    width: 100%;
+    height: 35px;
+    margin-left: 0px; /* Quitamos desajustes antiguos */
+    font-weight: bold;
+    transition: background 0.2s, transform 0.1s;
 }
 
-.btn-desactivar:hover{
-    background-color:rgb(14, 190, 190);
-    transform: scale(1.05);
+.btn-desactivar {
+    background-color: #ff4d4d; /* Rojo sutil de alerta para desactivar */
 }
 
-.btn-editar{
-   background-color:aqua;
-    color: black;
-    border: 1px solid black;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100px;
-    height: 30px;
-    margin-left: 5px; 
+.btn-desactivar:hover {
+    background-color: #e03333;
+    transform: none;
 }
 
-.btn-editar:hover{
-    background-color:rgb(14, 190, 190);
-    transform: scale(1.05);
+.btn-editar:hover {
+    background-color: #008990;
+    transform: none;
 }
 
-.vender-producto {
-    background-color: red;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    flex-shrink: 0;
-    padding: 20px;
-    width: auto;
-    height: 300px;
+.action-producto form:last-child button {
+    background-color: #212121; /* Negro/Gris oscuro elegante para el botón Vender */
 }
-
-input#unidades {
-    width: auto;
-    height:30px;
-    border-radius: 5px;
-    border: 1px solid black;
-    text-align: justify;
-    padding: 5px;
-    margin: 8px;
-}
-
-.btn-vender{
-    background-color:aqua;
-    color: black;
-    border: 1px solid black;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100px;
-    height: 30px;
-    margin-left: 5px; 
+.action-producto form:last-child button:hover {
+    background-color: #424242;
 }
 
 section#resumen_de_inventario{

@@ -123,7 +123,7 @@ def inicio():
     g2_labels = [row[0] for row in menor_stock]
     g2_data = [row[1] for row in menor_stock]
 
-        # G3: Valor del inventario por producto (Top 5 más valiosos en dinero estancado)
+    
     cursor.execute("""
             SELECT TOP 5 nombre, (precio * cantidad) AS valor_inventario
             FROM Productos 
@@ -469,7 +469,7 @@ def vender_producto(id):
 
         logger.error(f"Error en la venta: {error}")
 
-        flash("🚨 Ocurrió un error en la venta")
+        flash("🚨 Ocurrió un error en la venta 🚨")
 
     return redirect("/")
 
