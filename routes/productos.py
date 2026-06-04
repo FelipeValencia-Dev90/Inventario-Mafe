@@ -29,7 +29,7 @@ productos = Blueprint("productos", __name__)
 
 # PAGINA PRINCIPAL
 @productos.route("/")
-@login_required
+# @login_required
 def inicio():
 
     conexion = obtener_conexion()
@@ -174,7 +174,7 @@ def inicio():
    
 # GUARDAR PRODUCTO
 @productos.route("/guardar-producto", methods=["POST"])
-@login_required
+# @login_required
 def guardar_producto():
 
     nombre = request.form["nombre"]

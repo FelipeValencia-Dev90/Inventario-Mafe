@@ -4715,3 +4715,115 @@
 2026-06-04 11:35:42,919 - INFO -  * Restarting with stat
 2026-06-04 11:35:45,370 - WARNING -  * Debugger is active!
 2026-06-04 11:35:45,377 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 12:10:59,387 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-04 12:10:59,387 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-04 12:10:59,391 - INFO -  * Restarting with stat
+2026-06-04 12:11:02,283 - WARNING -  * Debugger is active!
+2026-06-04 12:11:02,309 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 12:11:03,442 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "GET / HTTP/1.1" 200 -
+2026-06-04 12:11:03,588 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-04 12:11:03,592 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "[36mGET /static/imagenes/dedo-queso.png HTTP/1.1[0m" 304 -
+2026-06-04 12:11:03,594 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "[36mGET /static/imagenes/dedo-hawaiano.png HTTP/1.1[0m" 304 -
+2026-06-04 12:11:03,614 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "[36mGET /static/imagenes/dedos-salchicha.png HTTP/1.1[0m" 304 -
+2026-06-04 12:11:03,616 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "[36mGET /static/imagenes/pastel-pollo.png HTTP/1.1[0m" 304 -
+2026-06-04 12:11:03,627 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "[36mGET /static/imagenes/hojaldras.png HTTP/1.1[0m" 304 -
+2026-06-04 12:11:03,659 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "[36mGET /static/imagenes/empanadas-tradicionales.png HTTP/1.1[0m" 304 -
+2026-06-04 12:11:03,670 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "[36mGET /static/imagenes/arepas-super-queso.png HTTP/1.1[0m" 304 -
+2026-06-04 12:11:03,677 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "[36mGET /static/imagenes/dedos-bocadillo.png HTTP/1.1[0m" 304 -
+2026-06-04 12:11:03,754 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "[36mGET /static/imagenes/papa-rellena.jpg HTTP/1.1[0m" 304 -
+2026-06-04 12:11:03,765 - INFO - 127.0.0.1 - - [04/Jun/2026 12:11:03] "[36mGET /static/imagenes/dedos-arequipe.jpg HTTP/1.1[0m" 304 -
+2026-06-04 12:12:57,691 - INFO - 127.0.0.1 - - [04/Jun/2026 12:12:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-06-04 12:12:57,748 - INFO - 127.0.0.1 - - [04/Jun/2026 12:12:57] "GET / HTTP/1.1" 200 -
+2026-06-04 12:14:33,323 - INFO - 127.0.0.1 - - [04/Jun/2026 12:14:33] "[31m[1mGET /api/perfil HTTP/1.1[0m" 401 -
+2026-06-04 12:17:04,122 - INFO - 127.0.0.1 - - [04/Jun/2026 12:17:04] "[32mPOST /api/productos HTTP/1.1[0m" 302 -
+2026-06-04 12:17:04,151 - INFO - 127.0.0.1 - - [04/Jun/2026 12:17:04] "GET /login HTTP/1.1" 200 -
+2026-06-04 12:30:20,674 - INFO - 127.0.0.1 - - [04/Jun/2026 12:30:20] "[32mPOST /api/productos HTTP/1.1[0m" 302 -
+2026-06-04 12:30:20,680 - INFO - 127.0.0.1 - - [04/Jun/2026 12:30:20] "GET /login HTTP/1.1" 200 -
+2026-06-04 12:32:33,536 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-04 12:32:33,710 - INFO -  * Restarting with stat
+2026-06-04 12:32:35,683 - WARNING -  * Debugger is active!
+2026-06-04 12:32:35,693 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 12:32:40,643 - INFO - 127.0.0.1 - - [04/Jun/2026 12:32:40] "[32mPOST /api/productos HTTP/1.1[0m" 302 -
+2026-06-04 12:32:40,678 - INFO - 127.0.0.1 - - [04/Jun/2026 12:32:40] "GET /login HTTP/1.1" 200 -
+2026-06-04 12:32:56,039 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-04 12:32:56,040 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-04 12:32:56,042 - INFO -  * Restarting with stat
+2026-06-04 12:32:57,379 - WARNING -  * Debugger is active!
+2026-06-04 12:32:57,390 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 12:33:03,585 - INFO - 127.0.0.1 - - [04/Jun/2026 12:33:03] "[32mPOST /api/productos HTTP/1.1[0m" 302 -
+2026-06-04 12:33:03,604 - INFO - 127.0.0.1 - - [04/Jun/2026 12:33:03] "GET /login HTTP/1.1" 200 -
+2026-06-04 12:39:37,779 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-04 12:39:37,877 - INFO -  * Restarting with stat
+2026-06-04 12:39:40,907 - WARNING -  * Debugger is active!
+2026-06-04 12:39:40,932 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 12:39:45,624 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-04 12:39:45,743 - INFO -  * Restarting with stat
+2026-06-04 12:39:47,809 - WARNING -  * Debugger is active!
+2026-06-04 12:39:47,816 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 12:39:49,226 - INFO - 127.0.0.1 - - [04/Jun/2026 12:39:49] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2026-06-04 12:40:16,458 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-04 12:40:16,458 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-04 12:40:16,463 - INFO -  * Restarting with stat
+2026-06-04 12:40:18,789 - WARNING -  * Debugger is active!
+2026-06-04 12:40:18,800 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 12:40:20,607 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "GET / HTTP/1.1" 200 -
+2026-06-04 12:40:20,711 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-04 12:40:20,717 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "[36mGET /static/imagenes/dedo-hawaiano.png HTTP/1.1[0m" 304 -
+2026-06-04 12:40:20,719 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "[36mGET /static/imagenes/dedo-queso.png HTTP/1.1[0m" 304 -
+2026-06-04 12:40:20,742 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "[36mGET /static/imagenes/dedos-salchicha.png HTTP/1.1[0m" 304 -
+2026-06-04 12:40:20,744 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "[36mGET /static/imagenes/pastel-pollo.png HTTP/1.1[0m" 304 -
+2026-06-04 12:40:20,764 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "[36mGET /static/imagenes/hojaldras.png HTTP/1.1[0m" 304 -
+2026-06-04 12:40:20,782 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "[36mGET /static/imagenes/empanadas-tradicionales.png HTTP/1.1[0m" 304 -
+2026-06-04 12:40:20,808 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "[36mGET /static/imagenes/arepas-super-queso.png HTTP/1.1[0m" 304 -
+2026-06-04 12:40:20,824 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "[36mGET /static/imagenes/dedos-bocadillo.png HTTP/1.1[0m" 304 -
+2026-06-04 12:40:20,842 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "[36mGET /static/imagenes/papa-rellena.jpg HTTP/1.1[0m" 304 -
+2026-06-04 12:40:20,856 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:20] "[36mGET /static/imagenes/dedos-arequipe.jpg HTTP/1.1[0m" 304 -
+2026-06-04 12:40:26,489 - INFO - 127.0.0.1 - - [04/Jun/2026 12:40:26] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2026-06-04 12:42:45,421 - INFO - 127.0.0.1 - - [04/Jun/2026 12:42:45] "POST /api/login HTTP/1.1" 200 -
+2026-06-04 12:44:17,491 - INFO - 127.0.0.1 - - [04/Jun/2026 12:44:17] "[31m[1mGET /api/perfil HTTP/1.1[0m" 422 -
+2026-06-04 12:45:00,327 - INFO - 127.0.0.1 - - [04/Jun/2026 12:45:00] "GET /api/perfil HTTP/1.1" 200 -
+2026-06-04 12:48:39,232 - INFO - 127.0.0.1 - - [04/Jun/2026 12:48:39] "[31m[1mGET /api/productos HTTP/1.1[0m" 422 -
+2026-06-04 12:49:11,099 - INFO - 127.0.0.1 - - [04/Jun/2026 12:49:11] "GET /api/productos HTTP/1.1" 200 -
+2026-06-04 12:51:10,107 - INFO - 127.0.0.1 - - [04/Jun/2026 12:51:10] "[32mPOST /api/productos HTTP/1.1[0m" 302 -
+2026-06-04 12:51:10,126 - INFO - 127.0.0.1 - - [04/Jun/2026 12:51:10] "GET /login HTTP/1.1" 200 -
+2026-06-04 12:52:12,393 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-04 12:52:12,584 - INFO -  * Restarting with stat
+2026-06-04 12:52:15,156 - WARNING -  * Debugger is active!
+2026-06-04 12:52:15,176 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 12:52:55,587 - INFO - 127.0.0.1 - - [04/Jun/2026 12:52:55] "[35m[1mPOST /api/productos HTTP/1.1[0m" 500 -
+2026-06-04 12:53:13,317 - INFO - 127.0.0.1 - - [04/Jun/2026 12:53:13] "[35m[1mPOST /api/productos HTTP/1.1[0m" 201 -
+2026-06-04 12:53:39,572 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-04 12:53:39,663 - INFO -  * Restarting with stat
+2026-06-04 12:53:42,424 - WARNING -  * Debugger is active!
+2026-06-04 12:53:42,435 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 12:53:43,629 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-04 12:53:43,730 - INFO -  * Restarting with stat
+2026-06-04 12:53:45,670 - WARNING -  * Debugger is active!
+2026-06-04 12:53:45,687 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 12:53:55,897 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-04 12:53:55,997 - INFO -  * Restarting with stat
+2026-06-04 12:53:58,114 - WARNING -  * Debugger is active!
+2026-06-04 12:53:58,121 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 12:57:10,854 - INFO - 127.0.0.1 - - [04/Jun/2026 12:57:10] "PUT /api/productos/32 HTTP/1.1" 200 -
+2026-06-04 12:58:02,799 - INFO - 127.0.0.1 - - [04/Jun/2026 12:58:02] "DELETE /api/productos/32 HTTP/1.1" 200 -
+2026-06-04 12:58:55,700 - INFO - 127.0.0.1 - - [04/Jun/2026 12:58:55] "PUT /api/productos/32 HTTP/1.1" 200 -
+2026-06-04 12:59:46,874 - INFO - 127.0.0.1 - - [04/Jun/2026 12:59:46] "DELETE /api/productos/32 HTTP/1.1" 200 -
+2026-06-04 13:04:54,970 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-04 13:04:55,073 - INFO -  * Restarting with stat
+2026-06-04 13:04:56,322 - WARNING -  * Debugger is active!
+2026-06-04 13:04:56,328 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 13:04:59,581 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-04 13:04:59,674 - INFO -  * Restarting with stat
+2026-06-04 13:05:00,840 - WARNING -  * Debugger is active!
+2026-06-04 13:05:00,847 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 13:05:05,189 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-04 13:05:05,291 - INFO -  * Restarting with stat
+2026-06-04 13:05:06,409 - WARNING -  * Debugger is active!
+2026-06-04 13:05:06,416 - INFO -  * Debugger PIN: 125-925-734
+2026-06-04 13:05:41,643 - INFO -  * Detected change in 'C:\\Users\\USER\\Downloads\\PRIMERA_APP\\routes\\productos.py', reloading
+2026-06-04 13:05:41,724 - INFO -  * Restarting with stat
+2026-06-04 13:05:42,873 - WARNING -  * Debugger is active!
+2026-06-04 13:05:42,879 - INFO -  * Debugger PIN: 125-925-734

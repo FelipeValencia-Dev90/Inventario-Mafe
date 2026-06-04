@@ -57,37 +57,59 @@ Machine Learninig: Pandas, NumPy
 
 ## 📦 Menú productos
 
-![Inventario](static/screenshots/menu-productos.png)
+![Productos](static/screenshots/menu-productos.png)
 
 ---
 
 ## 📦 Reportes
 
-![Inventario](static/screenshots/reportes.png)
+![Reportes](static/screenshots/reportes.png)
 
 ---
 
 ## 📦 Registro y Busqueda
 
-![Inventario](static/screenshots/registro-busqueda.png)
+![Registro](static/screenshots/registro-busqueda.png)
 
 ---
 
 ## 📦 Menú hamburguesa
 
-![Inventario](static/screenshots/menu-hamburguesa.png)
+![Menú ](static/screenshots/menu-hamburguesa.png)
 
 ---
 
 ## 📦 Editar producto
 
-![Inventario](static/screenshots/editar-producto.png)
+![Editar](static/screenshots/editar-producto.png)
 
 ---
 
 ## 📦 Dashboard y Estadísticas
 
-![Inventario](static/screenshots/Dashboard-interactivo.png)
+![Dashboard](static/screenshots/Dashboard-interactivo.png)
+
+---
+
+## 📦 Base de datos del sistema
+
+![Base de datos](static/screenshots/base-datos.png)
+
+---
+
+## ✔ Pruebas con Postman
+
+![Collection](static/screenshots/Collections.png)
+
+![Login JWT](static/screenshots/token-login.png)
+
+![Perfil usuario](static/screenshots/perfil-autenticado.png)
+
+![CRUD Productos](static/screenshots/Consulta-productos.png)
+
+![Editar Producto](static/screenshots/editar-productos.png)
+
+![Eliminar Producto](static/screenshots/eliminar-producto.png)
 
 ---
 
@@ -98,6 +120,40 @@ Operaciones CRUD: Registrar, editar, consultar y eliminar productos con filtros 
 Ciclo de vida del producto: Sistema de desactivación y papelera de reciclaje con opción para reactivar productos o realizar la eliminación permanente.
 
 Control de existencias: Indicadores visuales automáticos para productos en stock crítico o agotados.
+
+---
+
+🗄️ Base de Datos SQL Server
+
+El sistema utiliza SQL Server Express como motor de base de datos.
+
+### Tabla Productos
+
+La aplicación almacena información de inventario como:
+
+- Nombre del producto
+- Precio
+- Cantidad disponible
+- Descripción
+- Estado (activo/inactivo)
+- Imagen asociada
+- Fecha de registro
+
+👤 Tabla Usuarios
+
+Gestiona:
+
+- Inicio de sesión
+- Roles
+- Autenticación
+
+💰 Tabla Ventas
+
+Registra:
+
+- Productos vendidos
+- Cantidades vendidas
+- Historial de movimientos
 
 ---
 
@@ -221,6 +277,31 @@ Se incorporo un módulo experimental de análisis predictivo desarrollado en Pyt
 
 - Pandas
 - NumPy
+
+---
+
+🔌 Pruebas API con Postman
+
+La API fue validada utilizando Postman para comprobar el correcto funcionamiento de los endpoints protegidos mediante JWT.
+
+Endpoints probados
+Método Endpoint Descripción
+POST /api/login Autenticación de usuarios
+GET /api/perfil Información del usuario autenticado
+GET /api/productos Listado de productos
+POST /api/productos Creación de productos
+PUT /api/productos/{id} Actualización de productos
+DELETE /api/productos/{id} Eliminación de productos
+
+🧪 Pruebas API
+
+Realizadas mediante Postman:
+
+Login JWT
+Refresh Token
+Perfil usuario
+CRUD Productos
+Control de acceso por roles
 
 ---
 
