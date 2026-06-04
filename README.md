@@ -73,7 +73,7 @@ Machine Learninig: Pandas, NumPy
 
 ---
 
-## 📦 Menú hamburguesa
+## 📦 Menú Desplegable
 
 ![Menú ](static/screenshots/menu-hamburguesa.png)
 
