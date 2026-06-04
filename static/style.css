@@ -114,7 +114,6 @@ main::before {
     border: 1px solid #eef2f3;
 }
 
-
 #formulario_producto .contenedor-inputs {
     display: flex;
     flex-wrap: wrap;
@@ -126,7 +125,6 @@ main::before {
 #formulario_producto .Registro {
     display: flex;
     flex-direction: column;
-
     flex: 1 1 calc(18% - 20px); 
     min-width: 200px;
     text-align: left;
@@ -156,7 +154,6 @@ main::before {
     box-sizing: border-box;
 }
 
-/* Inputs de texto y número específicos */
 #formulario_producto input[type="text"],
 #formulario_producto input[type="number"] {
     padding: 10px 14px;
@@ -773,48 +770,105 @@ footer{
 }
 
 section#login{
-    width: 40%;
-    margin: auto;
-    margin-top: 100px;
+    width: 100%;
+    margin: 80px auto;
+    max-width: 500px;
     background-color: rgb(241, 227, 227);
-    padding: 30px;
+    padding: 35px;
     border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eef2f3;
+    text-align: center;
+}
+
+section#login h2 {
+    font-size: 1.8rem;
+    color: #222222;
+    margin-bottom: 25px;
+    font-weight: 700;
 }
 
 #form-login{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: rgb(139, 139, 143);
-    padding: 30px;
-    border-radius: 5px;
+    justify-content: center;
+    background-color: rgb(228, 224, 224);
+    padding-top:20px;
+    width: 100%;
+    border-radius: 8px;
 }
 
 .grupo-login{
     margin-bottom: 20px;
+    margin-right: 5px;
+    display: flex; 
+    justify-content: center;           /* Activamos Flexbox */
+    flex-direction: row;       /* Ponemos Label e Input en la misma fila */
+    align-items: center;       /* Los centra verticalmente entre sí */
+    width: 100%;
+    padding: 2px;
+}
+
+.grupo-login label {
+    margin-right: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;   
+    color: #222222;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 25%;         
+    text-align: justify; 
+}
+
+.entrada-login {
+    padding: 10px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333333;
+    background-color: #fcfcfc;
+    transition: all 0.3s ease;
+    box-sizing: border-box; 
+}
+
+.entrada-login:focus {
+    border-color: #00adb5;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.15);
+    outline: none;
 }
 
 .btn-login{
-    background-color: aqua;
-    border: 1px solid black;
-    width: 120px;
-    height: 35px;
-    border-radius: 5px;
+    display: block;
+    width: 100%;
+    height: 45px;
+    margin-top: 10px;
+    background-color: #00adb5; 
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 173, 181, 0.2);
 }
 
 .btn-login:hover{
     background-color: rgb(14, 190, 190);
     transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 173, 181, 0.3);
 }
 
+.btn-login:active {
+    transform: translateY(0);
+}
 
 :root {
     --bg-panel: #222831;
     --texto-panel: #eeeeee;
 }
 
-/* Estilo del botón de apertura (Hamburguesa flotante) */
 .menu-hamburguesa {
     position: fixed;
     top: 20px;
