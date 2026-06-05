@@ -4986,3 +4986,46 @@
 2026-06-04 20:48:53,327 - INFO - 127.0.0.1 - - [04/Jun/2026 20:48:53] "GET /editar-producto/39 HTTP/1.1" 200 -
 2026-06-04 20:48:53,371 - INFO - 127.0.0.1 - - [04/Jun/2026 20:48:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 2026-06-04 20:49:10,703 - INFO - 127.0.0.1 - - [04/Jun/2026 20:49:10] "GET / HTTP/1.1" 200 -
+2026-06-05 07:08:42,998 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-05 07:08:42,999 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-05 07:08:43,002 - INFO -  * Restarting with stat
+2026-06-05 07:08:44,412 - WARNING -  * Debugger is active!
+2026-06-05 07:08:44,420 - INFO -  * Debugger PIN: 125-925-734
+2026-06-05 07:08:59,785 - INFO - 127.0.0.1 - - [05/Jun/2026 07:08:59] "GET /login HTTP/1.1" 200 -
+2026-06-05 07:08:59,863 - INFO - 127.0.0.1 - - [05/Jun/2026 07:08:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-05 07:08:59,894 - INFO - 127.0.0.1 - - [05/Jun/2026 07:08:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-05 07:09:14,276 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-06-05 07:09:14,406 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "GET / HTTP/1.1" 200 -
+2026-06-05 07:09:14,454 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,455 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/dedo-hawaiano.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,456 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/dedo-queso.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,467 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/dedos-salchicha.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,468 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/pastel-pollo.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,479 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/hojaldras.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,493 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/empanadas-tradicionales.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,499 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/arepas-super-queso.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,519 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/dedos-bocadillo.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,525 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/papa-rellena.jpg HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,532 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/dedos-arequipe.jpg HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,547 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/arepa-tela.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,563 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/panzerotti.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:14,569 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:14] "[36mGET /static/imagenes/chorizo-santarrosano.jpg HTTP/1.1[0m" 304 -
+2026-06-05 07:09:15,273 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:15] "[36mGET /static/imagenes/logo-empresa.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:15,275 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:15] "[36mGET /static/imagenes/fondo-main.jpg HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,645 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "GET / HTTP/1.1" 200 -
+2026-06-05 07:09:41,691 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,701 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/dedo-hawaiano.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,703 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/dedo-queso.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,704 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/hojaldras.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,707 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/dedos-salchicha.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,710 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/pastel-pollo.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,713 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/empanadas-tradicionales.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,721 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/arepas-super-queso.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,731 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/dedos-bocadillo.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,737 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/papa-rellena.jpg HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,744 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/dedos-arequipe.jpg HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,748 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/arepa-tela.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,753 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/panzerotti.png HTTP/1.1[0m" 304 -
+2026-06-05 07:09:41,756 - INFO - 127.0.0.1 - - [05/Jun/2026 07:09:41] "[36mGET /static/imagenes/chorizo-santarrosano.jpg HTTP/1.1[0m" 304 -
+2026-06-05 08:07:15,926 - INFO - 127.0.0.1 - - [05/Jun/2026 08:07:15] "[31m[1mGET /api/productos/1 HTTP/1.1[0m" 405 -

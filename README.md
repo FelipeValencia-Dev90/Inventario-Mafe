@@ -1,49 +1,80 @@
-# 🛒 INVENTARIO AVA
+# 🛒 Inventario AVA
 
-Sistema web de gestión de inventario desarrollado con Flask, SQL Server y Python.
+![Python](https://img.shields.io/badge/Python-3.13-blue)
+![Flask](https://img.shields.io/badge/Flask-Web_App-black)
+![SQL Server](https://img.shields.io/badge/SQL_Server-Database-red)
+![JWT](https://img.shields.io/badge/JWT-Security-green)
+![License](https://img.shields.io/badge/License-Educational-orange)
 
-Permite administrar productos, controlar stock, gestionar imágenes, autenticación de usuarios y operaciones CRUD completas.
+Sistema web empresarial para la gestión de inventarios desarrollado con Python, Flask y SQL Server.
 
----
-
-✨ Características Principales
-
-🔐 Sistema de Autenticación y Seguridad
-Inicio de sesión seguro: Control de sesiones de usuario (session) y manejo de rutas protegidas.
-
-Cifrado avanzado: Hash de contraseñas mediante generate_password_hash() y validación con check_password_hash().
-
-Seguridad API: Implementación de tokens JWT para la protección de endpoints de la API REST.
-
-Roles de usuario: Control de accesos basado en permisos y perfiles del sistema.
-
-Validación estricta: Validación de formularios, prevención de registros inválidos y manejo global de errores.
+Permite administrar productos, controlar stock, registrar ventas, generar reportes, realizar respaldos automáticos y exponer funcionalidades mediante una API REST protegida con JWT.
 
 ---
 
 🚀 Tecnologías Utilizadas
 
-Backend: Python & Flask (Arquitectura modular con Blueprints).
+- Python
+- Flask
+- SQL Server
+- PyODBC
+- JWT
+- Swagger
+- Bootstrap
+- HTML5
+- CSS3
+- JavaScript
+- Pandas
+- NumPy
+- OpenPyXL
+- ReportLab
+- Matplotlib
 
-Base de Datos: SQL Server (Conectado mediante PyODBC).
+---
 
-Autenticación: Flask Sessions & JWT (JSON Web Tokens).
+## ✨ Funcionalidades
 
-Frontend: HTML5, CSS3, JavaScript y Bootstrap.
+### 📦 Gestión de Inventario
+- Crear productos
+- Editar productos
+- Eliminar productos
+- Papelera de reciclaje
+- Reactivar productos
+- Control de stock
 
-Motor de Plantillas: Jinja2.
+### 💰 Gestión de Ventas
+- Registro de ventas
+- Descuento automático de inventario
+- Validación de stock
+- Historial de ventas
 
-Librerías de Datos y Reportes:
+### 📊 Reportes y Estadísticas
+- Dashboard interactivo
+- Reportes PDF
+- Reportes Excel
+- Indicadores empresariales
 
-OpenPyXL: Manipulación y exportación a archivos Excel.
+### 🔐 Seguridad
+- Login de usuarios
+- JWT
+- Roles
+- Protección de rutas
+- Manejo global de errores
 
-ReportLab: Diseño y estructuración de reportes PDF.
+### 💾 Respaldo de Datos
+- Backups automáticos SQL Server
+- Descarga desde interfaz web   
 
-Matplotlib: Generación de gráficos estadísticos empresariales.
+---
 
-Documentación: Swagger API Documentation.
+## 🌟 Vista General del Sistema
 
-Machine Learninig: Pandas, NumPy
+- Gestión de Inventario
+- Dashboard Empresarial
+- Reportes PDF y Excel
+- API REST con JWT
+- Respaldos Automáticos
+- Machine Learning para predicción de stock
 
 ---
 
@@ -52,6 +83,13 @@ Machine Learninig: Pandas, NumPy
 ## 🔑 Login
 
 ![Login](static/screenshots/login.png)
+
+---
+
+## 📦 Dashboard y Estadísticas
+
+![Dashboard](static/screenshots/Dashboard-interactivo.png)
+
 
 ---
 
@@ -64,30 +102,6 @@ Machine Learninig: Pandas, NumPy
 ## 📦 Reportes
 
 ![Reportes](static/screenshots/reportes.png)
-
----
-
-## 📦 Registro y Busqueda
-
-![Registro](static/screenshots/registro-busqueda.png)
-
----
-
-## 📦 Menú Desplegable
-
-![Menú ](static/screenshots/menu-hamburguesa.png)
-
----
-
-## 📦 Editar producto
-
-![Editar](static/screenshots/editar-producto.png)
-
----
-
-## 📦 Dashboard y Estadísticas
-
-![Dashboard](static/screenshots/Dashboard-interactivo.png)
 
 ---
 
@@ -113,110 +127,84 @@ Machine Learninig: Pandas, NumPy
 
 ---
 
-📦 Gestión de Inventario (CRUD Completo)
+## 📋 Requisitos
 
-Operaciones CRUD: Registrar, editar, consultar y eliminar productos con filtros avanzados de búsqueda y ordenamiento por stock.
-
-Ciclo de vida del producto: Sistema de desactivación y papelera de reciclaje con opción para reactivar productos o realizar la eliminación permanente.
-
-Control de existencias: Indicadores visuales automáticos para productos en stock crítico o agotados.
-
----
-
-🗄️ Base de Datos SQL Server
-
-El sistema utiliza SQL Server Express como motor de base de datos.
-
-### Tabla Productos
-
-La aplicación almacena información de inventario como:
-
-- Nombre del producto
-- Precio
-- Cantidad disponible
-- Descripción
-- Estado (activo/inactivo)
-- Imagen asociada
-- Fecha de registro
-
-👤 Tabla Usuarios
-
-Gestiona:
-
-- Inicio de sesión
-- Roles
-- Autenticación
-
-💰 Tabla Ventas
-
-Registra:
-
-- Productos vendidos
-- Cantidades vendidas
-- Historial de movimientos
+- Python 3.13+
+- flask
+- SQL Server Express
+- ODBC Driver 17 o superior
+- Git
 
 ---
 
-🖼️ Gestión de Imágenes
+## ⚙️ Instalación
 
-Carga y almacenamiento seguro de archivos en el servidor.
+### Clonar repositorio
 
-Validación estricta de formatos permitidos y asociación dinámica de imágenes a cada producto.
+git clone https://github.com/FelipeValencia-Dev90/Inventario-Mafe.git
 
----
+### Crear entorno virtual
 
-💰 Gestión de Ventas e Historial
+python -m venv venv
 
-Registro de operaciones de venta con descuento automático en el inventario real.
+### Activar entorno
 
-Validaciones lógicas de negocio (control de stock disponible y prevención de ingreso de cantidades negativas).
+venv\Scripts\activate
 
-Historial auditable de transacciones comerciales.
+### Instalar dependencias
 
----
+pip install -r requirements.txt
 
-📊 Dashboard y Estadísticas Empresariales
+### Ejecutar aplicación
 
-Indicadores clave de rendimiento (KPIs) en tiempo real: productos activos, unidades totales disponibles, valor económico total del inventario y volumen de ventas.
-
-Gráficas automáticas para la toma de decisiones: rendimiento de inventario y listado de los productos más vendidos.
+python app.py
 
 ---
 
-📄 Reportes Profesionales y Auditoría
+## 🤖 Inteligencia Artificial y Machine Learning
 
-Exportación a PDF: Diseñado con formato corporativo, limpio y listo para impresión de inventarios a través de ReportLab.
+El proyecto incorpora un módulo experimental de análisis predictivo desarrollado en Python utilizando Machine Learning.
 
-Exportación a Excel: Reportes en formato de hoja de cálculo mediante OpenPyXL para análisis externos de datos.
+### Tecnologías utilizadas
 
-Sistema de Logs: Registro histórico de eventos críticos y errores en el archivo logs/sistema.log.
+- Pandas
+- NumPy
+- Scikit-Learn
+- Matplotlib
 
----
+### Funcionalidades
 
-💾 Sistema de Respaldos (Backups)
+- Predicción de stock futuro
+- Identificación de productos en riesgo
+- Visualización gráfica de resultados
+- Soporte para la toma de decisiones
 
-Creación y descarga de copias de seguridad de la base de datos directamente desde la interfaz web.
+Archivo principal:
 
-Generación automática de archivos estructurados .bak para la prevención de pérdida de información.
-
----
-
-🔌 API REST y Documentación Interactiva
-
-API completamente funcional para interactuar de manera externa con el sistema (Login, perfil, consultas, creación, edición y eliminación).
-
-Documentación interactiva e integrada mediante Swagger UI accesible localmente en: http://localhost:5000/apidocs/
+ml/prediccion_stock.py
 
 ---
 
-🛡️ Seguridad
+## 📚 Documentación API
 
-- Validación de formularios
-- Validación de imágenes
-- Protección de rutas
-- Manejo global de errores
-- Validaciones de negocio
-- Prevención de registros inválido
+Swagger UI:
+
+http://localhost:5000/apidocs/
+
+---
+
+## 🔌 API REST
+
+Endpoints principales:
+
+| Método | Endpoint | Descripción |
+|---------|-----------|-------------|
+| POST | /api/login | Iniciar sesión |
+| GET | /api/perfil | Perfil autenticado |
+| GET | /api/productos | Listar productos |
+| POST | /api/productos | Crear producto |
+| PUT | /api/productos/<id> | Editar producto |
+| DELETE | /api/productos/<id> | Eliminar producto |
 
 ---
 
@@ -245,10 +233,10 @@ InventarioAVA/
 │ └── sistema.log  
 │
 ├── ml/  
-│ ├── prediccion.stock.py
+│ ├── prediccion_stock.py
 |
 ├── routes/  
-│ ├── **init**.py  
+│ ├── __init__.py  
 │ ├── auth.py  
 │ └── productos.py  
 │
@@ -269,59 +257,29 @@ InventarioAVA/
 │
 |── venv/
 
-🤖 Inteligencia Artificial y Machine Learning
-
-Se incorporo un módulo experimental de análisis predictivo desarrollado en Python utilizando Machine Learning.
-
-### Tecnologías utilizadas
-
-- Pandas
-- NumPy
 
 ---
 
-🔌 Pruebas API con Postman
+## 🏆 Logros Técnicos
 
-La API fue validada utilizando Postman para comprobar el correcto funcionamiento de los endpoints protegidos mediante JWT.
-
-Endpoints probados
-Método Endpoint Descripción
-POST /api/login Autenticación de usuarios
-GET /api/perfil Información del usuario autenticado
-GET /api/productos Listado de productos
-POST /api/productos Creación de productos
-PUT /api/productos/{id} Actualización de productos
-DELETE /api/productos/{id} Eliminación de productos
-
-🧪 Pruebas API
-
-Realizadas mediante Postman:
-
-Login JWT
-Refresh Token
-Perfil usuario
-CRUD Productos
-Control de acceso por roles
-
----
-
-🧠 Aprendizajes Clave Adquiridos
-
-Durante el desarrollo de este proyecto se consolidaron habilidades técnicas avanzadas en:
-
-Implementación de arquitecturas modulares con Flask Blueprints.
-
-Gestión avanzada de sesiones, tokens de seguridad (JWT) y protección de rutas.
-
-Conexión y optimización de consultas relacionales utilizando SQL Server y PyODBC.
-
-Manejo seguro de archivos, procesamiento y validación de subidas de imágenes.
-
-Desarrollo backend estructurado bajo estándares profesionales de organización y manejo global de logs/errores.
-
+- Arquitectura modular con Flask Blueprints
+- API REST protegida con JWT
+- SQL Server integrado mediante PyODBC
+- Dashboard empresarial
+- Reportes PDF y Excel
+- Backups automáticos
+- Machine Learning aplicado al inventario
+- Documentación Swagger
+- Testing API con Postman
 ---
 
 🔗 **Repositorio del Proyecto:** [Inventario-Mafe](https://github.com/FelipeValencia-Dev90/Inventario-Mafe)
+
+---
+
+## 📄 Licencia
+
+Proyecto desarrollado con fines educativos y de fortalecimiento profesional.
 
 ---
 
