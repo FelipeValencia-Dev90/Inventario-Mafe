@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Productos</title>
+</head>
+<body>
+
+    <h1>🏆 Productos Más Vendidos</h1>
+
+    <table border="1">
+
+    <tr>
+        <th>Producto</th>
+        <th>Cantidad Vendida</th>
+    </tr>
+
+    {% for producto in productos %}
+
+    <tr>
+
+        <td>{{ producto[0] }}</td>
+
+        <td>{{ producto[1] }}</td>
+
+    </tr>
+
+    {% endfor %}
+
+    </table>
+
+</body>
+</html>

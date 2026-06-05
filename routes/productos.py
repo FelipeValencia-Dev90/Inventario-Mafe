@@ -473,6 +473,122 @@ def vender_producto(id):
 
     return redirect("/")
 
+# HISTORIAL DE VENTAS
+@productos.route("/historial")
+@login_required
+def historial():
+
+    conexion = obtener_conexion()
+
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+        SELECT
+            V.id,
+            P.nombre,
+            V.cantidad,
+            V.fecha
+        FROM Ventas V
+        INNER JOIN Productos P
+            ON P.id = V.producto_id
+        ORDER BY V.fecha DESC
+    """)
+
+    historial_ventas = cursor.fetchall()
+
+    conexion.close()
+
+    return render_template(
+        "historial.html",
+        historial=historial_ventas
+    )
+
+@productos.route("/ganancias")
+@login_required
+def ganancias():
+
+    conexion = obtener_conexion()
+
+    cursor = conexion.cursor()
+
+    # HOY
+
+    cursor.execute("""
+        SELECT
+            SUM(P.precio * V.cantidad)
+        FROM Ventas V
+        INNER JOIN Productos P
+            ON P.id = V.producto_id
+        WHERE CAST(V.fecha AS DATE) = CAST(GETDATE() AS DATE)
+    """)
+
+    hoy = cursor.fetchone()[0] or 0
+
+    # MES
+
+    cursor.execute("""
+        SELECT
+            SUM(P.precio * V.cantidad)
+        FROM Ventas V
+        INNER JOIN Productos P
+            ON P.id = V.producto_id
+        WHERE MONTH(V.fecha) = MONTH(GETDATE())
+        AND YEAR(V.fecha) = YEAR(GETDATE())
+    """)
+
+    mes = cursor.fetchone()[0] or 0
+
+    # AÑO
+
+    cursor.execute("""
+        SELECT
+            SUM(P.precio * V.cantidad)
+        FROM Ventas V
+        INNER JOIN Productos P
+            ON P.id = V.producto_id
+        WHERE YEAR(V.fecha) = YEAR(GETDATE())
+    """)
+
+    anio = cursor.fetchone()[0] or 0
+
+    conexion.close()
+
+    return render_template(
+        "ganancias.html",
+        hoy=hoy,
+        mes=mes,
+        anio=anio
+    )
+
+@productos.route("/top-productos")
+@login_required
+def top_productos():
+
+    conexion = obtener_conexion()
+
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+        SELECT
+            P.nombre,
+            SUM(V.cantidad) AS total_vendido
+        FROM Ventas V
+        INNER JOIN Productos P
+            ON P.id = V.producto_id
+        WHERE V.cantidad > 0
+        GROUP BY P.nombre
+        ORDER BY total_vendido DESC
+    """)
+
+    productos = cursor.fetchall()
+
+    conexion.close()
+
+    return render_template(
+        "top_productos.html",
+        productos=productos
+    )
+
 # API REST PARA OBTENER PRODUCTOS EN FORMATO JSON
 @productos.route("/api/productos")
 @admin_required

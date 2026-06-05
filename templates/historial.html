@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Historial de Ventas</title>
+</head>
+<body>
+
+    <h1>📊 Historial de Ventas</h1>
+
+    <table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Fecha</th>
+    </tr>
+
+    {% for venta in historial %}
+
+    <tr>
+
+        <td>{{ venta[0] }}</td>
+        <td>{{ venta[1] }}</td>
+        <td>{{ venta[2] }}</td>
+        <td>{{ venta[3] }}</td>
+
+    </tr>
+
+    {% endfor %}
+
+    </table>
+
+</body>
+</html>

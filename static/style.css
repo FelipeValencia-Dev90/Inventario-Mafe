@@ -15,32 +15,33 @@ body{
     margin:0px;
 }
 
-header{
-    display:flex;
+header {
+    display: flex;
     flex-direction: column;
-    width:auto;
-    height: 700px;
-    align-items: center;
-    border-radius: 50px;
-    padding: 50px;
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    padding: 20px;
     margin-bottom: 5px;
-    background-size: cover;
     position: relative;
     overflow: hidden;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
 }
 
-header::before{
-    background-image: url('imagenes/logo-empresa.png');
-    filter: blur(1px);
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background-size: cover;
-        transform: scale(1.1);
+header::before {
+    background-image: url('imagenes/logo-empresa.png'); 
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 h1{
@@ -241,7 +242,8 @@ main::before {
 
 .form-busqueda, .form-filtros {
     display: flex;
-    gap: 12px;
+    flex-direction: column;
+    gap: 10px;
     align-items: center;
     width: 100%;
     border: none;
@@ -381,7 +383,7 @@ section#inventario h2 {
 
 .contenedor-graficas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     margin-bottom: 35px;
 }
@@ -963,6 +965,59 @@ section#login h2 {
     .panel-lateral {
         width: 100%;
         right: -100%;
+    }
+}
+
+@media (max-width: 768px){
+
+    h1{
+        font-size: 40px;
+    }
+
+    #subtitulo{
+        font-size: 18px;
+    }
+
+    header{
+        min-height: 350px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .form-busqueda,
+    .form-filtros{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #buscar-producto,
+    .orden-filtro,
+    .stock-filtro,
+    .btn-buscar,
+    .btn-filtro{
+        width: 100%;
+    }
+
+    .contenedor-estadisticas{
+        flex-direction: column;
+    }
+
+    .contenedor-graficas{
+        grid-template-columns: 1fr;
+    }
+
+    section#resumen_de_inventario{
+        width: 100%;
+    }
+
+    .contenedor-footer{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .footer-content{
+        width: 100%;
+        text-align: center;
     }
 }
 
