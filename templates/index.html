@@ -51,59 +51,56 @@
         <hr style="border: 0; border-top: 1px solid #555; margin: 20px 0" />
 
         <div class="seccion-panel">
-            <h3>📊 Resumen del Negocio</h3>
+          <h3>📊 Resumen del Negocio</h3>
 
-            <div class="contenedor-estadisticas-lateral">
-                <p>
-                <strong>📦 Productos Activos:</strong> {{
-                estadisticas.productos_activos }}
-                </p>
-                <p>
-                <strong>📊 Unidades en Stock:</strong> {{
-                estadisticas.unidades_stock }}
-                </p>
-                <p>
-                <strong>💰 Valor Inventario:</strong> ${{
-                "{:,.2f}".format(estadisticas.valor_inventario) }}
-                </p>
-                <p>
-                <strong>🛒 Ventas Realizadas:</strong> {{
-                estadisticas.total_ventas }}
-                </p>
-            </div>
+          <div class="contenedor-estadisticas-lateral">
+            <p>
+              <strong>📦 Productos Activos:</strong> {{
+              estadisticas.productos_activos }}
+            </p>
+            <p>
+              <strong>📊 Unidades en Stock:</strong> {{
+              estadisticas.unidades_stock }}
+            </p>
+            <p>
+              <strong>💰 Valor Inventario:</strong> ${{
+              "{:,.2f}".format(estadisticas.valor_inventario) }}
+            </p>
+            <p>
+              <strong>🛒 Ventas Realizadas:</strong> {{
+              estadisticas.total_ventas }}
+            </p>
+          </div>
 
-            <h3 style="margin-top: 20px">📈 Gráficas de Rendimiento</h3>
-            <div class="bloque-grafica-panel">
-                <h4>🔥 Productos Más Vendidos</h4>
-                <canvas id="graficaMasVendidos"></canvas>
-            </div>
-            <div class="bloque-grafica-panel">
-                <h4>⚠️ Alerta: Menor Stock</h4>
-                <canvas id="graficaMenorStock"></canvas>
-            </div>
-            <div class="bloque-grafica-panel">
-                <h4>💰 Valor de Inventario por Producto</h4>
-                <canvas id="graficaValorProd"></canvas>
-            </div>
-            <div class="bloque-grafica-panel">
-                <h4>📅 Ventas por Día</h4>
-                <canvas id="graficaVentasDias"></canvas>
-            </div>
+          <h3 style="margin-top: 20px">📈 Gráficas de Rendimiento</h3>
+          <div class="bloque-grafica-panel">
+            <h4>🔥 Productos Más Vendidos</h4>
+            <canvas id="graficaMasVendidos"></canvas>
+          </div>
+          <div class="bloque-grafica-panel">
+            <h4>⚠️ Alerta: Menor Stock</h4>
+            <canvas id="graficaMenorStock"></canvas>
+          </div>
+          <div class="bloque-grafica-panel">
+            <h4>💰 Valor de Inventario por Producto</h4>
+            <canvas id="graficaValorProd"></canvas>
+          </div>
+          <div class="bloque-grafica-panel">
+            <h4>📅 Ventas por Día</h4>
+            <canvas id="graficaVentasDias"></canvas>
+          </div>
 
-            <div class="btn-historial">
-                <a href="/historial"> 📊 Historial de Ventas </a>
-            </div>
+          <div class="btn-historial">
+            <a href="/historial"> 📊 Historial de Ventas </a>
+          </div>
 
-            <div class="btn-ganancias">
-                <a href="/ganancias"> 💰 Ganancias Totales </a>
-            </div>
+          <div class="btn-ganancias">
+            <a href="/ganancias"> 💰 Ganancias Totales </a>
+          </div>
 
-            <div class="btn-top">
-                <a href="/top-productos">
-                    🏆 Productos Más Vendidos
-                </a>
-            </div>
-
+          <div class="btn-top">
+            <a href="/top-productos"> 🏆 Productos Más Vendidos </a>
+          </div>
         </div>
 
         <hr style="border: 0; border-top: 1px solid #555; margin: 20px 0" />
