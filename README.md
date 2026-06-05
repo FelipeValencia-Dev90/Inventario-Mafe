@@ -321,6 +321,10 @@ Desarrollo backend estructurado bajo estándares profesionales de organización 
 
 ---
 
+🔗 **Repositorio del Proyecto:** [Inventario-Mafe](https://github.com/FelipeValencia-Dev90/Inventario-Mafe)
+
+---
+
 ## 👨‍💻 Autor
 
 Andrés Felipe Valencia Alvis
