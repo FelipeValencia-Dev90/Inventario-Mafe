@@ -11,8 +11,8 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     width: auto;
     height: auto;
-    padding: 10px;
-    margin:0px;
+    padding: 1px;
+    margin:2px;
 }
 
 header {
@@ -20,14 +20,12 @@ header {
     flex-direction: column;
     width: 100%;
     height: auto;
-    min-height: 350px;
-    padding: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     position: relative;
     overflow: hidden;
-    border-radius: 25px;
+    border-radius: 15px;
     align-items: center;
-    justify-content: center;
+    justify-content: center;  
 }
 
 header::before {
@@ -46,7 +44,7 @@ header::before {
 
 h1{
     color: yellow;
-    opacity: 0.4;
+    opacity: 0.1;
     text-align:center;
     padding: 5px;
     font-weight: 900;
@@ -57,29 +55,29 @@ h1{
 
 #subtitulo{
     color:rgb(98, 138, 98);
-    opacity: 0.4;
+    opacity: 0.1;
     text-align:center;
     margin:2px;
     font-size: 25px;
 }
 
 main{
-    background-color:rgb(175, 197, 170);
     width:auto;
     height:auto;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
     position: relative;
     overflow: hidden;
     isolation: isolate;
 }
 
 main #registro {
-    position: relative;
-    z-index: 1;
-    color: #000; 
-    font-weight: normal;
+    color: black; 
+    font-style: italic;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 main::before {
@@ -98,16 +96,9 @@ main::before {
     z-index: -1; 
 }
 
-#registro {
-    font-size: 30px;
-    color: #0c0c0c;
-    margin-bottom: 20px;
-    font-weight: normal;
-}
-
 /* --- CONTENEDOR GENERAL DEL FORMULARIO --- */
 #agregar_producto {
-    background: rgba(141, 158, 158, 0.9); /* Un toque de opacidad por si tienes fondo con imagen */
+    background: rgba(158, 141, 149, 0.9); 
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -120,6 +111,7 @@ main::before {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
+    padding: 2px;
 }
 
 /* --- CADA BLOQUE DE INPUT (COLUMNAS) --- */
@@ -221,7 +213,7 @@ main::before {
 }
 
 .container-busqueda {
-    background:rgb(141, 158, 158);
+    background:rgba(158, 141, 149, 0.9); 
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -242,14 +234,14 @@ main::before {
 
 .form-busqueda, .form-filtros {
     display: flex;
-    flex-direction: column;
     gap: 10px;
     align-items: center;
     width: 100%;
     border: none;
-    padding: 0;
+    padding: 2px;
     margin: 0;
     background: transparent;
+    flex-wrap: wrap;
 }
 
 #buscar-producto {
@@ -318,7 +310,7 @@ main::before {
 }
 
 section#inventario{
-    color:rgb(10, 10, 10);
+    color:black;
     display: flex;
     flex-direction: column;
     text-align:center;
@@ -331,7 +323,8 @@ section#inventario h2 {
     color: black;
     text-align: left;
     font-size: 30px;
-    font-weight: normal;
+    font-style: italic;
+    font-weight: 600;
 }
 
 .contenedor-estadisticas {
@@ -654,7 +647,7 @@ section#resumen_de_inventario{
     text-align:justify;
     margin-top: 5px; 
     padding: 5px;
-    width: 400px;
+    width: auto;
     border-radius: 10px;
     backdrop-filter: blur(2px);
 }
@@ -670,6 +663,7 @@ section#resumen_de_inventario p{
     font-size: 20px; 
     padding: 1px;
     margin-bottom: 5px;
+    flex-wrap: wrap;
 }
 
 span{
@@ -691,7 +685,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:20px;
+    padding:1px;
     border-radius: 10px;
     height: 250px;
 }
@@ -699,7 +693,7 @@ footer{
 .footer-content{
     color: rgb(252, 252, 251);
     font-size: 15px;
-    padding: 30px;
+    padding: 1px;
     margin: 5px;
     justify-content: center;
     display: flex;
@@ -873,11 +867,11 @@ section#login h2 {
 
 .menu-hamburguesa {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 5px;
+    right: 5px;
     background-color: #00adb5;
     color: white;
-    padding: 12px 20px;
+    padding: 10px 15px;
     border-radius: 30px;
     font-weight: bold;
     cursor: pointer;
@@ -896,15 +890,15 @@ section#login h2 {
 /* El contenedor del panel (Oculto por defecto a la derecha) */
 .panel-lateral {
     height: 100%;
-    width: 450px;
+    width: auto;
     position: fixed;
-    z-index: 1001;
+    z-index: 1000;
     top: 0;
     right: -450px; 
     background-color: var(--bg-panel);
     overflow-x: hidden;
     transition: 0.4s ease-all; 
-    padding: 20px;
+    padding: 30px;
     box-shadow: -5px 0 15px rgba(0,0,0,0.2);
     box-sizing: border-box;
 }
@@ -959,71 +953,6 @@ section#login h2 {
     width: 100% !important;
     max-height: 200px !important;
 }
-
-/* Adaptabilidad para pantallas pequeñas */
-@media (max-width: 500px) {
-    .panel-lateral {
-        width: 100%;
-        right: -100%;
-    }
-}
-
-@media (max-width: 768px){
-
-    h1{
-        font-size: 40px;
-    }
-
-    #subtitulo{
-        font-size: 18px;
-    }
-
-    header{
-        min-height: 350px;
-        height: auto;
-        padding: 20px;
-    }
-
-    .form-busqueda,
-    .form-filtros{
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    #buscar-producto,
-    .orden-filtro,
-    .stock-filtro,
-    .btn-buscar,
-    .btn-filtro{
-        width: 100%;
-    }
-
-    .contenedor-estadisticas{
-        flex-direction: column;
-    }
-
-    .contenedor-graficas{
-        grid-template-columns: 1fr;
-    }
-
-    section#resumen_de_inventario{
-        width: 100%;
-    }
-
-    .contenedor-footer{
-        flex-direction: column;
-        height: auto;
-    }
-
-    .footer-content{
-        width: 100%;
-        text-align: center;
-    }
-}
-
-
-
-
 
 
 
