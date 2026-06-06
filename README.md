@@ -29,6 +29,12 @@ Permite administrar productos, controlar stock, registrar ventas, generar report
 - OpenPyXL
 - ReportLab
 - Matplotlib
+- Ngrok
+- Git Bash
+- Navegador Móvil Android 
+- Flask-JWT-Extended
+- Flasgger
+- Scikit-Learn
 
 ---
 
@@ -47,6 +53,13 @@ Permite administrar productos, controlar stock, registrar ventas, generar report
 - Descuento automático de inventario
 - Validación de stock
 - Historial de ventas
+- Ganancias totales 
+- Registro automático de ventas.
+- Historial cronológico de movimientos.
+- Asociación entre productos y ventas.
+- Consulta de fecha y cantidad vendida.
+- Visualización desde la interfaz web.
+- visualizacion ganancias totales (día, mes, año)
 
 ### 📊 Reportes y Estadísticas
 - Dashboard interactivo
@@ -75,6 +88,7 @@ Permite administrar productos, controlar stock, registrar ventas, generar report
 - API REST con JWT
 - Respaldos Automáticos
 - Machine Learning para predicción de stock
+- Acceso remoto desde dispositivos móviles mediante Ngrok.
 
 ---
 
@@ -89,6 +103,13 @@ Permite administrar productos, controlar stock, registrar ventas, generar report
 ## 📦 Dashboard y Estadísticas
 
 ![Dashboard](static/screenshots/Dashboard-interactivo.png)
+
+
+---
+
+## 📦 Dashboard de Ganancias
+
+![Dashboard](static/screenshots/resumen-ganancias.png)
 
 
 ---
@@ -124,6 +145,16 @@ Permite administrar productos, controlar stock, registrar ventas, generar report
 ![Editar Producto](static/screenshots/editar-productos.png)
 
 ![Eliminar Producto](static/screenshots/eliminar-producto.png)
+
+---
+
+## 📦 Pruebas de interfaz responsive. Móvil
+
+![Vsta General APP](static/screenshots/vistaApp-Movil.jpg)
+
+![Menú APP Móvil](static/screenshots/vistaApp-Movil.jpg)
+
+![Repostes APP Movil](static/screenshots/opciones-app%20Móvil.jpg)
 
 ---
 
@@ -246,6 +277,8 @@ InventarioAVA/
 │ └── screenshots/  
 │
 ├── templates/  
+| |-- ganancias.html
+│ ├── historial.html
 │ ├── editar_producto.html
 │ ├── index.html
 │ ├── login.html
@@ -257,6 +290,20 @@ InventarioAVA/
 │
 |── venv/
 
+
+---
+
+## 📱 acceso desde dispositivos Moviles 
+
+El sistema fue probado exitosamente desde dispositivos móviles mediante Ngrok.
+
+### Configuración
+
+```bash
+ngrok config add-authtoken TU_TOKEN
+
+- python app.py
+- ngrok http 5000
 
 ---
 
