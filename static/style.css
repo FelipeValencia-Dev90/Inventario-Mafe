@@ -12,7 +12,7 @@ body{
     width: auto;
     height: auto;
     padding: 1px;
-    margin:2px;
+    margin:0px;
 }
 
 header {
@@ -122,7 +122,6 @@ main::before {
     min-width: 200px;
     text-align: left;
 }
-
 
 #formulario_producto label {
     font-size: 0.85rem;
@@ -456,6 +455,26 @@ section#inventario h2 {
     font-weight: normal;
 }
 
+.btn-historial, .btn-ganancias, .btn-top {
+    text-align: center;
+    padding: 5px 10px;
+    margin: 5px;
+    width: auto;
+    height: 30px;
+    color: black;
+    background-color: #f5f7f8;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-historial:hover, .btn-ganancias:hover, .btn-top:hover {
+    background-color: rgb(130, 175, 243);
+    transform: scale(1.05);
+}
+
 .logout-container {
     display: flex;
     justify-content: flex-end;
@@ -606,20 +625,20 @@ li[id^="producto-"]:hover {
 }
 
 .btn-desactivar, .btn-editar, .action-producto form:last-child button {
-    background-color: #00adb5; /* El turquesa corporativo que usamos en el menú */
+    background-color: #00adb5; 
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     width: 100%;
     height: 35px;
-    margin-left: 0px; /* Quitamos desajustes antiguos */
+    margin-left: 0px; 
     font-weight: bold;
     transition: background 0.2s, transform 0.1s;
 }
 
 .btn-desactivar {
-    background-color: #ff4d4d; /* Rojo sutil de alerta para desactivar */
+    background-color: #ff4d4d; 
 }
 
 .btn-desactivar:hover {
@@ -633,7 +652,7 @@ li[id^="producto-"]:hover {
 }
 
 .action-producto form:last-child button {
-    background-color: #212121; /* Negro/Gris oscuro elegante para el botón Vender */
+    background-color: #212121; 
 }
 .action-producto form:last-child button:hover {
     background-color: #424242;
@@ -798,9 +817,9 @@ section#login h2 {
     margin-bottom: 20px;
     margin-right: 5px;
     display: flex; 
-    justify-content: center;           /* Activamos Flexbox */
-    flex-direction: row;       /* Ponemos Label e Input en la misma fila */
-    align-items: center;       /* Los centra verticalmente entre sí */
+    justify-content: center;           
+    flex-direction: row;      
+    align-items: center;       
     width: 100%;
     padding: 2px;
 }
