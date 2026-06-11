@@ -508,6 +508,8 @@ section#inventario h2 {
     height: auto;
     display: flex;
     text-align: justify;
+    margin-top: 10px;
+    justify-content: center
 }
 
 .btn-papelera:hover{
@@ -598,6 +600,7 @@ li[id^="producto-"]:hover {
     display: flex;
     gap: 5px;
     margin-top: 5px;
+    padding: 1px;
 }
 
 .action-producto input[type="number"] {
@@ -835,7 +838,7 @@ section#login h2 {
     text-align: justify; 
 }
 
-.entrada-login {
+.grupo-login input {
     padding: 10px 14px;
     border: 1.5px solid #e0e0e0;
     border-radius: 8px;
@@ -846,7 +849,7 @@ section#login h2 {
     box-sizing: border-box; 
 }
 
-.entrada-login:focus {
+.grupo-login input:focus {
     border-color: #00adb5;
     background-color: #ffffff;
     box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.15);
@@ -871,7 +874,7 @@ section#login h2 {
 
 .btn-login:hover{
     background-color: rgb(14, 190, 190);
-    transform: scale(1.05);
+    transition: background 0.2s, transform 0.1s;
     box-shadow: 0 6px 12px rgba(0, 173, 181, 0.3);
 }
 
