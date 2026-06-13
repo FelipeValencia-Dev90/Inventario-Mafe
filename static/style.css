@@ -482,7 +482,7 @@ section#inventario h2 {
 }
 
 .btn-logout {
-    background-color: rgb(242, 242, 243);
+    background-color: rgb(243, 243, 242);
     color: black;
     border: 1px solid black;
     padding: 5px 10px;
@@ -657,11 +657,40 @@ li[id^="producto-"]:hover {
 .action-producto form:last-child button {
     background-color: #212121; 
 }
+
 .action-producto form:last-child button:hover {
     background-color: #424242;
 }
 
-section#resumen_de_inventario{
+section#editar-producto{
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.btn-guardar{
+    background-color: #00adb5; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: auto;
+    height: 35px;
+    margin-top: 5px;
+    margin-left: 0px; 
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.btn-guardar:hover{
+    background-color: #008990;
+    transform: none;
+}
+
+section#resumen-inventario{
     background-color: rgba(199, 194, 189, 0.4);
     color:rgb(8, 8, 8);
     display: flex;
@@ -674,13 +703,13 @@ section#resumen_de_inventario{
     backdrop-filter: blur(2px);
 }
 
-section#resumen_de_inventario h3 {
+section#resumen-inventario h3 {
     font-size:25px;
     font-weight: 600;
     padding: 1px;
 }
 
-section#resumen_de_inventario p{
+section#resumen-inventario p{
     color:rgb(8, 8, 8);
     font-size: 20px; 
     padding: 1px;
@@ -787,16 +816,19 @@ footer{
     padding: 10px;
 }
 
-section#login{
+section#login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px; 
+    margin: 80px auto; 
+    max-width: 450px; 
     width: 100%;
-    margin: 80px auto;
-    max-width: 500px;
-    background-color: rgb(241, 227, 227);
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
     border: 1px solid #eef2f3;
-    text-align: center;
+    box-sizing: border-box;
 }
 
 section#login h2 {
@@ -804,63 +836,58 @@ section#login h2 {
     color: #222222;
     margin-bottom: 25px;
     font-weight: 700;
+    text-align: center; 
 }
 
-#form-login{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(228, 224, 224);
-    padding-top:20px;
-    width: 100%;
-    border-radius: 8px;
-}
-
-.grupo-login{
-    margin-bottom: 20px;
-    margin-right: 5px;
+#form-login {
     display: flex; 
-    justify-content: center;           
-    flex-direction: row;      
-    align-items: center;       
+    flex-direction: column;
     width: 100%;
-    padding: 2px;
+    background-color: transparent; 
+    gap: 20px; 
+}
+
+.grupo-login {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+    width: 100%;
+    gap: 8px; 
 }
 
 .grupo-login label {
-    margin-right: 10px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;   
-    color: #222222;
+    color: #555555; 
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    width: 25%;         
-    text-align: justify; 
+    letter-spacing: 0.8px;
 }
 
 .grupo-login input {
-    padding: 10px 14px;
+    padding: 12px 15px; 
     border: 1.5px solid #e0e0e0;
     border-radius: 8px;
     font-size: 0.95rem;
     color: #333333;
-    background-color: #fcfcfc;
+    background-color: #f9f9f9;
     transition: all 0.3s ease;
     box-sizing: border-box; 
+    width: 100%; 
+    height: 48px;
 }
 
 .grupo-login input:focus {
     border-color: #00adb5;
     background-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.15);
+    box-shadow: 0 0 0 4px rgba(0, 173, 181, 0.15);
     outline: none;
 }
 
-.btn-login{
+.btn-login {
     display: block;
     width: 100%;
-    height: 45px;
-    margin-top: 10px;
+    height: 48px;
+    margin-top: 10px; 
     background-color: #00adb5; 
     color: #ffffff;
     border: none;
@@ -869,17 +896,16 @@ section#login h2 {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 173, 181, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 173, 181, 0.25);
 }
 
-.btn-login:hover{
-    background-color: rgb(14, 190, 190);
-    transition: background 0.2s, transform 0.1s;
-    box-shadow: 0 6px 12px rgba(0, 173, 181, 0.3);
+.btn-login:hover {
+    background-color: #009399; 
+    box-shadow: 0 6px 16px rgba(0, 173, 181, 0.35);
 }
 
 .btn-login:active {
-    transform: translateY(0);
+    transform: scale(0.98); 
 }
 
 :root {
