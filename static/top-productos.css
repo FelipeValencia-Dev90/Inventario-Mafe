@@ -1,0 +1,64 @@
+#top-producto {
+    opacity: 1;        
+    color: #212121;     
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+.table-container {
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden; 
+    background-color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* Encabezado de la tabla */
+th {
+    background-color: #00adb5; /* Verde turquesa */
+    color: #ffffff;
+    padding: 15px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* Celdas */
+td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eaedf1;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Filas intercaladas (Efecto Cebra) */
+tr:nth-child(even) {
+    background-color: #f9fbfb;
+}
+
+/* Efecto al pasar el cursor sobre las filas */
+tbody tr:hover {
+    background-color: #f1f4f4;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+/* Reutiliza el estilo especial de la primera celda (Producto) */
+#top-producto  + .table-container td:first-child {
+    font-weight: 600;
+    color: #00adb5;    /* Tono verde turquesa para el nombre del producto */
+}
+
+/* Centra la cantidad vendida (segunda columna) en esta tabla específica */
+#top-producto + .table-container th:nth-child(2), 
+#top-producto + .table-container td:nth-child(2) {
+    text-align: center;
+}
