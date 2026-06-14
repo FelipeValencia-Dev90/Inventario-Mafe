@@ -15389,3 +15389,22 @@
 2026-06-14 17:00:52,713 - INFO - 127.0.0.1 - - [14/Jun/2026 17:00:52] "[36mGET /static/imagenes/arepa-tela.png HTTP/1.1[0m" 304 -
 2026-06-14 17:00:52,734 - INFO - 127.0.0.1 - - [14/Jun/2026 17:00:52] "[36mGET /static/imagenes/panzerotti.png HTTP/1.1[0m" 304 -
 2026-06-14 17:00:52,737 - INFO - 127.0.0.1 - - [14/Jun/2026 17:00:52] "[36mGET /static/imagenes/chorizo-santarrosano.jpg HTTP/1.1[0m" 304 -
+2026-06-14 17:03:54,632 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-14 17:03:54,632 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 17:03:54,636 - INFO -  * Restarting with stat
+2026-06-14 17:03:56,634 - WARNING -  * Debugger is active!
+2026-06-14 17:03:56,653 - INFO -  * Debugger PIN: 125-925-734
+2026-06-14 17:07:01,701 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:01] "GET /historial HTTP/1.1" 200 -
+2026-06-14 17:07:01,759 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-14 17:07:01,771 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:01] "[36mGET /static/historial.css HTTP/1.1[0m" 304 -
+2026-06-14 17:07:04,953 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:04] "GET /ganancias HTTP/1.1" 200 -
+2026-06-14 17:07:05,025 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-14 17:07:05,032 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:05] "[36mGET /static/ganancias.css HTTP/1.1[0m" 304 -
+2026-06-14 17:07:07,265 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:07] "GET /top-productos HTTP/1.1" 200 -
+2026-06-14 17:07:07,337 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-14 17:07:07,348 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:07] "[36mGET /static/top-productos.css HTTP/1.1[0m" 304 -
+2026-06-14 17:07:09,418 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:09] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-06-14 17:07:09,434 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:09] "GET /login HTTP/1.1" 200 -
+2026-06-14 17:07:09,499 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-14 17:07:09,502 - INFO - 127.0.0.1 - - [14/Jun/2026 17:07:09] "[36mGET /static/login.css HTTP/1.1[0m" 304 -
