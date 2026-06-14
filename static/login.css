@@ -1,0 +1,91 @@
+section#login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px; 
+    margin: 80px auto; 
+    max-width: 450px; 
+    width: 100%;
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
+    border: 1px solid #eef2f3;
+    box-sizing: border-box;
+}
+
+section#login h2 {
+    font-size: 1.8rem;
+    color: #222222;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-align: center; 
+}
+
+#form-login {
+    display: flex; 
+    flex-direction: column;
+    width: 100%;
+    background-color: transparent; 
+    gap: 20px; 
+}
+
+.grupo-login {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+    width: 100%;
+    gap: 8px; 
+}
+
+.grupo-login label {
+    font-size: 0.8rem;
+    font-weight: 700;   
+    color: #555555; 
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.grupo-login input {
+    padding: 12px 15px; 
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    box-sizing: border-box; 
+    width: 100%; 
+    height: 48px;
+}
+
+.grupo-login input:focus {
+    border-color: #00adb5;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 173, 181, 0.15);
+    outline: none;
+}
+
+.btn-login {
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin-top: 10px; 
+    background-color: #00adb5; 
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 173, 181, 0.25);
+}
+
+.btn-login:hover {
+    background-color: #009399; 
+    box-shadow: 0 6px 16px rgba(0, 173, 181, 0.35);
+}
+
+.btn-login:active {
+    transform: scale(0.98); 
+}
