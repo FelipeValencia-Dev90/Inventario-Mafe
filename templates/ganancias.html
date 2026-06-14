@@ -5,25 +5,26 @@
     <meta charset="UTF-8">
     <title>Ganancias Totales</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ganancias.css') }}">
 </head>
 
 <body>
 
     <h1 id="ganancias">💰 Resumen de Ganancias</h1>
 
-    <h2>
+    <h2 class="resumen">
         📅 Hoy:
-        $ {{ "{:,.0f}".format(hoy) }}
+        <span class="precio">$ {{ "{:,.0f}".format(hoy) }}</span>
     </h2>
 
-    <h2>
+    <h2 class="resumen">
         📆 Este Mes:
-        $ {{ "{:,.0f}".format(mes) }}
+        <span class="precio">$ {{ "{:,.0f}".format(mes) }}</span>
     </h2>
 
-    <h2>
+    <h2 class="resumen">
         🗓️ Este Año:
-        $ {{ "{:,.0f}".format(anio) }}
+        <span class="precio">$ {{ "{:,.0f}".format(anio) }}</span>
     </h2>
 
 </body>

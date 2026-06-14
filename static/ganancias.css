@@ -1,0 +1,18 @@
+#ganancias {
+    opacity: 1;         
+    color: #212121;     
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.resumen {
+    color: black;
+    margin-bottom: 15px;
+    font-weight: 600;   
+}
+
+.precio {
+    color:#00adb5;  
+    margin-left: 5px;  
+    font-weight: bold;
+}
