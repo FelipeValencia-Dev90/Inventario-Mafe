@@ -14,27 +14,47 @@ Permite administrar productos, controlar stock, registrar ventas, generar report
 
 🚀 Tecnologías Utilizadas
 
-- Python
-- Flask
-- SQL Server
-- PyODBC
-- JWT
-- Swagger
-- Bootstrap
-- HTML5
-- CSS3
-- JavaScript
-- Pandas
-- NumPy
-- OpenPyXL
-- ReportLab
-- Matplotlib
-- Ngrok
-- Git Bash
-- Navegador Móvil Android 
-- Flask-JWT-Extended
-- Flasgger
-- Scikit-Learn
+- attrs==26.1.0
+- blinker==1.9.0
+- charset-normalizer==3.4.7
+- click==8.3.3
+- colorama==0.4.6
+- contourpy==1.3.3
+- cycler==0.12.1
+- et_xmlfile==2.0.0
+- flasgger==0.9.7.1
+- Flask==3.1.3
+- Flask-JWT-Extended==4.7.4
+- fonttools==4.63.0
+- itsdangerous==2.2.0
+- Jinja2==3.1.6
+- joblib==1.5.3
+- jsonschema==4.26.0
+- jsonschema-specifications==2025.9.1
+- kiwisolver==1.5.0
+- MarkupSafe==3.0.3
+- matplotlib==3.10.9
+- mistune==3.2.1
+- numpy==2.4.6
+- openpyxl==3.1.5
+- packaging==26.2
+- pandas==3.0.3
+- pillow==12.2.0
+- PyJWT==2.13.0
+- pyodbc==5.3.0
+- pyparsing==3.3.2
+- python-dateutil==2.9.0.post0
+- PyYAML==6.0.3
+- referencing==0.37.0
+- reportlab==4.5.1
+- rpds-py==2026.5.1
+- scikit-learn==1.8.0
+- scipy==1.17.1
+- six==1.17.0
+- threadpoolctl==3.6.0
+- tzdata==2026.2
+- Werkzeug==3.1.8
+
 
 ---
 
@@ -271,7 +291,11 @@ InventarioAVA/
 │ ├── auth.py  
 │ └── productos.py  
 │
-├── static/  
+├── static/ 
+│ ├── ganancias.css  
+│ ├── historial.css
+│ └── top-productos.css 
+│ └── login.css 
 │ ├── style.css  
 │ ├── imagenes/  
 │ └── screenshots/  
