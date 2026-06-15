@@ -172,7 +172,7 @@ Permite administrar productos, controlar stock, registrar ventas, generar report
 
 ![Vsta General APP](static/screenshots/vistaApp-Movil.jpg)
 
-![Menú APP Móvil](static/screenshots/vistaApp-Movil.jpg)
+![Panel-Historial](static/screenshots/panel-historial.png)
 
 ![Repostes APP Movil](static/screenshots/opciones-app%20Móvil.jpg)
 
@@ -265,56 +265,54 @@ La arquitectura sigue un patrón modular y limpio utilizando Blueprints de Flask
 
 InventarioAVA/
 │
-├── app.py  
-├── crear_usuario.py  
+├── app.py
+├── crear_usuario.py
 ├── Inventario AVA API.postman_collection.json
-├── README.md  
-├── requirements.txt  
+├── README.md
+├── requirements.txt
 │
-├── backups/  
-│ ├── inventario_20260603_084123.bak
-│ └── inventario_20260603_162202.bak
+├── backups/
+│   ├── inventario_20260603_084123.bak
+│   └── inventario_20260603_162202.bak
 │
-├── cli/  
+├── cli/
 │
-├── database/  
-│ └── conexion.py  
+├── database/
+│   └── conexion.py
 │
-├── logs/  
-│ └── sistema.log  
+├── logs/
+│   └── sistema.log
 │
-├── ml/  
-│ ├── prediccion_stock.py
-|
-├── routes/  
-│ ├── __init__.py  
-│ ├── auth.py  
-│ └── productos.py  
+├── ml/
+│   └── prediccion_stock.py
 │
-├── static/ 
-│ ├── ganancias.css  
-│ ├── historial.css
-│ └── top-productos.css 
-│ └── login.css 
-│ ├── style.css  
-│ ├── imagenes/  
-│ └── screenshots/  
+├── routes/
+│   ├── __init__.py
+│   ├── auth.py
+│   └── productos.py
 │
-├── templates/  
-| |-- ganancias.html
-│ ├── historial.html
-│ ├── editar_producto.html
-│ ├── index.html
-│ ├── login.html
-│ └── papelera.html
+├── static/
+│   ├── ganancias.css
+│   ├── historial.css
+│   ├── login.css
+│   ├── style.css
+│   ├── top-productos.css
+│   ├── imagenes/
+│   └── screenshots/
 │
-├── tests/  
+├── templates/
+│   ├── editar_producto.html
+│   ├── ganancias.html
+│   ├── historial.html
+│   ├── index.html
+│   ├── login.html
+│   └── papelera.html
 │
-├── utils/  
+├── tests/
 │
-|── venv/
-
-
+├── utils/
+│
+└── venv/
 ---
 
 ## 📱 acceso desde dispositivos Moviles 
