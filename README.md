@@ -263,6 +263,7 @@ Endpoints principales:
 
 La arquitectura sigue un patrón modular y limpio utilizando Blueprints de Flask para una organización profesional del backend:
 
+```
 InventarioAVA/
 │
 ├── app.py
@@ -313,6 +314,8 @@ InventarioAVA/
 ├── utils/
 │
 └── venv/
+
+```
 ---
 
 ## 📱 acceso desde dispositivos Moviles 
