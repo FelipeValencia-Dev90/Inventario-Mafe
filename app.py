@@ -1,5 +1,7 @@
 from flask import Flask
 from flask_jwt_extended import JWTManager
+from dotenv import load_dotenv
+import os
 
 from routes.productos import productos
 from routes.auth import auth
@@ -12,11 +14,13 @@ from utils.errors import configurar_errores
 
 app = Flask(__name__)
 
+load_dotenv()
+
 configurar_errores(app)
 
 
-app.secret_key = "InventarioAVA"
-app.config["JWT_SECRET_KEY"] = "super-secret-key"
+app.secret_key = os.getenv("SECRET_KEY")
+app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(minutes=30)
 app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(days=7)
