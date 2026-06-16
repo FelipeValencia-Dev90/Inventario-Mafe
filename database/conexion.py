@@ -7,24 +7,21 @@ def obtener_conexion():
     if url_nube:
         import psycopg2
         conexion = psycopg2.connect(url_nube)
-        
         cursor = conexion.cursor()
-        # --- AUTOMIGRACIÓN EN LA NUBE ---
+        
         script_tablas = """
-
+        DROP TABLE IF EXISTS historial_movimiento CASCADE;
+        DROP TABLE IF EXISTS ventas CASCADE;
         DROP TABLE IF EXISTS productos CASCADE;
         DROP TABLE IF EXISTS usuarios CASCADE;
-        DROP TABLE IF EXISTS ventas CASCADE;
 
-
-        CREATE TABLE IF NOT EXISTS usuarios (
+        CREATE TABLE usuarios (
             id SERIAL PRIMARY KEY,
             username VARCHAR(50) UNIQUE NOT NULL,
             password VARCHAR(255) NOT NULL
         );
 
-
-        CREATE TABLE IF NOT EXISTS productos (
+        CREATE TABLE productos (
             id SERIAL PRIMARY KEY,
             nombre VARCHAR(100) NOT NULL,
             precio DECIMAL(10, 2) NOT NULL,
@@ -35,9 +32,9 @@ def obtener_conexion():
             imagen VARCHAR(255)
         );
         
-        CREATE TABLE IF NOT EXISTS ventas (
+        CREATE TABLE ventas (
             id SERIAL PRIMARY KEY,
-            producto_id INT,
+            producto_id INT REFERENCES productos(id) ON DELETE CASCADE,
             cantidad INT NOT NULL,
             total DECIMAL(10, 2) NOT NULL,
             fecha_venta TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -51,7 +48,6 @@ def obtener_conexion():
             fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
         """
-    
         try:
             cursor.execute(script_tablas)
             conexion.commit()
