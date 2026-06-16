@@ -8,21 +8,39 @@ def obtener_conexion():
         import psycopg2
         conexion = psycopg2.connect(url_nube)
         
-        # --- AUTOMIGRACIÓN EN LA NUBE ---
-        # Cada vez que se conecte en Render, verificará y creará las tablas de forma interna
         cursor = conexion.cursor()
+        # Modificamos el script para que tenga las columnas exactas de tu SQL Server local
         script_tablas = """
-        CREATE TABLE IF NOT EXISTS productos (
-            id SERIAL PRIMARY KEY,
-            nombre VARCHAR(100) NOT NULL,
-            precio DECIMAL(10, 2) NOT NULL,
-            stock INT NOT NULL
-        );
-        
+
+        DROP TABLE IF EXISTS productos CASCADE;
+        DROP TABLE IF EXISTS usuarios CASCADE;
+        DROP TABLE IF EXISTS ventas CASCADE;
+
+
         CREATE TABLE IF NOT EXISTS usuarios (
             id SERIAL PRIMARY KEY,
             username VARCHAR(50) UNIQUE NOT NULL,
             password VARCHAR(255) NOT NULL
+        );
+
+
+        CREATE TABLE IF NOT EXISTS productos (
+            id SERIAL PRIMARY KEY,
+            nombre VARCHAR(100) NOT NULL,
+            precio DECIMAL(10, 2) NOT NULL,
+            cantidad INT NOT NULL,
+            descripcion TEXT,
+            fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            activo INT DEFAULT 1,
+            imagen VARCHAR(255)
+        );
+        
+        CREATE TABLE IF NOT EXISTS ventas (
+            id SERIAL PRIMARY KEY,
+            producto_id INT,
+            cantidad INT NOT NULL,
+            total DECIMAL(10, 2) NOT NULL,
+            fecha_venta TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
         """
         try:
@@ -35,7 +53,6 @@ def obtener_conexion():
             
         return conexion
     else:
-        # Conexión para tu computadora local con SQL Server
         conexion_local = pyodbc.connect(
             'DRIVER={ODBC Driver 17 for SQL Server};'
             'SERVER=DESKTOP-Q681RM2\\SQLEXPRESS;'
