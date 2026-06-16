@@ -9,7 +9,7 @@ def obtener_conexion():
         conexion = psycopg2.connect(url_nube)
         
         cursor = conexion.cursor()
-        # Modificamos el script para que tenga las columnas exactas de tu SQL Server local
+        # --- AUTOMIGRACIÓN EN LA NUBE ---
         script_tablas = """
 
         DROP TABLE IF EXISTS productos CASCADE;
@@ -42,7 +42,16 @@ def obtener_conexion():
             total DECIMAL(10, 2) NOT NULL,
             fecha_venta TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
+
+        CREATE TABLE historial_movimiento (
+            id SERIAL PRIMARY KEY,
+            producto_id INT REFERENCES productos(id) ON DELETE CASCADE,
+            accion VARCHAR(100) NOT NULL,
+            cantidad INT NOT NULL,
+            fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
         """
+    
         try:
             cursor.execute(script_tablas)
             conexion.commit()
