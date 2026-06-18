@@ -15602,3 +15602,70 @@
 2026-06-16 09:56:21,333 - INFO -  * Restarting with stat
 2026-06-16 09:56:23,816 - WARNING -  * Debugger is active!
 2026-06-16 09:56:23,825 - INFO -  * Debugger PIN: 125-925-734
+2026-06-16 11:23:31,637 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-16 11:23:31,638 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-16 11:23:31,639 - INFO -  * Restarting with stat
+2026-06-16 11:23:32,819 - WARNING -  * Debugger is active!
+2026-06-16 11:23:32,827 - INFO -  * Debugger PIN: 125-925-734
+2026-06-16 11:23:32,901 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:32] "GET /login HTTP/1.1" 200 -
+2026-06-16 11:23:32,947 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-16 11:23:32,953 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:32] "[36mGET /static/login.css HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,254 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-06-16 11:23:40,291 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "GET / HTTP/1.1" 200 -
+2026-06-16 11:23:40,351 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,356 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/dedo-queso.png HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,356 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/dedo-hawaiano.png HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,401 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/dedos-salchicha.png HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,401 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/pastel-pollo.png HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,416 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/hojaldras.png HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,428 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/empanadas-tradicionales.png HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,434 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/arepas-super-queso.png HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,447 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/dedos-bocadillo.png HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,454 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/papa-rellena.jpg HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,461 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/dedos-arequipe.jpg HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,467 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/arepa-tela.png HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,473 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/panzerotti.png HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,479 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/chorizo-santarrosano.jpg HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,988 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/logo-empresa.png HTTP/1.1[0m" 304 -
+2026-06-16 11:23:40,988 - INFO - 127.0.0.1 - - [16/Jun/2026 11:23:40] "[36mGET /static/imagenes/fondo-main.jpg HTTP/1.1[0m" 304 -
+2026-06-18 11:42:03,201 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-18 11:42:03,201 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-18 11:42:03,204 - INFO -  * Restarting with stat
+2026-06-18 11:42:04,917 - WARNING -  * Debugger is active!
+2026-06-18 11:42:04,930 - INFO -  * Debugger PIN: 125-925-734
+2026-06-18 11:42:09,385 - INFO - 127.0.0.1 - - [18/Jun/2026 11:42:09] "GET /login HTTP/1.1" 200 -
+2026-06-18 11:42:09,571 - INFO - 127.0.0.1 - - [18/Jun/2026 11:42:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-18 11:42:09,596 - INFO - 127.0.0.1 - - [18/Jun/2026 11:42:09] "[36mGET /static/login.css HTTP/1.1[0m" 304 -
+2026-06-18 11:42:09,754 - INFO - 127.0.0.1 - - [18/Jun/2026 11:42:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-18 11:42:29,588 - INFO - 127.0.0.1 - - [18/Jun/2026 11:42:29] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2026-06-18 11:42:29,711 - INFO - 127.0.0.1 - - [18/Jun/2026 11:42:29] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-06-18 11:42:29,754 - INFO - 127.0.0.1 - - [18/Jun/2026 11:42:29] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-06-18 11:42:29,864 - INFO - 127.0.0.1 - - [18/Jun/2026 11:42:29] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=pZCAMPRwFuyKc428OpxH HTTP/1.1" 200 -
+2026-06-18 11:42:29,899 - INFO - 127.0.0.1 - - [18/Jun/2026 11:42:29] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-06-18 11:43:13,505 - INFO - 127.0.0.1 - - [18/Jun/2026 11:43:13] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2026-06-18 11:43:13,666 - INFO - 127.0.0.1 - - [18/Jun/2026 11:43:13] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-06-18 11:43:13,683 - INFO - 127.0.0.1 - - [18/Jun/2026 11:43:13] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-06-18 11:43:13,892 - INFO - 127.0.0.1 - - [18/Jun/2026 11:43:13] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=pZCAMPRwFuyKc428OpxH HTTP/1.1[0m" 304 -
+2026-06-18 11:48:03,928 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:03] "GET /login HTTP/1.1" 200 -
+2026-06-18 11:48:04,006 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-18 11:48:04,013 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:04] "[36mGET /static/login.css HTTP/1.1[0m" 304 -
+2026-06-18 11:48:10,125 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-06-18 11:48:10,439 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "GET / HTTP/1.1" 200 -
+2026-06-18 11:48:10,539 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-06-18 11:48:10,544 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "[36mGET /static/imagenes/dedo-queso.png HTTP/1.1[0m" 304 -
+2026-06-18 11:48:10,544 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "[36mGET /static/imagenes/dedo-hawaiano.png HTTP/1.1[0m" 304 -
+2026-06-18 11:48:10,598 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "[36mGET /static/imagenes/dedos-salchicha.png HTTP/1.1[0m" 304 -
+2026-06-18 11:48:10,600 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "[36mGET /static/imagenes/pastel-pollo.png HTTP/1.1[0m" 304 -
+2026-06-18 11:48:10,615 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "[36mGET /static/imagenes/hojaldras.png HTTP/1.1[0m" 304 -
+2026-06-18 11:48:10,944 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "[36mGET /static/imagenes/empanadas-tradicionales.png HTTP/1.1[0m" 304 -
+2026-06-18 11:48:10,959 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "[36mGET /static/imagenes/arepas-super-queso.png HTTP/1.1[0m" 304 -
+2026-06-18 11:48:10,988 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "[36mGET /static/imagenes/dedos-bocadillo.png HTTP/1.1[0m" 304 -
+2026-06-18 11:48:10,996 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:10] "[36mGET /static/imagenes/papa-rellena.jpg HTTP/1.1[0m" 304 -
+2026-06-18 11:48:11,003 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:11] "[36mGET /static/imagenes/dedos-arequipe.jpg HTTP/1.1[0m" 304 -
+2026-06-18 11:48:11,019 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:11] "[36mGET /static/imagenes/arepa-tela.png HTTP/1.1[0m" 304 -
+2026-06-18 11:48:11,034 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:11] "[36mGET /static/imagenes/panzerotti.png HTTP/1.1[0m" 304 -
+2026-06-18 11:48:11,043 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:11] "[36mGET /static/imagenes/chorizo-santarrosano.jpg HTTP/1.1[0m" 304 -
+2026-06-18 11:48:11,873 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:11] "[36mGET /static/imagenes/fondo-main.jpg HTTP/1.1[0m" 304 -
+2026-06-18 11:48:11,874 - INFO - 127.0.0.1 - - [18/Jun/2026 11:48:11] "[36mGET /static/imagenes/logo-empresa.png HTTP/1.1[0m" 304 -

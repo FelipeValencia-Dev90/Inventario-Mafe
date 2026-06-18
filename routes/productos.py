@@ -94,7 +94,7 @@ def inicio():
     cursor.execute("SELECT SUM(cantidad) FROM Ventas")
     resultado_ventas = cursor.fetchone()[0]
     total_ventas = resultado_ventas if resultado_ventas else 0
-
+    
 
     # === CONSULTAS PARA GRÁFICAS (DASHBOARD) ===
 
